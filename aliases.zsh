@@ -1,3 +1,8 @@
+# Unix
+alias l='ls'
+alias ll='ls -al'
+alias e="$EDITOR"
+
 # General
 alias zshconfig="e ~/.zshrc"
 alias myzshconfig="e $ZSH_CUSTOM/rap.zsh"
