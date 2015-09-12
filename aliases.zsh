@@ -1,6 +1,6 @@
 # General
-alias zshconfig="vim ~/.zshrc"
-alias myzshconfig="vim $ZSH_CUSTOM/rap.zsh"
+alias zshconfig="e ~/.zshrc"
+alias myzshconfig="e $ZSH_CUSTOM/rap.zsh"
 
 # Shiftit
 alias shiftit="bundle exec foreman start -f Procfile.dev"
