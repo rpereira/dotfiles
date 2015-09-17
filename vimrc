@@ -30,6 +30,13 @@ set t_Co=16
 set background=light
 colorscheme solarized
 
+" Draw a vertical line to encourage wrapping the text at 80 chars.
+set textwidth=80
+set colorcolumn=+1
+
+" Highlight current line.
+set cursorline
+
 " Match and highligh on red color trailing whitespaces.
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
