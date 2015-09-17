@@ -21,6 +21,10 @@ set noswapfile
 " Switch off automatic creation of backup files.
 set nobackup
 set nowritebackup
+
+" Display incomplete commands
+set showcmd
+
 " Delete comment character when joining commented lines.
 set formatoptions+=j
 
