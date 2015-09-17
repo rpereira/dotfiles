@@ -28,9 +28,13 @@ set showcmd
 " Delete comment character when joining commented lines.
 set formatoptions+=j
 
-" Git settings for better commit messages: enables spell checking and
-" wrapps the text to 72 chars.
-autocmd Filetype gitcommit setlocal spell textwidth=72
+" Automatically wrap at 72 characters and spell check git commit messages.
+autocmd FileType gitcommit setlocal textwidth=72
+autocmd FileType gitcommit setlocal spell
+
+" Automatically wrap at 80 characters for Markdown.
+autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+autocmd FileType markdown setlocal spell
 
 " Enable color syntax highlighting.
 syntax enable
