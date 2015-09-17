@@ -4,13 +4,13 @@
 
 [user]
   name = Rui Pereira
-  email = ruiafonsopereira@gmail.com                                          
+  email = ruiafonsopereira@gmail.com
 
 [push]
   default = simple
 
 [core]
-  editor = vim                                                                                            
+  editor = vim
 
 [commit]
   template = ~/repos/dotfiles/gitmessage.txt
