@@ -2,9 +2,10 @@
 set nocompatible
 
 filetype off
+
 call vundle#begin()
 
-" Let Vundle manage Vundle.
+" Let Vundle manage itself.
 Plugin 'gmarik/vundle'
 
 " List of plugins on GitHub repo.
