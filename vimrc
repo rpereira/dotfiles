@@ -50,3 +50,7 @@ function! TrimWhiteSpace()
   %s/\s\+$//e
 endfunction
 autocmd BufWritePre * :call TrimWhiteSpace()
+
+" Line numbers.
+set number
+set numberwidth=5
