@@ -12,12 +12,14 @@ filetype plugin indent on
 " Copy indent from current line when starting a new line.
 set autoindent
 
+" Make backspace work like most other apps
+set backspace=2
+
 " Delete comment character when joining commented lines.
 set formatoptions+=j
 
 " Git settings for better commit messages: enables spell checking and
 " wrapps the text to 72 chars.
-set backspace=2
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " Enable color syntax highlighting.
