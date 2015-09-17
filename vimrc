@@ -1,6 +1,11 @@
 " Runtime path manipulation.
 call pathogen#infect()
 
+" Vim plugins. In order to install them launch vim and run :PluginInstall.
+if filereadable(expand("vimrc.bundles"))
+  source vimrc.bundles
+endif
+
 " Enable language-dependent indenting.
 filetype plugin indent on
 
