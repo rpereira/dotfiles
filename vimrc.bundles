@@ -14,5 +14,8 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
 
+" Theme
+Plugin 'altercation/vim-colors-solarized'
+
 call vundle#end()
 filetype plugin indent on
