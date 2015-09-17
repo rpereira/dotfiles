@@ -13,4 +13,4 @@
   editor = vim
 
 [commit]
-  template = gitmessage.txt
+  template = ~/repos/dotfiles/gitmessage.txt
