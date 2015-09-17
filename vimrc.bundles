@@ -9,6 +9,7 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 
 " List of plugins on GitHub repo.
+Plugin 'junegunn/fzf'
 Plugin 'kchmck/vim-coffee-script'
 
 Plugin 'tpope/vim-fugitive'
