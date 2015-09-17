@@ -15,6 +15,9 @@ set autoindent
 " Make backspace work like most other apps
 set backspace=2
 
+" http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set noswapfile
+
 " Delete comment character when joining commented lines.
 set formatoptions+=j
 
