@@ -48,6 +48,12 @@ autocmd FileType gitcommit setlocal spell
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 autocmd FileType markdown setlocal spell
 
+" Softtabs, 2 spaces
+set tabstop=2
+set shiftwidth=2
+set shiftround
+set expandtab
+
 " Draw a vertical line to encourage wrapping the text at 80 chars.
 set textwidth=80
 set colorcolumn=+1
@@ -72,3 +78,12 @@ autocmd BufWritePre * :call TrimWhiteSpace()
 " Line numbers.
 set number
 set numberwidth=5
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
