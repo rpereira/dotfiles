@@ -1,5 +1,17 @@
+set nocompatible
+
+" Allow color schemes to do bright colors without forcing bold.
+set t_Co=16
+
 " Runtime path manipulation.
 call pathogen#infect()
+
+" Enable color syntax highlighting.
+syntax enable
+
+" Solarized Light
+set background=light
+colorscheme solarized
 
 " Vim plugins. In order to install them launch vim and run :PluginInstall.
 if filereadable(expand("vimrc.bundles"))
@@ -35,16 +47,6 @@ autocmd FileType gitcommit setlocal spell
 " Automatically wrap at 80 characters for Markdown.
 autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 autocmd FileType markdown setlocal spell
-
-" Enable color syntax highlighting.
-syntax enable
-
-" Allow color schemes to do bright colors without forcing bold.
-set t_Co=16
-
-" Solarized Light
-set background=light
-colorscheme solarized
 
 " Draw a vertical line to encourage wrapping the text at 80 chars.
 set textwidth=80
