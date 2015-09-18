@@ -1,5 +1,5 @@
-# Use the 16 colors terminal option to get VIM to look like GVIM with solarized colors.
-set t_Co=16
+# Set correct term for tmux so solarized theme works in vim.
+alias tmux="TERM=screen-256color-bce tmux"
 
 # Activate the theme for all future shell sessions.
 eval `dircolors $ZSH_CUSTOM/dircolors_solarized/dircolors.ansi-light`
