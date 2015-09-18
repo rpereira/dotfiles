@@ -5,7 +5,7 @@ My personal oh-my-zsh configuration.
 In your ``~/.zshrc`` file just change the path of ``$ZSH_CUSTOM`` to a directory of your own liking:
 
 ```bash
-ZSH_CUSTOM=~/repos/zsh-config
+ZSH_CUSTOM=~/repos/dotfiles/zsh
 ```
 
 ## Setting another ``source`` file:
