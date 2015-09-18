@@ -1,6 +1,3 @@
-# Set correct term for tmux so solarized theme works in vim.
-alias tmux="TERM=screen-256color-bce tmux"
-
 # Activate the theme for all future shell sessions.
 eval `dircolors $ZSH_CUSTOM/dircolors_solarized/dircolors.ansi-light`
 
