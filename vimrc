@@ -85,6 +85,24 @@ autocmd BufWritePre * :call TrimWhiteSpace()
 set number
 set numberwidth=5
 
+" Get rid of default mode indicator - using airline's instead.
+set noshowmode
+
+" Load airline theme on startup.
+let g:airline_theme='solarized'
+
+" Enable powerline font symbols.
+let g:airline_powerline_fonts=1
+
+" Prevent powerline font symbols from being partially messed up.
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+
+" https://github.com/bling/vim-airline/wiki/FAQ#vim-airline-doesnt-appear-until-i-create-a-new-split
+set laststatus=2
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
