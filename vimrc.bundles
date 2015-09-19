@@ -9,13 +9,15 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 
 " List of plugins on GitHub repo.
+Plugin 'airblade/vim-gitgutter'
+Plugin 'bling/vim-airline'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'junegunn/fzf'
-Plugin 'bling/vim-airline'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'slim-template/vim-slim'
+Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-rails'
 
 " Theme
