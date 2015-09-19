@@ -8,7 +8,7 @@ PROMPT='
 $(_user_host)${_current_dir} $(git_prompt_info)
 ${return_status}'
 
-RPROMPT='$(_vi_status)%{$(echotc UP 1)%}$(_git_time_since_commit) $(git_prompt_status) ${_return_status}%{$(echotc DO 1)%}'
+RPROMPT='%{$(echotc UP 1)%}$(_git_time_since_commit) $(git_prompt_status) ${_return_status}%{$(echotc DO 1)%}'
 
 local _current_dir="%{$fg[blue]%}%3~%{$reset_color%} "
 local _return_status="%{$fg[red]%}%(?..⍉)%{$reset_color%}"
@@ -22,12 +22,6 @@ function _user_host() {
   fi
   if [[ -n $me ]]; then
     echo "%{$fg[cyan]%}$me%{$reset_color%}:"
-  fi
-}
-
-function _vi_status() {
-  if {echo $fpath | grep -q "plugins/vi-mode"}; then
-    echo "$(vi_mode_prompt_info)"
   fi
 }
 
