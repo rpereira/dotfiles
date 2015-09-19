@@ -2,11 +2,11 @@
 
 # Set the arrow's color to red when the command line return an error; default's
 # grey.
-local return_status="%(?.➜ .%{$fg[red]%}➜ )"
+local return_status="%(?.➜.%{$fg[red]%}➜)"
 
 PROMPT='
 $(_user_host)${_current_dir} $(git_prompt_info)
-${return_status}'
+${return_status} '
 
 RPROMPT='%{$(echotc UP 1)%}$(_git_time_since_commit) $(git_prompt_status) ${_return_status}%{$(echotc DO 1)%}'
 
