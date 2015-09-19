@@ -11,6 +11,7 @@ Plugin 'gmarik/vundle'
 " List of plugins on GitHub repo.
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'junegunn/fzf'
+Plugin 'bling/vim-airline'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
