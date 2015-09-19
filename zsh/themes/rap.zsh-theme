@@ -1,9 +1,12 @@
 # Based on AVIT ZSH Theme
 
+# Set the arrow's color to red when the command line return an error; default's
+# grey.
+local return_status="%(?.➜ .%{$fg[red]%}➜ )"
+
 PROMPT='
 $(_user_host)${_current_dir} $(git_prompt_info) $(_ruby_version)
-➜ '
-
+${return_status}'
 
 RPROMPT='$(_vi_status)%{$(echotc UP 1)%}$(_git_time_since_commit) $(git_prompt_status) ${_return_status}%{$(echotc DO 1)%}'
 
