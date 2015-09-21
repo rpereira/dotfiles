@@ -112,5 +112,5 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" Format and return the same line.
+" Fix code identation.
 map <F7> mzgg=G`z
