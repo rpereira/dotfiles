@@ -10,5 +10,9 @@
 
 [fetch]
   prune = true
+
+[include]
+  path = ~/.dotfiles.local/gitconfig.local
+
 [push]
   default = current
