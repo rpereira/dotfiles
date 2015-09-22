@@ -2,15 +2,10 @@
   lg = g log --abbrev-commit --date=relative --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset'
   gsb = gss --branch
 
-[user]
-  name = Rui Pereira
-  email = ruiafonsopereira@gmail.com
 
 [push]
   default = simple
-
 [core]
-  editor = vim
 
 [commit]
   template = ~/repos/dotfiles/gitmessage.txt
