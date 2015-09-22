@@ -6,5 +6,8 @@
 
 [commit]
   template = ~/repos/dotfiles/gitmessage.txt
+
+[fetch]
+  prune = true
 [push]
   default = current
