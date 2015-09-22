@@ -3,6 +3,7 @@
   gsb = gss --branch
 
 [core]
+  autocrlf = input
 
 [commit]
   template = ~/repos/dotfiles/gitmessage.txt
