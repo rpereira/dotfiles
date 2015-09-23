@@ -30,7 +30,9 @@ if [ ! -d tmux-colors-solarized ]; then
 fi
 
 # Install vim Vundle
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
 
 # Install vim plugins
 vim +PluginInstall +qall
