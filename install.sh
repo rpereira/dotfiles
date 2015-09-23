@@ -7,13 +7,6 @@ else if ! command -v wget >/dev/null 2>&1; then
   sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 fi
 
-
-# Install vim Vundle
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-# Install vim plugins
-vim +PluginInstall +qall
-
 # Create a folder to hold all the solarized color schemes
 cd && mkdir .solarized && cd $_
 export SOLARIZED=~/.solarized
@@ -28,8 +21,12 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Install vim plugins
 vim +PluginInstall +qall
+
 # Instalation steps
 #source .bin/steps/color_scheme.sh
+
+# Install Gnome Colors Solarized
+~/.solarized/gnome-terminal-colors-solarized/install.sh
 
 # Install dir colors solarized
 ln -s ~/.solarized/dircolors-solarized/dircolors.ansi-light .dircolors.ansi-light
