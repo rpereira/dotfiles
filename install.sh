@@ -7,9 +7,14 @@ elif ! command -v wget >/dev/null 2>&1; then
   sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 fi
 
-# Create a folder to hold all the solarized color schemes
-cd && mkdir .solarized && cd $_ || exit
 export SOLARIZED=~/.solarized
+
+# Create a folder to hold all the solarized color schemes
+if [ ! -d $SOLARIZED ]; then
+  cd && mkdir .solarized
+fi
+
+cd $SOLARIZED || exit
 
 # Download solarized color schemes
 git clone https://github.com/Anthony25/gnome-terminal-colors-solarized
