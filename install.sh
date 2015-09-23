@@ -18,4 +18,4 @@ git clone https://github.com/Anthony25/gnome-terminal-colors-solarized
 git clone git@github.com:seebi/tmux-colors-solarized.git
 
 # Instalation steps
-source .bin/steps/color_scheme.sh
+#source .bin/steps/color_scheme.sh
