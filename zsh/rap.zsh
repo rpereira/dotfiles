@@ -9,9 +9,6 @@
 # ~/repos/dotfiles/zsh/dircolors.ansi-light.
 eval `dircolors $ZSH_CUSTOM/.dircolors.ansi-light`
 
-# Local dotfiles
-LOCAL_DOTFILES=~/.dotfiles.local
-
 # Load aliases.
 [[ -f ~/.aliases ]] && source $ZSH_CUSTOM/aliases.zsh
 
@@ -19,5 +16,8 @@ LOCAL_DOTFILES=~/.dotfiles.local
 setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
 DIRSTACKSIZE=5
 
-# Local config
-[[ -f $LOCAL_DOTFILES/zshrc.local ]] && source ~/$LOCAL_DOTFILES/zshrc.local
+# If local dotfiles exists, load the local zsh config.
+if [ -d ~/.dotfiles.local ]; then
+  LOCAL_DOTFILES=~/.dotfiles.local
+  [[ -f $LOCAL_DOTFILES/zshrc.local ]] && source ~/$LOCAL_DOTFILES/zshrc.local
+fi
