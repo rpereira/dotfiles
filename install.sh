@@ -44,4 +44,6 @@ vim +PluginInstall +qall
 ~/.solarized/gnome-terminal-colors-solarized/install.sh
 
 # Install dir colors solarized
-ln -s ~/.solarized/dircolors-solarized/dircolors.ansi-light .dircolors.ansi-light
+if [ ! -f $ZSH_CUSTOM/.dircolors.ansi-light ]; then
+  ln -s ~/.solarized/dircolors-solarized/dircolors.ansi-light $ZSH_CUSTOM/.dircolors.ansi-light
+fi
