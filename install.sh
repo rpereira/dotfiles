@@ -22,5 +22,10 @@ export SOLARIZED=~/.solarized
 git clone https://github.com/Anthony25/gnome-terminal-colors-solarized
 git clone git@github.com:seebi/tmux-colors-solarized.git
 
+# Install vim Vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# Install vim plugins
+vim +PluginInstall +qall
 # Instalation steps
 #source .bin/steps/color_scheme.sh
