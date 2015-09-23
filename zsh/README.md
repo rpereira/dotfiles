@@ -20,9 +20,3 @@ In your ``~/.zshrc`` just change the ``$ZSH_THEME`` to ``rap``:
 ```bash
 ZSH_THEME="rap"
 ```
-
-## Setting up Solarized Light Colorscheme for Gnome Terminal
-You should take a look at [gnome-terminal-colors-solarized](https://github.com/Anthony25/gnome-terminal-colors-solarized).
-
-1. Clone the repo mentioned above: ``git clone git@github.com:Anthony25/gnome-terminal-colors-solarized.git .gnome-terminal-colors-solarized.git``
-2. Navigate to the target folder and just execute ``./set_light``.
