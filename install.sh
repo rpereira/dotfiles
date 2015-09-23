@@ -17,9 +17,17 @@ fi
 cd $SOLARIZED || exit
 
 # Download solarized color schemes
-git clone https://github.com/Anthony25/gnome-terminal-colors-solarized
-git clone https://github.com/seebi/dircolors-solarized
-git clone https://github.com/seebi/tmux-colors-solarized
+if [ ! -d gnome-terminal-colors-solarized ]; then
+  git clone https://github.com/Anthony25/gnome-terminal-colors-solarized
+fi
+
+if [ ! -d dircolors-solarized ]; then
+  git clone https://github.com/seebi/dircolors-solarized
+fi
+
+if [ ! -d tmux-colors-solarized ]; then
+  git clone https://github.com/seebi/tmux-colors-solarized
+fi
 
 # Install vim Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
