@@ -100,7 +100,6 @@ autocmd FileType markdown setlocal spell
 " ----------------------------------------------------------------------------
 " Airline
 " ----------------------------------------------------------------------------
-
 " Note: The airline theme is defined on the top of this file under "THEME"
 " section.
 
@@ -116,7 +115,6 @@ let g:airline_symbols.space = "\ua0"
 " ----------------------------------------------------------------------------
 " Gitgutter
 " ----------------------------------------------------------------------------
-
 let g:gitgutter_sign_added = '✚'
 let g:gitgutter_sign_modified = '✹'
 let g:gitgutter_sign_removed = '✖'
