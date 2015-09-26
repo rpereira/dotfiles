@@ -5,8 +5,8 @@ set nocompatible
 " VIM-PLUG
 " ============================================================================
 
-if filereadable(expand("vimrc.bundles"))
-  source vimrc.bundles
+if filereadable(expand("$DOTFILES/vimrc.bundles"))
+  source $DOTFILES/vimrc.bundles
 endif
 
 " ============================================================================

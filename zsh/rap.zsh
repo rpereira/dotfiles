@@ -16,6 +16,11 @@ eval `dircolors $ZSH_CUSTOM/.dircolors.ansi-light`
 setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
 DIRSTACKSIZE=5
 
+# This repo path. In the future, perhaps this should be asked during
+# instalation. For now, lets just assume that the repo is cloned to
+# ~/repos/dotfiles.
+export DOTFILES=~/repos/dotfiles
+
 # If local dotfiles exists, load the local zsh config.
 if [ -d ~/.dotfiles.local ]; then
   LOCAL_DOTFILES=~/.dotfiles.local
