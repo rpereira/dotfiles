@@ -37,9 +37,6 @@ fi
 # Install vim plugins
 vim +PluginInstall +qall
 
-# Instalation steps
-#source .bin/steps/color_scheme.sh
-
 # Install Gnome Colors Solarized
 ~/.solarized/gnome-terminal-colors-solarized/install.sh
 
