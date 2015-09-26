@@ -7,7 +7,7 @@ elif ! command -v wget >/dev/null 2>&1; then
   sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 fi
 
-export SOLARIZED=~/.solarized
+SOLARIZED=~/.solarized
 
 # Create a folder to hold all the solarized color schemes
 if [ ! -d $SOLARIZED ]; then
@@ -29,11 +29,13 @@ if [ ! -d tmux-colors-solarized ]; then
   git clone https://github.com/seebi/tmux-colors-solarized
 fi
 
+cd || exit
+
 # Install vim plugins
 vim +PlugInstall +qall
 
 # Install Gnome Colors Solarized
-~/.solarized/gnome-terminal-colors-solarized/install.sh
+$SOLARIZED/gnome-terminal-colors-solarized/install.sh
 
 # Install dir colors solarized
 if [ ! -f $ZSH_CUSTOM/.dircolors.ansi-light ]; then
