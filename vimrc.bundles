@@ -1,30 +1,25 @@
-" Be iMproved.
-set nocompatible
-
-filetype off
-
-call vundle#begin()
-
-" Let Vundle manage itself.
-Plugin 'gmarik/vundle'
-
-" List of plugins on GitHub repo.
-Plugin 'airblade/vim-gitgutter'
-Plugin 'bling/vim-airline'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'junegunn/fzf'
-Plugin 'slim-template/vim-slim'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
+call plug#begin('~/.vim/bundle')
 
 " Theme
-Plugin 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 
+" Tools
+Plug 'bling/vim-airline'
+Plug 'junegunn/fzf'
+
+" Edit
+Plug 'tpope/vim-commentary',    { 'on': '<Plug>Commentary' }
+Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-surround'
+
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+" Local bundles
 if filereadable(expand("$LOCAL_DOTFILES/vimrc.bundles.local"))
   source $LOCAL_DOTFILES/vimrc.bundles.local
 endif
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
