@@ -10,6 +10,9 @@ alias e="$EDITOR"
 alias zshconfig="e ~/.zshrc"
 alias myzshconfig="e $ZSH_CUSTOM/rap.zsh"
 
+# Bundler
+alias b="bundle"
+
 # Shiftit
 alias befs="bundle exec foreman start -f Procfile.dev"
 alias tail_log="tail -f log/development.log"
