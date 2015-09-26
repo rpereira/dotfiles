@@ -113,6 +113,16 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.space = "\ua0"
 
+" ----------------------------------------------------------------------------
+" Gitgutter
+" ----------------------------------------------------------------------------
+
+let g:gitgutter_sign_added = '✚'
+let g:gitgutter_sign_modified = '✹'
+let g:gitgutter_sign_removed = '✖'
+let g:gitgutter_sign_removed_first_line = '➜'
+let g:gitgutter_sign_modified_removed = '✗'
+
 " Match and highligh on red color trailing whitespaces.
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
