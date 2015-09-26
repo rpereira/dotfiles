@@ -17,7 +17,7 @@ setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
 DIRSTACKSIZE=5
 
 # This repo path. In the future, perhaps this should be asked during
-# instalation. For now, lets just assume that the repo is cloned to
+# installation. For now, lets just assume that the repo is cloned to
 # ~/repos/dotfiles.
 export DOTFILES=~/repos/dotfiles
 
