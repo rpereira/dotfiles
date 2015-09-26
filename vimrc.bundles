@@ -8,6 +8,7 @@ Plug 'bling/vim-airline'
 Plug 'junegunn/fzf'
 
 " Edit
+Plug 'ruiafonsopereira/vim-unwanted-spaces'
 Plug 'tpope/vim-commentary',    { 'on': '<Plug>Commentary' }
 Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
 Plug 'tpope/vim-endwise'

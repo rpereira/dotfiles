@@ -121,20 +121,6 @@ let g:gitgutter_sign_removed = '✖'
 let g:gitgutter_sign_removed_first_line = '➜'
 let g:gitgutter_sign_modified_removed = '✗'
 
-" Match and highligh on red color trailing whitespaces.
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
-
-" Auto-strip trailing whitespaces from files on saving.
-function! TrimWhiteSpace()
-  %s/\s\+$//e
-endfunction
-autocmd BufWritePre * :call TrimWhiteSpace()
-
 "let g:syntastic_enable_signs=1
 "let g:syntastic_mode_map={ 'mode': 'active',
 "                     \ 'active_filetypes': ['coffee'],
