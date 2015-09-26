@@ -35,7 +35,7 @@ if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
 fi
 
 # Install vim plugins
-vim +PluginInstall +qall
+vim +PlugInstall +qall
 
 # Install Gnome Colors Solarized
 ~/.solarized/gnome-terminal-colors-solarized/install.sh
