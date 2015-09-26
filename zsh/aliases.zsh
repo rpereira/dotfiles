@@ -15,6 +15,7 @@ alias b="bundle"
 
 # Shiftit
 alias start="bundle exec foreman start -f Procfile.dev"
+alias migrate="foreman run rake db:migrate"
 alias tail_log="tail -f log/development.log"
 
 # Vagrant
