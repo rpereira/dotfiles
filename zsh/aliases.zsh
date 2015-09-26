@@ -14,7 +14,7 @@ alias myzshconfig="e $ZSH_CUSTOM/rap.zsh"
 alias b="bundle"
 
 # Shiftit
-alias befs="bundle exec foreman start -f Procfile.dev"
+alias start="bundle exec foreman start -f Procfile.dev"
 alias tail_log="tail -f log/development.log"
 
 # Vagrant
