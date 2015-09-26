@@ -37,5 +37,5 @@ vim +PlugInstall +qall
 
 # Install dir colors solarized
 if [ ! -f $ZSH_CUSTOM/.dircolors.ansi-light ]; then
-  ln -s ~/.solarized/dircolors-solarized/dircolors.ansi-light $ZSH_CUSTOM/.dircolors.ansi-light
+  ln -s $SOLARIZED/dircolors-solarized/dircolors.ansi-light $ZSH_CUSTOM/.dircolors.ansi-light
 fi
