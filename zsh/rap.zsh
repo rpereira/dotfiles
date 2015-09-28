@@ -10,7 +10,7 @@
 eval `dircolors $ZSH_CUSTOM/.dircolors.ansi-light`
 
 # Load aliases.
-[[ -f ~/.aliases ]] && source $ZSH_CUSTOM/aliases.zsh
+[[ -f $ZSH_CUSTOM/aliases ]] && source $ZSH_CUSTOM/aliases
 
 # Awesome cd movements from zshkit.
 setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
