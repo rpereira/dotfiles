@@ -4,6 +4,7 @@
 
 [core]
   autocrlf = input
+  pager = diff-highlight | less -r
 
 [commit]
   template = ~/repos/dotfiles/gitmessage.txt
