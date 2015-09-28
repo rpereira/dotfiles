@@ -24,5 +24,5 @@ export DOTFILES=~/repos/dotfiles
 # If local dotfiles exists, load the local zsh config.
 if [ -d ~/.dotfiles.local ]; then
   export LOCAL_DOTFILES=~/.dotfiles.local
-  [[ -f $LOCAL_DOTFILES/zshrc.local ]] && source ~/$LOCAL_DOTFILES/zshrc.local
+  [[ -f $LOCAL_DOTFILES/zshrc.local ]] && source $LOCAL_DOTFILES/zshrc.local
 fi
