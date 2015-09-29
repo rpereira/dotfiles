@@ -94,6 +94,23 @@ autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 autocmd FileType markdown setlocal spell
 
 " ============================================================================
+" FILE TYPES
+" ============================================================================
+
+" ----------------------------------------------------------------------------
+" CoffeeScript
+" ----------------------------------------------------------------------------
+augroup filetype_coffee
+  autocmd!
+  " Folding is disabled by default but can be quickly toggled per-file by
+  " hitting <z>-<i>
+  au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+
+ " Standard two-space indentation
+  au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+augroup END
+
+" ============================================================================
 " PLUGINS
 " ============================================================================
 
