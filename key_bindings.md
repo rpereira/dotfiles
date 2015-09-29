@@ -62,3 +62,11 @@ Key | Description
 --- | ---
 <kbd>d</kbd> <kbd>w</kbd> | Delete from the current cursor position to the beginning of the next word character
 <kbd>d</kbd> <kbd>$</kbd> or <kbd>D</kbd> | Delete from the current cursor position to the end of the current line
+
+### File type specifics
+
+#### CoffeeScript
+Key | Description
+--- | ---
+<kbd>z</kbd> <kbd>i</kbd> | Toggle code foldeing per file.
+
