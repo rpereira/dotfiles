@@ -102,17 +102,16 @@ autocmd FileType markdown setlocal spell
 " ----------------------------------------------------------------------------
 " Note: The airline theme is defined on the top of this file under "THEME"
 " section.
-
-" Enable powerline font symbols.
-let g:airline_powerline_fonts=1
-
-" Prevent powerline font symbols from being partially messed up.
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
-
-let g:airline#extensions#syntastic#enabled = 1
+augroup ailine_config
+  autocmd!
+  let g:airline_powerline_fonts=1
+  let g:airline#extensions#syntastic#enabled = 1
+  let g:airline#extensions#tabline#buffer_nr_format = '%s '
+  let g:airline#extensions#tabline#buffer_nr_show = 1
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#fnamecollapse = 0
+  let g:airline#extensions#tabline#fnamemod = ':t'
+augroup END
 
 " ----------------------------------------------------------------------------
 " Gitgutter
