@@ -112,6 +112,8 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.space = "\ua0"
 
+let g:airline#extensions#syntastic#enabled = 1
+
 " ----------------------------------------------------------------------------
 " Gitgutter
 " ----------------------------------------------------------------------------
@@ -121,22 +123,21 @@ let g:gitgutter_sign_removed = '✖'
 let g:gitgutter_sign_removed_first_line = '➜'
 let g:gitgutter_sign_modified_removed = '✗'
 
-"let g:syntastic_enable_signs=1
-"let g:syntastic_mode_map={ 'mode': 'active',
-"                     \ 'active_filetypes': ['coffee'],
-"                     \ 'passive_filetypes': ['html', 'java'] }
-"let g:syntastic_coffee_checkers = ['coffeelint', 'coffee']
-"let g:syntastic_enable_signs=1
-"let g:syntastic_error_symbol='✗'
-"let g:syntastic_warning_symbol='⚠'
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
+" ----------------------------------------------------------------------------
+" Syntastic
+" ----------------------------------------------------------------------------
+augroup syntastic_config
+  autocmd!
+  "let g:syntastic_always_populate_loc_list = 1
+  "let g:syntastic_auto_loc_list = 1
+  let g:syntastic_check_on_wq = 0
+  let g:syntastic_error_symbol = '✗'
+  let g:syntastic_style_error_symbol = '✗'
+  let g:syntastic_warning_symbol = '⚠'
+  let g:syntastic_style_warning_symbol = '⚠'
+  let g:syntastic_ruby_checkers = ['reek', 'rubocop']
+  let g:syntastic_coffee_checkers = ['coffeelint', 'coffee']
+augroup END
 
 " ============================================================================
 " MAPPINGS
