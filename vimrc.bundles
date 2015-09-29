@@ -6,6 +6,7 @@ Plug 'altercation/vim-colors-solarized'
 " Tools
 Plug 'bling/vim-airline'
 Plug 'junegunn/fzf',            { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'scrooloose/syntastic'
 
 " Edit
 Plug 'ruiafonsopereira/vim-unwanted-spaces'
