@@ -171,7 +171,7 @@ map <F7> mzgg=G`z
 
 " Highlight all instances of word under cursor. Use <S-*> to move to the next
 " occurence.
-map <F2> :set hlsearch!
+map <F2> :set hlsearch!<CR>
 
 " Look for files under current directory
 map <C-p> :FZF<CR>
