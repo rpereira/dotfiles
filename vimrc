@@ -175,3 +175,22 @@ map <F2> :set hlsearch!<CR>
 
 " Look for files under current directory
 map <C-p> :FZF<CR>
+
+" ----------------------------------------------------------------------------
+" Tab navigation
+" ----------------------------------------------------------------------------
+
+" Navigate through tabs like Chrome and Firefox.
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+nnoremap <C-w>     :tabclose<CR>
+inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+inoremap <C-Tab>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
+
+nnoremap H gT
+nnoremap L gt
+
+autocmd VimEnter * tab all
+"autocmd BufAdd * exe 'tablast | tabe "' . expand( "<afile") .'"'
