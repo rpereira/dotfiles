@@ -63,7 +63,21 @@ Key | Description
 <kbd>d</kbd> <kbd>w</kbd> | Delete from the current cursor position to the beginning of the next word character
 <kbd>d</kbd> <kbd>$</kbd> or <kbd>D</kbd> | Delete from the current cursor position to the end of the current line
 
+### Buffer actions
+
+
 ### File type specifics
+
+Key | Description
+--- | ---
+<kbd>bd</kbd> <kbd>d</kbd> | Close the current buffer
+
+### Code identation
+
+Key | Description
+--- | ---
+<kbd>></kbd> <kbd>></kbd> | Ident 2 spaces to the right
+<kbd><</kbd> <kbd><</kbd> | Ident 2 spaces to the left
 
 #### CoffeeScript
 Key | Description
