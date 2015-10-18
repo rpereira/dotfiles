@@ -65,9 +65,6 @@ Key | Description
 
 ### Buffer actions
 
-
-### File type specifics
-
 Key | Description
 --- | ---
 <kbd>bd</kbd> <kbd>d</kbd> | Close the current buffer
@@ -78,6 +75,8 @@ Key | Description
 --- | ---
 <kbd>></kbd> <kbd>></kbd> | Ident 2 spaces to the right
 <kbd><</kbd> <kbd><</kbd> | Ident 2 spaces to the left
+
+### File type specifics
 
 #### CoffeeScript
 Key | Description
