@@ -5,6 +5,8 @@ alias tmux="TERM=screen-256color-bce tmux"
 alias l='ls'
 alias ll='ls -al'
 alias e="$EDITOR"
+alias vi=nvim
+alias vim=nvim
 
 # General
 alias zshconfig="e ~/.zshrc"
