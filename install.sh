@@ -34,3 +34,22 @@ $SOLARIZED/gnome-terminal-colors-solarized/install.sh
 if [ ! -f $ZSH_CUSTOM/.dircolors.ansi-light ]; then
   ln -s $SOLARIZED/dircolors-solarized/dircolors.ansi-light $ZSH_CUSTOM/.dircolors.ansi-light
 fi
+
+# Configure Neovim.
+# See: https://github.com/neovim/neovim/wiki/Following-HEAD#20151026
+echo "Do you have Neovim installed in your system?"
+select yn in "Yes" "No"; do
+  case $yn in
+    Yes ) configure_nvim; break;;
+    No ) exit;;
+  esac
+done
+
+echo "Finished setting up your system."
+
+function configure_nvim {
+  cd ~/.config/nvim || exit
+  ln -s ~/.vim/autoload ~/.config/nvim/autoload
+  ln -s ~/.vim/bundle ~/.config/bundle
+  ln -s ~/repos/dotfiles/vimrc ~/.config/nvim/init.vim
+}
