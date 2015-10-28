@@ -14,6 +14,7 @@ Plug 'tpope/vim-commentary',    { 'on': '<Plug>Commentary' }
 Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
 
 " Git
 Plug 'tpope/vim-fugitive'
