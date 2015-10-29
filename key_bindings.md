@@ -83,3 +83,16 @@ Key | Description
 --- | ---
 <kbd>z</kbd> <kbd>i</kbd> | Toggle code foldeing per file.
 
+## tmux
+
+### Prefix
+
+All commands are preceded with the prefix <kbd>Ctrl</kbd> + <kbd>a</kbd>.
+
+### Vim-style pane navigation
+Key | Description
+--- | ---
+<kbd>h</kbd> | Move one pane to the left
+<kbd>j</kbd> | Move one pane down
+<kbd>k</kbd> | Move one pane up
+<kbd>l</kbd> | Move one pane to the right
