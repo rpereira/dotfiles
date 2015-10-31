@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SOLARIZED=~/.solarized
+SOLARIZED=$HOME/.solarized
 
 # Create a folder to hold all the solarized color schemes
 if [ ! -d $SOLARIZED ]; then

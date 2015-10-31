@@ -1,0 +1,21 @@
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+ZSH_THEME="rap"
+
+ZSH_CUSTOM=$HOME/repos/dotfiles/zsh
+
+# zsh-syntax-highlighting must be the last plugin in the array
+plugins=(git bundler history-substring-search zsh-syntax-highlighting)
+
+source $ZSH/oh-my-zsh.sh
+
+# Load configuration files
+for zsh_source in $HOME/repos/dotfiles/zsh/config/*.zsh; do
+  source $zsh_source
+done
+
+# Solarized dircolors for GNOME ls
+eval `dircolors $HOME/.dircolors`
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
