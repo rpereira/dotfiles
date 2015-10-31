@@ -7,7 +7,7 @@
   pager = diff-highlight | less -r
 
 [commit]
-  template = ~/repos/dotfiles/gitmessage.txt
+  template = ~/repos/dotfiles/git/gitmessage.txt
 
 [fetch]
   prune = true
