@@ -33,6 +33,11 @@ git clone https://github.com/Anthony25/gnome-terminal-colors-solarized $SOLARIZE
 git clone https://github.com/seebi/dircolors-solarized $SOLARIZED
 git clone https://github.com/seebi/tmux-colors-solarized $SOLARIZED
 
+# Clone this repo
+git clone https://github.com/ruiafonsopereira/dotfiles $HOME/repos/dotfiles
+
+cd $HOME/repos/dotfiles || exit
+
 # symlink it up!
 ./symlink_setup.sh
 
