@@ -21,7 +21,8 @@ ln -sf $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
 ln -sf $DOTFILES/git/gitconfig $HOME/.gitconfig
 
 # Gnome Colors Solarized Light
-./$SOLARIZED/gnome-terminal-colors-solarized/set_light.sh
+cd $SOLARIZED/gnome-terminal-colors-solarized || exit
+./set_light.sh
 
 # dircolors Solarized Light
 ln -sf $SOLARIZED/dircolors-solarized/dircolors.ansi-light $HOME/.dircolors
