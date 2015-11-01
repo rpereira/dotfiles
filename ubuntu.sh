@@ -21,7 +21,7 @@ chsh -s $(which zsh)
 sh -c "$(curl -fsSL \
   https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-echo "\nType 'exit' to continue installation!"
+echo "\n*** Type 'exit' to continue installation!"
 
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git \
   ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
@@ -43,6 +43,8 @@ git clone https://github.com/seebi/tmux-colors-solarized \
 git clone https://github.com/ruiafonsopereira/dotfiles $HOME/repos/dotfiles
 
 cd $HOME/repos/dotfiles || exit
+
+echo "\n*** Creating symlinks..."
 
 # symlink it up!
 ./symlink_setup.sh
