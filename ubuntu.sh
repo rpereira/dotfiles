@@ -47,5 +47,9 @@ cd $HOME/repos/dotfiles || exit
 # symlink it up!
 ./symlink_setup.sh
 
+# Install vim plugin manager
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 # Install vim plugins
 vim +PlugInstall +qall
