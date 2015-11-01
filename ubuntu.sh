@@ -56,4 +56,4 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # Install vim plugins
 vim +PlugInstall +qall
 
-echo "\n*** Finished setting up your system!"
+echo "\n*** Finished setting up your system! Logout and login again."
