@@ -194,3 +194,11 @@ nnoremap L gt
 
 autocmd VimEnter * tab all
 "autocmd BufAdd * exe 'tablast | tabe "' . expand( "<afile") .'"'
+
+" ============================================================================
+" LOCAL CUSTOMIZATION
+" ============================================================================
+
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
