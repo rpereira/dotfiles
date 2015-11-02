@@ -22,8 +22,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Local bundles
-if filereadable(expand("$LOCAL_DOTFILES/vimrc.bundles.local"))
-  source $LOCAL_DOTFILES/vimrc.bundles.local
+if filereadable(expand("~/.vimrc_bundles.local"))
+  source ~/.vimrc_bundles.local
 endif
 
 call plug#end()

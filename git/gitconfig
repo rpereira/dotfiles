@@ -13,7 +13,7 @@
   prune = true
 
 [include]
-  path = ~/.dotfiles.local/gitconfig.local
+  path = ~/.gitconfig.local
 
 [push]
   default = current
