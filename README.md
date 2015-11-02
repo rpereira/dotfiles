@@ -43,8 +43,8 @@ bindings](https://github.com/ruiafonsopereira/dotfiles/blob/master/key_bindings.
 ## Acknowledgements
 
 Inspiration and some code was taken from several sources, including:
-* [Thoughtbot](https://github.com/thoughtbot) and their [dotfiles repo](https://github.com/thoughtbot/dotfiles)
-* [Thoughtbot](https://github.com/thoughtbot) and their [laptop setup](https://github.com/thoughtbot/laptop)
+* [Thoughtbot](https://thoughtbot.com/) and their [dotfiles repo](https://github.com/thoughtbot/dotfiles)
+* [Thoughtbot](https://thoughtbot.com/) and their [laptop setup](https://github.com/thoughtbot/laptop)
 * [Paul Irish](http://www.paulirish.com/) and his [dotfiles repo](https://github.com/paulirish/dotfiles)
 
 ## License
