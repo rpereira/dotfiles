@@ -43,9 +43,9 @@ bindings](https://github.com/ruiafonsopereira/dotfiles/blob/master/key_bindings.
 ## Acknowledgements
 
 Inspiration and some code was taken from several sources, including:
-* [Thoughtbot's dotfiles](https://github.com/thoughtbot/dotfiles);
-* [Thoughtbot's laptop setup](https://github.com/thoughtbot/laptop);
-* [Paul Irish's dotfiles](https://github.com/paulirish/dotfiles).
+* [Thoughtbot](https://github.com/thoughtbot) and their [dotfiles repo](https://github.com/thoughtbot/dotfiles)
+* [Thoughtbot](https://github.com/thoughtbot) and their [laptop setup](https://github.com/thoughtbot/laptop)
+* [Paul Irish](http://www.paulirish.com/) and his [dotfiles repo](https://github.com/paulirish/dotfiles)
 
 ## License
 
