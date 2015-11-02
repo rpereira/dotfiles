@@ -14,6 +14,8 @@ sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt-get update
 sudo apt-get install neovim
 
+apt-get install silversearcher-ag
+
 sudo apt-get install tmux
 
 sudo apt-get install zsh
@@ -25,8 +27,6 @@ echo "\n*** Type 'exit' to continue installation!"
 
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git \
   ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-
-sudo apt-get install ack-grep
 
 # Create a folder to hold all the solarized color schemes
 mkdir -p ${SOLARIZED:=$HOME/.solarized}
