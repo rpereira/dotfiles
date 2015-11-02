@@ -18,4 +18,7 @@ done
 # Solarized dircolors for GNOME ls
 eval `dircolors $HOME/.dircolors`
 
+# If zshrc.local exists, load it.
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -11,11 +11,5 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - --no-rehash)"
 
-# If local dotfiles exists, load the local zsh config.
-if [ -d $HOME/dotfiles.local ]; then
-  export LOCAL_DOTFILES=$HOME/dotfiles.local
-  [[ -f $LOCAL_DOTFILES/zshrc.local ]] && source $LOCAL_DOTFILES/zshrc.local
-fi
-
 # Must be sourced at the end of this file.
 source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
