@@ -1,21 +1,22 @@
+" ============================================================================
+" LAUNCH CONFIG
+" ============================================================================
+
 " Better safe than sorry
 set nocompatible
 
-" ============================================================================
-" VIM-PLUG
-" ============================================================================
+let mapleader = ','
 
+" Source plugins
 if filereadable(expand("$DOTFILES/vim/bundles"))
   source $DOTFILES/vim/bundles
 endif
 
 " ============================================================================
-" THEME
+" THEME & COLORS
 " ============================================================================
 
-" ----------------------------------------------------------------------------
 " Solarized light
-" ----------------------------------------------------------------------------
 set background=light
 colorscheme solarized
 let g:airline_theme='solarized'
@@ -23,11 +24,12 @@ let g:airline_theme='solarized'
 " Allow color schemes to do bright colors without forcing bold
 set t_Co=16
 
-" ============================================================================
-" BASIC SETTINGS
-" ============================================================================
+" Enable color syntax highlighting
+syntax enable
 
-let mapleader = ' '
+" ============================================================================
+" SPACES & TABS
+" ============================================================================
 
 " Copy indent from current line when starting a new line
 set autoindent
@@ -35,27 +37,44 @@ set autoindent
 " Backspace deletes like most programs in insert mode
 set backspace=2
 
+" Tabs are spaces: shortcut for inserting 2 spaces
+set expandtab
+
+" Round indent to multiple of 'shiftwidth'
+set shiftround
+
+" Number of columns to use for text indenting
+set shiftwidth=2
+
+" Number of spaces in tab when editing
+set softtabstop=2
+
+" Number of visual spaces per TAB
+set tabstop=2
+
+" Fix code identation
+map <F7> mzgg=G`z
+
+" ============================================================================
+" UI LAYOUT
+" ============================================================================
+
+" Draw a vertical line at 'textwidth' + 1
+set colorcolumn=+1
+
 " Highlight current line
 set cursorline
 
-" Do incremental searching
-set incsearch
-
-" https://github.com/bling/vim-airline/wiki/FAQ#vim-airline-doesnt-appear-until-i-create-a-new-split
+" Always show the status line
 set laststatus=2
-
-" Switch off automatic creation of backup files
-set nobackup
-set nowritebackup
 
 " Get rid of default mode indicator - using airline's instead
 set noshowmode
 
-" http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
-set noswapfile
-
-" Line numbers
+" Show line numbers
 set number
+
+" Minimal number of columns to use for the line number
 set numberwidth=5
 
 " Show the cursor position all the time
@@ -64,18 +83,70 @@ set ruler
 " Display incomplete commands
 set showcmd
 
-" Softtabs, 2 spaces
-set tabstop=2
-set shiftwidth=2
-set shiftround
-set expandtab
+" Highlight matching parenthesis
+set showmatch
 
-" Draw a vertical line to encourage wrapping the text at 80 chars
+" Break lines at this many chars
 set textwidth=80
-set colorcolumn=+1
 
-" Enable color syntax highlighting
-syntax enable
+" ============================================================================
+" SEARCHING
+" ============================================================================
+
+" Highlight matches
+set hlsearch
+
+" Search as characters are entered
+set incsearch
+
+" Turn off search highlight
+map <silent> <leader>qs <ESC> :nohlsearch<CR>
+
+" Look for files under current directory
+map <C-p> :FZF<CR>
+
+" ============================================================================
+" BACKUPS
+" ============================================================================
+
+" Switch off automatic creation of backup files
+set nobackup
+set nowritebackup
+
+" http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set noswapfile
+
+" ============================================================================
+" TAB NAVIGATION
+" ============================================================================
+
+" Navigate Vim style
+nnoremap th :tabfirst<CR>
+nnoremap tj :tabnext<CR>
+nnoremap tk :tabprevious<CR>
+nnoremap tl :tablast<CR>
+nnoremap tn :tabnext<CR>
+
+" Open tabpage after the last one
+nnoremap tn :$tabnew<CR>
+
+" Close current tab
+nnoremap td :tabclose<CR>
+
+" Go to the nth tabpage
+nnoremap t1 1gt
+nnoremap t2 2gt
+nnoremap t3 3gt
+nnoremap t4 4gt
+nnoremap t5 5gt
+nnoremap t6 6gt
+nnoremap t7 7gt
+nnoremap t8 8gt
+nnoremap t9 9gt
+nnoremap t0 10gt
+
+autocmd VimEnter * tab all
+"autocmd BufAdd * exe 'tablast | tabe "' . expand( "<afile") .'"'
 
 " ============================================================================
 " TEXT WRAPP AND SPELL CHECK
@@ -117,7 +188,7 @@ augroup END
 " ----------------------------------------------------------------------------
 " Airline
 " ----------------------------------------------------------------------------
-" Note: The airline theme is defined on the top of this file under "THEME"
+" Note: The airline theme is defined on the top of this file under the 'THEME'
 " section.
 augroup ailine_config
   autocmd!
@@ -159,59 +230,10 @@ augroup syntastic_config
 augroup END
 
 " ============================================================================
-" MAPPINGS
-" ============================================================================
-
-" ----------------------------------------------------------------------------
-" Basic mappings
-" ----------------------------------------------------------------------------
-
-" Fix code identation.
-map <F7> mzgg=G`z
-
-" Highlight all instances of word under cursor. Use <S-*> to move to the next
-" occurence.
-map <F2> :noh<CR>
-
-" Look for files under current directory
-map <C-p> :FZF<CR>
-
-" ----------------------------------------------------------------------------
-" Tab navigation
-" ----------------------------------------------------------------------------
-
-" Navigate Vim style
-nnoremap th :tabfirst<CR>
-nnoremap tj :tabnext<CR>
-nnoremap tk :tabprevious<CR>
-nnoremap tl :tablast<CR>
-nnoremap tn :tabnext<CR>
-
-" Open tabpage after the last one
-nnoremap tn :$tabnew<CR>
-
-" Close current tab
-nnoremap td :tabclose<CR>
-
-" Go to the nth tabpage
-nnoremap t1 1gt
-nnoremap t2 2gt
-nnoremap t3 3gt
-nnoremap t4 4gt
-nnoremap t5 5gt
-nnoremap t6 6gt
-nnoremap t7 7gt
-nnoremap t8 8gt
-nnoremap t9 9gt
-nnoremap t0 10gt
-
-autocmd VimEnter * tab all
-"autocmd BufAdd * exe 'tablast | tabe "' . expand( "<afile") .'"'
-
-" ============================================================================
 " LOCAL CUSTOMIZATION
 " ============================================================================
 
+" If the file exists, load local configurations
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
