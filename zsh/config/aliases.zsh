@@ -45,7 +45,7 @@ alias rd='rails destroy'
 
 # Rake
 alias rr='rake routes'
-alias rm='rake db:migrate'
+alias rdbm='rake db:migrate'
 
 # Other
 alias devlog='tail -f log/development.log'
