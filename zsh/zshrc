@@ -10,6 +10,8 @@ plugins=(git bundler history-substring-search zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
+fpath=(~/.zsh $fpath)
+
 # Load configuration files
 for zsh_source in $HOME/repos/dotfiles/zsh/config/*.zsh; do
   source $zsh_source
