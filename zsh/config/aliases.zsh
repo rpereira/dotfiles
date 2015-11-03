@@ -21,8 +21,6 @@ alias path='echo $PATH | tr -s ":" "\n"'
 # --------------------------------------------
 # Tmux
 # --------------------------------------------
-alias tat='create_if_needed_and_attach'
-
 # Set correct term for tmux so solarized theme works in vim.
 alias tmux="TERM=screen-256color-bce tmux"
 
