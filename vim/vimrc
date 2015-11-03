@@ -111,8 +111,14 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 endif
 
-" bind K to grep word under cursor
+" Bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" Set Ag to search for the provided text and open a 'quickfix' window
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+
+" Bind \ (backward slash) to grep shortcut
+nnoremap \ :Ag<SPACE>
 
 " ============================================================================
 " BACKUPS
