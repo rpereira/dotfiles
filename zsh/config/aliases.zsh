@@ -4,7 +4,9 @@ alias tmux="TERM=screen-256color-bce tmux"
 # Unix
 alias l='ls'
 alias ll='ls -al'
+alias ln='ln -v'
 alias e="$EDITOR"
+alias v="$VISUAL"
 alias vi=vim
 
 # Pretty print the path
@@ -15,7 +17,6 @@ alias tat='create_if_needed_and_attach'
 
 # General
 alias zshconfig="e ~/.zshrc"
-alias myzshconfig="e $ZSH_CUSTOM/rap.zsh"
 
 # Bundler
 alias b="bundle"
