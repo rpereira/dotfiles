@@ -15,6 +15,11 @@ for zsh_source in $HOME/repos/dotfiles/zsh/config/*.zsh; do
   source $zsh_source
 done
 
+# Load functions
+for file in $HOME/repos/dotfiles/bin/*.sh; do
+  source $file
+done
+
 # Solarized dircolors for GNOME ls
 eval `dircolors $HOME/.dircolors`
 
