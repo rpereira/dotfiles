@@ -5,7 +5,7 @@ export EDITOR=$VISUAL
 # Dotfiles location
 export DOTFILES=$HOME/repos/dotfiles
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+export PATH="$HOME/.dotfiles/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 # load rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
