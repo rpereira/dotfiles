@@ -1,5 +1,5 @@
 # use nvim as the visual editor
-export VISUAL=nvim
+export VISUAL=vim
 export EDITOR=$VISUAL
 
 # Dotfiles location
