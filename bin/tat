@@ -6,7 +6,7 @@
 #
 # Workflow:
 # * Use 'tat' to create ow attach a session;
-# * Use <prefix> d to detach the session.
+# * Use `<prefix> d` to detach the session.
 
 path_name="$(basename "$PWD" | tr . -)"
 session_name=${1-$path_name}
