@@ -28,6 +28,11 @@ echo "\n*** Type 'exit' to continue installation!"
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git \
   ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
+# Create folder to hold git-completition script
+mkdir -p ${GIT_COMP:=$HOME/.zsh/_git}
+curl -o $GIT_COMP \
+  https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
+
 # Create a folder to hold all the solarized color schemes
 mkdir -p ${SOLARIZED:=$HOME/.solarized}
 
