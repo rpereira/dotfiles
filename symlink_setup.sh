@@ -5,7 +5,10 @@
 ################################
 
 SOLARIZED=$HOME/.solarized
-DOTFILES=$HOME/repos/dotfiles
+DOTFILES=$HOME/.dotfiles
+
+# Symlink dotfiles to our home.
+ln -sf $HOME/repos/dotfiles $DOTFILES/.dotfiles
 
 # zsh
 ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
