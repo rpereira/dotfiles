@@ -7,21 +7,6 @@ alias ll='ls -al'
 alias e="$EDITOR"
 alias vi=vim
 
-LSB_DISTRIBUTOR='lsb_release -i -s'
-
-# Ubuntu specific aliases
-# autocomplete-able apt-xxx aliases
-if [[ "$LSB_DISTRIBUTOR" == "Ubuntu" ]]; then
-  alias acs='apt-cache show'
-  alias agi='sudo apt-get install'
-  alias ag='sudo apt-get'
-  alias agu='sudo apt-get update'
-  alias agug='sudo apt-get upgrade'
-  alias aguu='agu && agug'
-  alias agr='sudo apt-get uninstall'
-  alias agp='sudo apt-get purge'
-  alias aga='sudo apt-get autoremove'
-fi
 
 # General
 alias zshconfig="e ~/.zshrc"
@@ -40,3 +25,6 @@ alias v="vagrant"
 alias vs="vagrant status"
 alias vh="vagrant halt"
 alias vu="vagrant up"
+
+# Include custom aliases
+[ -f ~/.aliases.local ] && source ~/.aliases.local
