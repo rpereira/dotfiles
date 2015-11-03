@@ -105,6 +105,15 @@ map <silent> <leader>qs <ESC> :nohlsearch<CR>
 " Look for files under current directory
 map <C-p> :FZF<CR>
 
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
+
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
 " ============================================================================
 " BACKUPS
 " ============================================================================
@@ -147,6 +156,16 @@ nnoremap t0 10gt
 
 autocmd VimEnter * tab all
 "autocmd BufAdd * exe 'tablast | tabe "' . expand( "<afile") .'"'
+
+" ============================================================================
+" WINDOW NAVIGATION
+" ============================================================================
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " ============================================================================
 " TEXT WRAPP AND SPELL CHECK
