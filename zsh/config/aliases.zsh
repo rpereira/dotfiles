@@ -12,6 +12,9 @@ alias e="$EDITOR"
 alias v="$VISUAL"
 alias vi=vim
 
+# This actually happens a lot
+alias :q='exit'
+
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
@@ -31,7 +34,6 @@ alias b="bundle"
 # --------------------------------------------
 # Rails
 # --------------------------------------------
-
 # Basic commands
 alias r='rails'
 alias rn='rails new'
@@ -59,13 +61,18 @@ alias vu="vagrant up"
 # --------------------------------------------
 # GNOME
 # --------------------------------------------
-
 # Lock screen
 alias afk='gnome-screensaver-command --lock'
 
 # Hide/show all desktop icons
 alias hidedesktop='gsettings set org.gnome.desktop.background show-desktop-icons false'
 alias showdesktop='gsettings set org.gnome.desktop.background show-desktop-icons true'
+
+# --------------------------------------------
+# Network
+# --------------------------------------------
+alias hosts='sudo $EDITOR /etc/hosts'
+alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 # --------------------------------------------
 # Custom
