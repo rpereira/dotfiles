@@ -7,6 +7,8 @@ alias ll='ls -al'
 alias e="$EDITOR"
 alias vi=vim
 
+# Tmux
+alias tat='create_if_needed_and_attach'
 
 # General
 alias zshconfig="e ~/.zshrc"
