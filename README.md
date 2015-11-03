@@ -25,14 +25,17 @@ sh -c "$(curl -fsSL \
 * [Zsh](http://www.zsh.org/) as your shell
 
 ## Local Settings
-This configuration can be extended to suit additional user requirements. In
-order to accomplish that, create and edit the following files:
+This configuration can be extended or overriden to suit user-specific
+requirements. In order to accomplish that, just create and edit the following
+files:
+* `~/.aliases.local`
 * `~/.gitconfig.local`
+* `~/.tmux.conf.local`
 * `~/.vimrc.local`
 * `~/.vimrc_bundles.local`
 
-If it exists in your `$HOME`, each of these files will be automatically included
-at the bottom of its "parent". Thus, you can override existing configurations.
+If it exists in your `$HOME`, each of these files will be automatically
+included.
 
 ## Key bindings
 
