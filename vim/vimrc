@@ -180,17 +180,18 @@ map <C-p> :FZF<CR>
 " Tab navigation
 " ----------------------------------------------------------------------------
 
-" Navigate through tabs like Chrome and Firefox.
-nnoremap <C-S-tab> :tabprevious<CR>
-nnoremap <C-tab>   :tabnext<CR>
-nnoremap <C-t>     :tabnew<CR>
-nnoremap <C-w>     :tabclose<CR>
-inoremap <C-S-tab> <Esc>:tabprevious<CR>i
-inoremap <C-Tab>   <Esc>:tabnext<CR>i
-inoremap <C-t>     <Esc>:tabnew<CR>
+" Navigate Vim style
+nnoremap th :tabfirst<CR>
+nnoremap tj :tabnext<CR>
+nnoremap tk :tabprevious<CR>
+nnoremap tl :tablast<CR>
+nnoremap tn :tabnext<CR>
 
-nnoremap H gT
-nnoremap L gt
+" Open tabpage after the last one
+nnoremap tn :$tabnew<CR>
+
+" Close current tab
+nnoremap td :tabclose<CR>
 
 autocmd VimEnter * tab all
 "autocmd BufAdd * exe 'tablast | tabe "' . expand( "<afile") .'"'
