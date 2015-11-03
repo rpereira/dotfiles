@@ -7,6 +7,9 @@ alias ll='ls -al'
 alias e="$EDITOR"
 alias vi=vim
 
+# Pretty print the path
+alias path='echo $PATH | tr -s ":" "\n"'
+
 # Tmux
 alias tat='create_if_needed_and_attach'
 
