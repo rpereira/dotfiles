@@ -18,6 +18,9 @@ alias :q='exit'
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
+# A list of directories for TheSilverSearcher ignore
+alias ag='ag --path-to-agignore=~/.agignore'
+
 # --------------------------------------------
 # Tmux
 # --------------------------------------------
