@@ -34,3 +34,6 @@ ln -sf $SOLARIZED/dircolors-solarized/dircolors.ansi-light $HOME/.dircolors
 # See https://github.com/git/git/tree/master/contrib/diff-highlight
 sudo ln -sf /usr/share/doc/git/contrib/diff-highlight/diff-highlight /bin/
 sudo chmod +x /bin/diff-highlight
+
+# TheSilverSearcher ignore list
+ln -sf $DOTFILES/agignore $HOME/.agignore
