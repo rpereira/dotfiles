@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# Nukes a Git branch both locally and remotely.
+#
+# $1 - Branch name.
+#
+# Examples
+#
+#   git nuke my_branch_name
+#
+# See:
+# http://stackoverflow.com/questions/2003505/delete-a-git-branch-both-locally-and-remotely
+
+set -e
+
+git branch -D "$1"
+git push origin --delete "$1"
