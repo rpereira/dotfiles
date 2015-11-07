@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# Creates a new empty file and add its content to the index.
+
+filename="$*"
+
+test -z "$filename" && echo "filename required" 1>&2 && exit 1
+
+touch "$filename" && git add "$filename"
