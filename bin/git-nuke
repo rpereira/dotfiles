@@ -11,7 +11,8 @@
 # See:
 # http://stackoverflow.com/questions/2003505/delete-a-git-branch-both-locally-and-remotely
 
-set -e
+# Assert there is one branch provided
+test -z $1 && echo "fatal: branch name required." 1>&2 && exit 1
 
 git branch -D "$1"
 git push origin --delete "$1"
