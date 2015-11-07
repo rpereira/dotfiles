@@ -6,11 +6,9 @@ ZSH_THEME="rap"
 ZSH_CUSTOM=$HOME/repos/dotfiles/zsh
 
 # zsh-syntax-highlighting must be the last plugin in the array
-plugins=(git bundler history-substring-search zsh-syntax-highlighting)
+plugins=(gitfast bundler history-substring-search zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-
-fpath=(~/.zsh $fpath)
 
 # Load configuration files
 for zsh_source in $HOME/repos/dotfiles/zsh/config/*.zsh; do
