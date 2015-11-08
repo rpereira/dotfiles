@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# Fetch and rebase origin/master into specified branch.
+#
+# Usage:
+#   $ git up
+#
+# See:
+# http://stackoverflow.com/questions/3357122/git-pull-vs-git-fetch-git-rebase
+
+set -e
+
+git fetch origin
+git rebase origin/master "$@"
