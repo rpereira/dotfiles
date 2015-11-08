@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# Show list of files in a conflict state.
+# Usage: git conflicts
+#
+# See:
+# http://stackoverflow.com/questions/3065650/whats-the-simplest-way-to-git-a-list-of-conflicted-files
+
+git diff --name-only --diff-filter=U
