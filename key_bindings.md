@@ -16,7 +16,7 @@ In command mode.
 #### Moving one character at a time
 
 Key | Description
---- | ---
+:---: | ---
 <kbd>h</kbd> | left one space
 <kbd>l</kbd> | right one space
 <kbd>j</kbd> | down one space
@@ -24,7 +24,7 @@ Key | Description
 
 #### Moving among words and lines
 Key | Description
---- | ---
+:---: | ---
 <kbd>w</kbd> | Move the cursor forward one word
 <kbd>b</kbd> | Move the cursor backward one word (if in the middle of a word, the cursor is moved to the beginning of the current word).
 <kbd>e</kbd> | Move to the end of a word
@@ -35,13 +35,13 @@ for greater movement. For example, 5w would move you forward five words;
 
 #### Shortcuts
 Key | Description
---- | ---
+:---: | ---
 <kbd>0</kbd> | Move the cursor to the beginning of a line
 <kbd>$</kbd> | Move the cursor to the end of a line
 
 #### Screen movements
 Key | Description
---- | ---
+:---: | ---
 <kbd>Ctrl</kbd>-<kbd>f</kbd> | Scroll down one screen
 <kbd>Ctrl</kbd>-<kbd>b</kbd> | Scroll up one screen
 <kbd>H</kbd> | Move the cursor to the top line of the screen
@@ -59,20 +59,20 @@ of that string of text. Then, you can move to the next occurrence using
 ### Delete actions
 
 Key | Description
---- | ---
+:---: | ---
 <kbd>d</kbd> <kbd>w</kbd> | Delete from the current cursor position to the beginning of the next word character
 <kbd>d</kbd> <kbd>$</kbd> or <kbd>D</kbd> | Delete from the current cursor position to the end of the current line
 
 ### Buffer actions
 
 Key | Description
---- | ---
+:---: | ---
 <kbd>bd</kbd> <kbd>d</kbd> | Close the current buffer
 
 ### Code identation
 
 Key | Description
---- | ---
+:---: | ---
 <kbd>></kbd> <kbd>></kbd> | Ident 2 spaces to the right
 <kbd><</kbd> <kbd><</kbd> | Ident 2 spaces to the left
 
@@ -80,7 +80,7 @@ Key | Description
 
 #### CoffeeScript
 Key | Description
---- | ---
+:---: | ---
 <kbd>z</kbd> <kbd>i</kbd> | Toggle code foldeing per file.
 
 ## tmux
@@ -91,7 +91,7 @@ All commands are preceded with the prefix <kbd>Ctrl</kbd> + <kbd>a</kbd>.
 
 ### Vim-style pane navigation
 Key | Description
---- | ---
+:---: | ---
 <kbd>h</kbd> | Move one pane to the left
 <kbd>j</kbd> | Move one pane down
 <kbd>k</kbd> | Move one pane up
