@@ -1,16 +1,66 @@
 " ============================================================================
-" LAUNCH CONFIG
+" GENERAL CONFIG
 " ============================================================================
 
-" Better safe than sorry
+" Use Vim settings. Better safe than sorry.
+" This must be first, because it changes other options as a side effect.
 set nocompatible
 
-let mapleader = ','
+" Automatically reload files changed outside vim.
+set autoread
 
 " Source plugins
 if filereadable(expand("$DOTFILES/vim/bundles"))
   source $DOTFILES/vim/bundles
 endif
+
+" ============================================================================
+" MAPPINGS
+" ============================================================================
+
+" Change Leader to a comma because the backslash is too far away
+let mapleader = ","
+
+" Open ~/.vimrc file in a vertical split.
+" Think of this command as 'Edit my Vimrc file'.
+nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
+
+" Source the ~/.vimrc file so that changes take effect.
+" Think of this command as 'Source my Vimrc file'.
+nnoremap <Leader>sv :source $MYVIMRC<CR>
+
+" ----------------------------------------------------------------------------
+" Learn Vim the hard way
+" ----------------------------------------------------------------------------
+" Quote from http://learnvimscriptthehardway.stevelosh.com/
+" `The right way to use Vim is to get out of insert mode as soon as you can and
+" use normal mode to move around.`
+nnoremap <Up> :echoe "Use k"<CR>
+inoremap <Up> <NOP>
+vnoremap <Up> <NOP>
+
+nnoremap <Down> :echoe "Use j"<CR>
+inoremap <Down> <NOP>
+vnoremap <Down> <NOP>
+
+nnoremap <Left> :echoe "Use h"<CR>
+inoremap <Left> <NOP>
+vnoremap <Left> <NOP>
+
+nnoremap <Right> :echoe "Use l"<CR>
+inoremap <Right> <NOP>
+vnoremap <Right> <NOP>
+
+" Save my left hand. Using <jk> to return to normal mode is greate because these
+" keys are under two of my strongest fingers and I don't have to perform a
+" chord.
+"inoremap jk <Esc>
+
+" Disable <Esc> key in insert mode. Use <jk> mapping to exit insert mode.
+"inoremap <Esc> <NOP>
+
+" Surround the word under the cursor in double quotes.
+:nnoremap <Leader>" viw<Esc>a"<Esc>hbi"<Esc>lel
 
 " ============================================================================
 " THEME & COLORS
@@ -55,6 +105,35 @@ set tabstop=2
 " Fix code identation
 map <F7> mzgg=G`z
 
+" Shortcut to rapidly toggle `set list`
+nmap <Leader>l :set list!<CR>
+
+" Display extra whitespace.
+set list listchars=tab:»·,trail:·,nbsp:·
+
+" Strip trailing spaces throughout an entire file.
+function! <SID>StripTrailingWhitespaces()
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  %s/\s\+$//e
+  " Clean up: restore previous search history, and cursor position.
+  let @/=_s
+  call cursor(l, c)
+endfunction
+
+" Run the previous command automatically when a file is saved.
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+" Ident like most editors do.
+" Note: In insert mode, you can just use Ctrl-t and Ctrl-d to indent/dedent.
+nnoremap <TAB> >>
+nnoremap <S-TAB> <<
+vnoremap <TAB> >gv
+vnoremap <S-TAB> <gv
+
 " ============================================================================
 " UI LAYOUT
 " ============================================================================
@@ -64,6 +143,11 @@ set colorcolumn=+1
 
 " Highlight current line
 set cursorline
+
+" Act like all other editors, where buffers can exist in the background without
+" being in a window.
+" http://items.sjbach.com/319/configuring-vim-right
+set hidden
 
 " Always show the status line
 set laststatus=2
@@ -93,6 +177,10 @@ set textwidth=80
 " SEARCHING
 " ============================================================================
 
+" Vim only remembers the last 20 commands and search patterns entered. Let's
+" boost this up.
+set history=50
+
 " Highlight matches
 set hlsearch
 
@@ -100,25 +188,25 @@ set hlsearch
 set incsearch
 
 " Turn off search highlight
-map <silent> <leader>qs <ESC> :nohlsearch<CR>
+map <silent> <Leader>qs <Esc> :nohlsearch<CR>
 
 " Look for files under current directory
 map <C-p> :FZF<CR>
 
-" The Silver Searcher
+" Use the Silver Searcher
 if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
+
+  " Bind K to grep word under cursor
+  nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+  " Set Ag to search for the provided text and open a 'quickfix' window
+  command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+
+  " Bind \ (backward slash) to grep shortcut
+  nnoremap \ :Ag<SPACE>
 endif
-
-" Bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
-" Set Ag to search for the provided text and open a 'quickfix' window
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-
-" Bind \ (backward slash) to grep shortcut
-nnoremap \ :Ag<SPACE>
 
 " ============================================================================
 " BACKUPS
@@ -167,11 +255,36 @@ autocmd VimEnter * tab all
 " WINDOW NAVIGATION
 " ============================================================================
 
-" Quicker window movement
+" Open new split panes to right and bottom, which feels more natural.
+set splitbelow
+set splitright
+
+" Quicker window movement.
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+
+" ============================================================================
+" COMPLETION
+" ============================================================================
+
+" By default, pressing <TAB> in command mode will choose the first possible
+" completion with no indication of how many others there might be. The following
+" configuration lets you see what your other options are:
+set wildmenu
+
+" ============================================================================
+" SCROLLING
+" ============================================================================
+
+" Keep more lines of context around where I'm working.
+set sidescrolloff=5
+set scrolloff=8
+
+" Scroll the viewport faster.
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
 
 " ============================================================================
 " TEXT WRAPP AND SPELL CHECK
