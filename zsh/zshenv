@@ -3,7 +3,7 @@ export VISUAL=vim
 export EDITOR=$VISUAL
 
 # Dotfiles location
-export DOTFILES=$HOME/repos/dotfiles
+export DOTFILES=$HOME/.dotfiles
 
 export PATH="$HOME/.dotfiles/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 

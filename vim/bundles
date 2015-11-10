@@ -10,7 +10,6 @@ Plug 'junegunn/fzf',            { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'scrooloose/syntastic'
 
 " Edit
-Plug 'ruiafonsopereira/vim-unwanted-spaces'
 Plug 'tpope/vim-commentary',    { 'on': '<Plug>Commentary' }
 Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
 Plug 'tpope/vim-endwise'
