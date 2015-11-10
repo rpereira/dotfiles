@@ -22,12 +22,6 @@ alias path='echo $PATH | tr -s ":" "\n"'
 alias ag='ag --path-to-agignore=~/.agignore'
 
 # --------------------------------------------
-# Tmux
-# --------------------------------------------
-# Set correct term for tmux so solarized theme works in vim.
-alias tmux="TERM=screen-256color-bce tmux"
-
-# --------------------------------------------
 # Bundler
 # --------------------------------------------
 alias b="bundle"

@@ -71,7 +71,8 @@ set background=light
 colorscheme solarized
 let g:airline_theme='solarized'
 
-" Allow color schemes to do bright colors without forcing bold
+" Allow color schemes to do bright colors without forcing bold. This is required
+" because I have loaded the solarized color palette into my terminal.
 set t_Co=16
 
 " Enable color syntax highlighting
