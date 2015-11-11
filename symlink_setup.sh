@@ -36,4 +36,4 @@ sudo ln -sf /usr/share/doc/git/contrib/diff-highlight/diff-highlight /bin/
 sudo chmod +x /bin/diff-highlight
 
 # TheSilverSearcher ignore list
-ln -sf $DOTFILES/agignore $HOME/.agignore
+ln -sf $DOTFILES/ag/agignore $HOME/.agignore
