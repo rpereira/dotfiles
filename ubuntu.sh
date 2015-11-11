@@ -10,7 +10,9 @@ sudo apt-get install git
 sudo apt-get remove vim-tiny
 sudo apt-get install vim
 
-apt-get install silversearcher-ag
+sudo apt-get install silversearcher-ag
+
+sudo apt-get install xclip
 
 sudo apt-get install tmux
 
