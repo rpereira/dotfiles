@@ -12,6 +12,3 @@ export PATH="$HOME/.dotfiles/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/b
 # load rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - --no-rehash)"
-
-# Must be sourced at the end of this file.
-source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
