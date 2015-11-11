@@ -10,10 +10,6 @@ sudo apt-get install git
 sudo apt-get remove vim-tiny
 sudo apt-get install vim
 
-sudo add-apt-repository ppa:neovim-ppa/unstable
-sudo apt-get update
-sudo apt-get install neovim
-
 apt-get install silversearcher-ag
 
 sudo apt-get install tmux
