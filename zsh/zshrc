@@ -24,3 +24,11 @@ eval `dircolors $HOME/.dircolors`
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+
+# Must be sourced at the end of this file.
+# NOTE: Documentation states that using oh-my-zsh it's only required to add the
+# plugin as the last entry in the plugins array. In order to get this to work,
+# I've also sourced the plugin. When I get the time, I have to further
+# investigate this. See the docs at
+# https://github.com/zsh-users/zsh-syntax-highlighting#with-oh-my-zsh
+source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
