@@ -1,0 +1,12 @@
+#!/bin/sh
+
+main() {
+  # Turn off "Remote Search" so that search terms in Dash do not get sent over
+  # the internet.
+  gsettings set com.canonical.Unity.Lenses remote-content-search 'none'
+
+  # Disable Dash "More suggestions" section.
+  gsettings set com.canonical.Unity.ApplicationsLens display-available-apps false
+}
+
+main
