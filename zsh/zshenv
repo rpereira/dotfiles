@@ -1,6 +1,8 @@
-export TERM="xterm-256color"
+# Enable a 256-color Terminal. This conditional statement ensures that the TERM
+# variable is only set outside of tmux, since tmux sets its own terminal.
+[[ -z "$TMUX" ]] && export TERM="xterm-256color"
 
-# use nvim as the visual editor
+# Use vim as the visual editor
 export VISUAL=vim
 export EDITOR=$VISUAL
 
