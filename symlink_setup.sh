@@ -4,6 +4,8 @@
 # TESTED WITH UBUNTU 14.04 LTS #
 ################################
 
+echo "\n*** Creating symlinks..."
+
 SOLARIZED=$HOME/.solarized
 DOTFILES=$HOME/.dotfiles
 
