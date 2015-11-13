@@ -6,6 +6,11 @@
   autocrlf = input
   pager = diff-highlight | less -r
 
+[color "status"]
+  added = cyan
+  changed = red
+  untracked = yellow
+
 [commit]
   template = ~/.dotfiles/git/gitmessage.txt
 
