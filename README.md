@@ -14,7 +14,7 @@ Just run the following command in your terminal.
 
 ```shell
 sh -c "$(curl -fsSL \
-  https://raw.githubusercontent.com/ruiafonsopereira/dotfiles/master/ubuntu.sh)"
+  https://raw.githubusercontent.com/ruiafonsopereira/dotfiles/master/system/ubuntu/ubuntu.sh)"
 ```
 ### What is set up?
 * [Solarized Light](http://ethanschoonover.com/solarized) as the colorscheme for
