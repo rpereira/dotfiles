@@ -1,0 +1,12 @@
+#!/bin/sh
+
+main() {
+  # Hide bluetooth icon from the menu bar.
+  gsettings set com.canonical.indicator.bluetooth visible false
+
+  # Use custom date format in the menu bar.
+  gsettings set com.canonical.indicator.datetime time-format "custom"
+  gsettings set com.canonical.indicator.datetime custom-time-format "%a %b %e, %l:%M %p"
+}
+
+main
