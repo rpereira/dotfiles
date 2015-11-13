@@ -47,8 +47,6 @@ git clone https://github.com/ruiafonsopereira/dotfiles $HOME/repos/dotfiles
 
 cd $HOME/repos/dotfiles || exit
 
-echo "\n*** Creating symlinks..."
-
 # symlink it up!
 ./symlink_setup.sh
 
