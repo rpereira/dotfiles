@@ -24,8 +24,8 @@ endfunction
 " ============================================================================
 " Source plugins
 " ============================================================================
-if filereadable(expand("$DOTFILES/vim/bundles"))
-  source $DOTFILES/vim/bundles
+if filereadable(expand("$DOTFILES/vim/bundles.vim"))
+  source $DOTFILES/vim/bundles.vim
 endif
 
 call s:SourceConfigFilesIn('rcplugins')
