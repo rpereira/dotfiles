@@ -1,5 +1,5 @@
 " ----------------------------------------------------------------------------
-" Trimmer
+" Whitespace Trimmer
 " ----------------------------------------------------------------------------
 " Strip trailing spaces throughout an entire file, everytime it is saved.
 if exists('g:loaded_trimmer')
