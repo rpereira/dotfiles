@@ -1,384 +1,44 @@
 " ============================================================================
-" GENERAL CONFIG
+" General Configuration
 " ============================================================================
-
 " Use Vim settings. Better safe than sorry.
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Change Leader to a comma because the backslash is too far away
+let mapleader = ','
+
 " Automatically reload files changed outside vim.
 set autoread
 
-" Source plugins
-if filereadable(expand("$DOTFILES/vim/bundles"))
-  source $DOTFILES/vim/bundles
-endif
-
-" ============================================================================
-" THEME & COLORS
-" ============================================================================
-
-" Enable syntax highlighting
-syntax on
-
-" Solarized Light (http://ethanschoonover.com/solarized)
-set background=light
-colorscheme solarized
-let g:airline_theme='solarized'
-
-" NOTE: If for some reason the colors inside Vim are rendered all messed up, try
-" either `let g:solarized_termcolors=16` or `set t_Co=16`, even though `16` is
-" the value set by default. Because I have loaded the solarized color palette
-" into my terminal.
-
-" ============================================================================
-" MAPPINGS
-" ============================================================================
-
-" Change Leader to a comma because the backslash is too far away
-let mapleader = ","
-
-" Open ~/.vimrc file in a vertical split.
-" Think of this command as 'Edit my Vimrc file'.
-nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
-
-" Source the ~/.vimrc file so that changes take effect.
-" Think of this command as 'Source my Vimrc file'.
-nnoremap <Leader>sv :source $MYVIMRC<CR>
-
-" ----------------------------------------------------------------------------
-" Learn Vim the hard way
-" ----------------------------------------------------------------------------
-" Quote from http://learnvimscriptthehardway.stevelosh.com/
-" `The right way to use Vim is to get out of insert mode as soon as you can and
-" use normal mode to move around.`
-nnoremap <Up> :echoe "Use k"<CR>
-inoremap <Up> <NOP>
-vnoremap <Up> <NOP>
-
-nnoremap <Down> :echoe "Use j"<CR>
-inoremap <Down> <NOP>
-vnoremap <Down> <NOP>
-
-nnoremap <Left> :echoe "Use h"<CR>
-inoremap <Left> <NOP>
-vnoremap <Left> <NOP>
-
-nnoremap <Right> :echoe "Use l"<CR>
-inoremap <Right> <NOP>
-vnoremap <Right> <NOP>
-
-" Save my left hand. Using <jk> to return to normal mode is greate because these
-" keys are under two of my strongest fingers and I don't have to perform a
-" chord.
-"inoremap jk <Esc>
-
-" Disable <Esc> key in insert mode. Use <jk> mapping to exit insert mode.
-"inoremap <Esc> <NOP>
-
-" Surround the word under the cursor in double quotes.
-:nnoremap <Leader>" viw<Esc>a"<Esc>hbi"<Esc>lel
-
-" ============================================================================
-" SPACES & TABS
-" ============================================================================
-
-" Copy indent from current line when starting a new line
-set autoindent
-
-" Backspace deletes like most programs in insert mode
-set backspace=2
-
-" Tabs are spaces: shortcut for inserting 2 spaces
-set expandtab
-
-" Round indent to multiple of 'shiftwidth'
-set shiftround
-
-" Number of columns to use for text indenting
-set shiftwidth=2
-
-" Number of spaces in tab when editing
-set softtabstop=2
-
-" Number of visual spaces per TAB
-set tabstop=2
-
-" Fix code identation
-map <F7> mzgg=G`z
-
-" Shortcut to rapidly toggle `set list`
-nmap <Leader>l :set list!<CR>
-
-" Display extra whitespace.
-set list listchars=tab:»·,trail:·,nbsp:·
-
-" Strip trailing spaces throughout an entire file.
-function! <SID>StripTrailingWhitespaces()
-  " Preparation: save last search, and cursor position.
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  " Do the business:
-  %s/\s\+$//e
-  " Clean up: restore previous search history, and cursor position.
-  let @/=_s
-  call cursor(l, c)
+" Source all of the .vim files under the specified directory.
+function! s:SourceConfigFilesIn(directory)
+  let dir_splat = '~/.dotfiles/vim/' . a:directory . '/*.vim'
+  for config_file in split(glob(dir_splat), '\n')
+    if filereadable(config_file)
+        execute 'source' config_file
+    endif
+  endfor
 endfunction
 
-" Run the previous command automatically when a file is saved.
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
-
-" Ident like most editors do.
-" Note: In insert mode, you can just use Ctrl-t and Ctrl-d to indent/dedent.
-nnoremap <TAB> >>
-nnoremap <S-TAB> <<
-vnoremap <TAB> >gv
-vnoremap <S-TAB> <gv
-
 " ============================================================================
-" UI LAYOUT
+" Source plugins
 " ============================================================================
-
-" Draw a vertical line at 'textwidth' + 1
-set colorcolumn=+1
-
-" Highlight current line
-set cursorline
-
-" Act like all other editors, where buffers can exist in the background without
-" being in a window.
-" http://items.sjbach.com/319/configuring-vim-right
-set hidden
-
-" Always show the status line
-set laststatus=2
-
-" Get rid of default mode indicator - using airline's instead
-set noshowmode
-
-" Show line numbers.
-" Check http://vim.wikia.com/wiki/Display_line_numbers to learn more about line
-" numbers.
-" set number
-
-" Minimal number of columns to use for the line number
-set numberwidth=4
-
-" Show relative line numbers
-set relativenumber
-
-" Show the cursor position all the time
-set ruler
-
-" Display incomplete commands
-set showcmd
-
-" Highlight matching parenthesis
-set showmatch
-
-" Break lines at this many chars
-set textwidth=80
-
-" ============================================================================
-" SEARCHING
-" ============================================================================
-
-" Vim only remembers the last 20 commands and search patterns entered. Let's
-" boost this up.
-set history=50
-
-" Highlight matches
-set hlsearch
-
-" Search as characters are entered
-set incsearch
-
-" Turn off search highlight
-map <silent> <Leader>qs <Esc> :nohlsearch<CR>
-
-" Look for files under current directory
-map <C-p> :FZF<CR>
-
-" Use the Silver Searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Bind K to grep word under cursor
-  nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
-  " Set Ag to search for the provided text and open a 'quickfix' window
-  command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-
-  " Bind \ (backward slash) to grep shortcut
-  nnoremap \ :Ag<Space>
+if filereadable(expand("$DOTFILES/vim/bundles.vim"))
+  source $DOTFILES/vim/bundles.vim
 endif
 
-" ============================================================================
-" BACKUPS
-" ============================================================================
-
-" Switch off automatic creation of backup files
-set nobackup
-set nowritebackup
-
-" http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
-set noswapfile
+call s:SourceConfigFilesIn('rcplugins')
 
 " ============================================================================
-" TAB NAVIGATION
+" Source vimrc files
 " ============================================================================
-
-" Navigate Vim style
-nnoremap th :tabfirst<CR>
-nnoremap tj :tabnext<CR>
-nnoremap tk :tabprevious<CR>
-nnoremap tl :tablast<CR>
-nnoremap tn :tabnext<CR>
-
-" Open tabpage after the last one
-nnoremap tn :$tabnew<CR>
-
-" Close current tab
-nnoremap td :tabclose<CR>
-
-" Go to the nth tabpage
-nnoremap t1 1gt
-nnoremap t2 2gt
-nnoremap t3 3gt
-nnoremap t4 4gt
-nnoremap t5 5gt
-nnoremap t6 6gt
-nnoremap t7 7gt
-nnoremap t8 8gt
-nnoremap t9 9gt
-nnoremap t0 10gt
-
-autocmd VimEnter * tab all
-"autocmd BufAdd * exe 'tablast | tabe "' . expand( "<afile") .'"'
+call s:SourceConfigFilesIn('rcfiles')
 
 " ============================================================================
-" WINDOW NAVIGATION
+" Local Customization
 " ============================================================================
-
-" Open new split panes to right and bottom, which feels more natural.
-set splitbelow
-set splitright
-
-" Quicker window movement.
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
-" ============================================================================
-" COMPLETION
-" ============================================================================
-
-" By default, pressing <TAB> in command mode will choose the first possible
-" completion with no indication of how many others there might be. The following
-" configuration lets you see what your other options are:
-set wildmenu
-
-" ============================================================================
-" SCROLLING
-" ============================================================================
-
-" Keep more lines of context around where I'm working.
-set sidescrolloff=5
-set scrolloff=8
-
-" Scroll the viewport faster.
-nnoremap <C-e> 3<C-e>
-nnoremap <C-y> 3<C-y>
-
-" ============================================================================
-" TEXT WRAPP & SPELL CHECK
-" ============================================================================
-
-" ----------------------------------------------------------------------------
-" Git commit
-" ----------------------------------------------------------------------------
-autocmd FileType gitcommit setlocal textwidth=72
-autocmd FileType gitcommit setlocal spell
-
-" ----------------------------------------------------------------------------
-" Markdown
-" ----------------------------------------------------------------------------
-autocmd BufRead,BufNewFile *.md setlocal textwidth=80
-autocmd FileType markdown setlocal spell
-
-" ============================================================================
-" FILE TYPES
-" ============================================================================
-
-" ----------------------------------------------------------------------------
-" CoffeeScript
-" ----------------------------------------------------------------------------
-augroup filetype_coffee
-  autocmd!
-  " Folding is disabled by default but can be quickly toggled per-file by
-  " hitting <z>-<i>
-  au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
-
- " Standard two-space indentation
-  au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
-augroup END
-
-" ============================================================================
-" PLUGINS
-" ============================================================================
-
-" ----------------------------------------------------------------------------
-" Airline
-" ----------------------------------------------------------------------------
-" Note: The airline theme is defined on the top of this file under the 'THEME'
-" section.
-augroup ailine_config
-  autocmd!
-  let g:airline_powerline_fonts=1
-  let g:airline#extensions#syntastic#enabled = 1
-  let g:airline#extensions#tabline#buffer_nr_format = '%s '
-  let g:airline#extensions#tabline#buffer_nr_show = 1
-  let g:airline#extensions#tabline#enabled = 1
-  let g:airline#extensions#tabline#fnamecollapse = 0
-  let g:airline#extensions#tabline#fnamemod = ':t'
-augroup END
-
-" ----------------------------------------------------------------------------
-" Gitgutter
-" ----------------------------------------------------------------------------
-augroup gitgutter_config
-  autocmd!
-  let g:gitgutter_sign_added = '✚'
-  let g:gitgutter_sign_modified = '✹'
-  let g:gitgutter_sign_removed = '✖'
-  let g:gitgutter_sign_removed_first_line = '➜'
-  let g:gitgutter_sign_modified_removed = '✗'
-augroup END
-
-" ----------------------------------------------------------------------------
-" Syntastic
-" ----------------------------------------------------------------------------
-augroup syntastic_config
-  autocmd!
-  "let g:syntastic_always_populate_loc_list = 1
-  "let g:syntastic_auto_loc_list = 1
-  let g:syntastic_check_on_wq = 0
-  let g:syntastic_error_symbol = '✗'
-  let g:syntastic_style_error_symbol = '✗'
-  let g:syntastic_warning_symbol = '⚠'
-  let g:syntastic_style_warning_symbol = '⚠'
-  let g:syntastic_ruby_checkers = ['reek', 'rubocop']
-  let g:syntastic_coffee_checkers = ['coffeelint', 'coffee']
-augroup END
-
-" ============================================================================
-" LOCAL CUSTOMIZATION
-" ============================================================================
-
-" If the file exists, load local configurations
-if filereadable(expand("~/.vimrc.local"))
+" If the file exists, load local configurations.
+if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
