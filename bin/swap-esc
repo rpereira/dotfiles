@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+# Easily swap the functions of Esc and Caps keys on Ubuntu.
+# Usage:
+#   $ swap-esc
+
+initial_status=$(gsettings get org.gnome.desktop.input-sources xkb-options)
+swapped="['caps:swapescape']"
+capslock="['caps:capslock']"
+
+if [ "$initial_status" == "$swapped" ]; then
+  gsettings set org.gnome.desktop.input-sources xkb-options $capslock
+  echo "Restored Caps and Escape to default layout"
+  echo "Current status: $capslock"
+elif [ "$initial_status" == "$capslock" ]; then
+  gsettings set org.gnome.desktop.input-sources xkb-options $swapped
+  echo "Swapped Caps and Escape"
+  echo "Current status: $swapped"
+else
+  echo "Nothing was changed! Exiting..."
+fi
