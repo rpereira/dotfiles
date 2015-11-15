@@ -25,6 +25,8 @@ sh -c "$(curl -fsSL \
   projects
 * [Vim](http://www.vim.org/) as your core editor
 * [Zsh](http://www.zsh.org/) as your shell
+* [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh) for managing your zsh
+  configuration
 
 ## Local Settings
 This configuration can be extended or overriden to suit user-specific
@@ -48,9 +50,10 @@ bindings](https://github.com/ruiafonsopereira/dotfiles/blob/master/key_bindings.
 ## Acknowledgements
 
 Inspiration and some code was taken from several sources, including:
+* [Chris Toomey](http://ctoomey.com/) and his [dotfiles repo](https://github.com/christoomey/dotfiles)
+* [Paul Irish](http://www.paulirish.com/) and his [dotfiles repo](https://github.com/paulirish/dotfiles)
 * [Thoughtbot](https://thoughtbot.com/) and their [dotfiles repo](https://github.com/thoughtbot/dotfiles)
 * [Thoughtbot](https://thoughtbot.com/) and their [laptop setup](https://github.com/thoughtbot/laptop)
-* [Paul Irish](http://www.paulirish.com/) and his [dotfiles repo](https://github.com/paulirish/dotfiles)
 
 ## License
 
