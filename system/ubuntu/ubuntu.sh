@@ -59,7 +59,7 @@ git clone https://github.com/ruiafonsopereira/dotfiles $HOME/repos/dotfiles
 cd $HOME/repos/dotfiles || exit
 
 # symlink it up!
-./symlink_setup.sh
+./system/symlink_setup.sh
 
 # Install vim plugin manager
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
