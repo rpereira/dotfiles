@@ -7,6 +7,9 @@ main() {
   # Use custom date format in the menu bar.
   gsettings set com.canonical.indicator.datetime time-format "custom"
   gsettings set com.canonical.indicator.datetime custom-time-format "%a %b %e, %l:%M %p"
+
+  # Show login name in the menu bar.
+  gsettings set com.canonical.indicator.session show-real-name-on-panel true
 }
 
 main
