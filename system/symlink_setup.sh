@@ -30,7 +30,7 @@ cd $SOLARIZED/gnome-terminal-colors-solarized || exit
 ./set_light.sh
 
 # dircolors Solarized Light
-ln -sf $SOLARIZED/dircolors-solarized/dircolors.ansi-light $HOME/.dircolors
+ln -sf $SOLARIZED/dircolors-solarized/dircolors.ansi-dark $HOME/.dircolors
 
 # git diff-highlight
 # See https://github.com/git/git/tree/master/contrib/diff-highlight

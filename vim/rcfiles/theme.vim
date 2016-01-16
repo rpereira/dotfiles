@@ -5,7 +5,7 @@
 syntax on
 
 " Solarized Light (http://ethanschoonover.com/solarized)
-set background=light
+set background=dark
 colorscheme solarized
 let g:airline_theme='solarized'
 
