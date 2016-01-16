@@ -5,7 +5,7 @@
 local return_status="%(?.➜.%{$fg[red]%}➜)"
 
 PROMPT='
-$(_user_host)${_current_dir} $(git_prompt_info)
+${_current_dir} $(git_prompt_info)
 ${return_status} '
 
 RPROMPT='%{$(echotc UP 1)%}$(_git_time_since_commit) $(git_prompt_status) ${_return_status}%{$(echotc DO 1)%}'
@@ -13,17 +13,6 @@ RPROMPT='%{$(echotc UP 1)%}$(_git_time_since_commit) $(git_prompt_status) ${_ret
 local _current_dir="%{$fg[blue]%}%3~%{$reset_color%} "
 local _return_status="%{$fg[red]%}%(?..⍉)%{$reset_color%}"
 local _hist_no="%{$fg[grey]%}%h%{$reset_color%}"
-
-function _user_host() {
-  if [[ -n $SSH_CONNECTION ]]; then
-    me="%n@%m"
-  elif [[ $LOGNAME != $USER ]]; then
-    me="%n"
-  fi
-  if [[ -n $me ]]; then
-    echo "%{$fg[cyan]%}$me%{$reset_color%}:"
-  fi
-}
 
 # Determine the time since last commit. If branch is clean,
 # use a neutral color, otherwise colors will vary according to time.
