@@ -1,7 +1,5 @@
 #!/usr/bin/env zsh
 
-MODE_INDICATOR="%{$fg_bold[yellow]%}❮%{$reset_color%}%{$fg[yellow]%}❮❮%{$reset_color%}"
-
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 
@@ -59,8 +57,3 @@ function _git_time_since_commit() {
   fi
 }
 
-if [[ $USER == "root" ]]; then
-  CARETCOLOR="red"
-else
-  CARETCOLOR="white"
-fi
