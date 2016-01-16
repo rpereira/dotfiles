@@ -19,7 +19,7 @@ local current_dir="%{$fg[blue]%}%3~%{$reset_color%} "
 
 # Determine the time since last commit.
 function _git_time_since_commit() {
-# Only proceed if there is actually a commit.
+  # Only proceed if there is actually a commit.
   if git log -1 > /dev/null 2>&1; then
     # Get the last commit.
     last_commit=$(git log --pretty=format:'%at' -1 2> /dev/null)
