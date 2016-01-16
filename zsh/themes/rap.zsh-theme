@@ -15,6 +15,8 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[grey]%}◒ "
 # Set the prompt's char color to red when the command line return an error;
 # default is white.
 local prompt_char="%(?:%{$fg_bold[white]%}$ :%{$fg_bold[red]%}$ %s)"
+
+# Display the whole current directory path.
 local current_dir="%{$fg[blue]%}%~%{$reset_color%} %s"
 
 # Determine the time since last commit.
