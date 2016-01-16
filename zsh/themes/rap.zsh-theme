@@ -1,5 +1,3 @@
-# Based on AVIT ZSH Theme
-
 # Set the arrow's color to red when the command line return an error; default's
 # grey.
 local return_status="%(?.➜.%{$fg[red]%}➜)"
