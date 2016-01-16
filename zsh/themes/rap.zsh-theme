@@ -26,8 +26,7 @@ local _current_dir="%{$fg[blue]%}%3~%{$reset_color%} "
 local _return_status="%{$fg[red]%}%(?..⍉)%{$reset_color%}"
 local _hist_no="%{$fg[grey]%}%h%{$reset_color%}"
 
-# Determine the time since last commit. If branch is clean,
-# use a neutral color, otherwise colors will vary according to time.
+# Determine the time since last commit.
 function _git_time_since_commit() {
 # Only proceed if there is actually a commit.
   if git log -1 > /dev/null 2>&1; then
@@ -38,7 +37,7 @@ function _git_time_since_commit() {
 
     # Totals
     minutes=$((seconds_since_last_commit / 60))
-    hours=$((seconds_since_last_commit/3600))
+    hours=$((seconds_since_last_commit / 3600))
 
     # Sub-hours and sub-minutes
     days=$((seconds_since_last_commit / 86400))
