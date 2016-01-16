@@ -49,8 +49,8 @@ function _git_time_since_commit() {
   fi
 }
 
-PROMPT="
+PROMPT='
 ${current_dir} $(git_prompt_info)
-${prompt_char}%{$reset_color%}"
+${prompt_char}%{$reset_color%}'
 
-RPROMPT="%{$(echotc UP 1)%}$(_git_time_since_commit) $(git_prompt_status)%{$(echotc DO 1)%}%{$reset_color%}"
+RPROMPT='%{$(echotc UP 1)%}$(_git_time_since_commit) $(git_prompt_status)%{$(echotc DO 1)%}%{$reset_color%}'
