@@ -12,19 +12,10 @@ ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[blue]%}▴ "
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[cyan]%}§ "
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[grey]%}◒ "
 
-# Set the arrow's color to red when the command line return an error; default's
-# grey.
-local return_status="%(?.➜.%{$fg[red]%}➜)"
-
-PROMPT='
-${_current_dir} $(git_prompt_info)
-${return_status} '
-
-RPROMPT='%{$(echotc UP 1)%}$(_git_time_since_commit) $(git_prompt_status) ${_return_status}%{$(echotc DO 1)%}'
-
-local _current_dir="%{$fg[blue]%}%3~%{$reset_color%} "
-local _return_status="%{$fg[red]%}%(?..⍉)%{$reset_color%}"
-local _hist_no="%{$fg[grey]%}%h%{$reset_color%}"
+# Set the prompt's char color to red when the command line return an error;
+# default is white.
+local prompt_char="%(?:%{$fg_bold[white]%}$ :%{$fg_bold[red]%}$ %s)"
+local current_dir="%{$fg[blue]%}%3~%{$reset_color%} "
 
 # Determine the time since last commit.
 function _git_time_since_commit() {
@@ -56,3 +47,8 @@ function _git_time_since_commit() {
   fi
 }
 
+PROMPT='
+${current_dir} $(git_prompt_info)
+${prompt_char}'
+
+RPROMPT='%{$(echotc UP 1)%}$(_git_time_since_commit) $(git_prompt_status) %{$(echotc DO 1)%}'
