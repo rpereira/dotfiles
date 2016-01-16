@@ -40,7 +40,7 @@ function _git_time_since_commit() {
     fi
 
     color=$ZSH_THEME_GIT_TIME_SINCE_COMMIT_NEUTRAL
-    echo "$commit_age%{$reset_color%}"
+    echo "%{$reset_color%}$commit_age"
   fi
 }
 
