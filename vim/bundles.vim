@@ -9,7 +9,6 @@ Plug 'bling/vim-airline'
 Plug 'junegunn/fzf',            { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'pbrisbin/vim-mkdir'
 Plug 'scrooloose/syntastic'
-Plug 'godlygeek/tabular'
 
 " Edit
 Plug 'tpope/vim-commentary',    { 'on': '<Plug>Commentary' }
