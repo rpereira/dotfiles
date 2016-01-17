@@ -11,15 +11,15 @@ Plug 'pbrisbin/vim-mkdir'
 Plug 'scrooloose/syntastic'
 
 " Edit
-Plug 'tpope/vim-commentary',    { 'on': '<Plug>Commentary' }
+Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
+Plug 'tpope/vim-commentary',    { 'on': '<Plug>Commentary' }
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
-Plug 'jiangmiao/auto-pairs'
 
 " Git
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 " Local bundles
 if filereadable(expand("~/.vimrc_bundles.local"))
