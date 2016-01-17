@@ -25,11 +25,11 @@ ln -sf $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
 # git
 ln -sf $DOTFILES/git/gitconfig $HOME/.gitconfig
 
-# Gnome Colors Solarized Light
+# Gnome Colors Solarized
 cd $SOLARIZED/gnome-terminal-colors-solarized || exit
-./set_light.sh
+./set_dark.sh
 
-# dircolors Solarized Light
+# dircolors Solarized
 ln -sf $SOLARIZED/dircolors-solarized/dircolors.ansi-dark $HOME/.dircolors
 
 # git diff-highlight
