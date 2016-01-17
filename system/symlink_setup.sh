@@ -18,6 +18,7 @@ ln -sf $DOTFILES/zsh/zshenv $HOME/.zshenv
 
 # vim
 ln -sf $DOTFILES/vim/vimrc $HOME/.vimrc
+ln -sf $DOTFILES/vim/ftplugin $HOME/.vim/ftplugin
 
 # tmux
 ln -sf $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
