@@ -1,4 +1,16 @@
 #!/usr/bin/env zsh
+#
+# Rui Afonso Pereira oh-my-zsh theme
+#
+# # README
+#
+# This theme needs the Git plugin in order to work as expected.
+#
+# # Goals
+#
+# The aim of this theme is to only show you *relevant* information. For
+# instance, it will only show git information when in a git working directory;
+# gives feedback on whether the last call exited with an error.
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
