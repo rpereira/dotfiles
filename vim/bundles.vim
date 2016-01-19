@@ -6,6 +6,7 @@ Plug 'edkolev/tmuxline.vim'
 
 " Tools
 Plug 'bling/vim-airline'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf',            { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'pbrisbin/vim-mkdir'
 Plug 'scrooloose/syntastic'
