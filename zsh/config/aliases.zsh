@@ -68,6 +68,7 @@ alias showdesktop='gsettings set org.gnome.desktop.background show-desktop-icons
 # --------------------------------------------
 alias hosts='sudo $EDITOR /etc/hosts'
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias png='ping www.google.pt'
 
 # --------------------------------------------
 # Custom
