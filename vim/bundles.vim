@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/bundle')
 
 " Theme
+Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
 Plug 'edkolev/tmuxline.vim'
 
