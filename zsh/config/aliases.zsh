@@ -1,3 +1,12 @@
+# Get host operating system
+platform='unknown'
+unamestr=$(uname)
+if [[ $unamestr == 'Linux' ]]; then
+  platform='linux'
+elif [[ $unamestr == 'Darwin' ]]; then
+  platform='darwin'
+fi
+
 # --------------------------------------------
 # Navigation
 # --------------------------------------------
@@ -54,14 +63,22 @@ alias vh="vagrant halt"
 alias vu="vagrant up"
 
 # --------------------------------------------
-# GNOME
+# System specific
 # --------------------------------------------
-# Lock screen
-alias afk='gnome-screensaver-command --lock'
+# OSX
+if [[ $platform == 'darwin' ]]; then
+  # Lock the screen
+  alias afk='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
 
-# Hide/show all desktop icons
-alias hidedesktop='gsettings set org.gnome.desktop.background show-desktop-icons false'
-alias showdesktop='gsettings set org.gnome.desktop.background show-desktop-icons true'
+# Linux with GNOME
+elif [[ $platform == 'linux' ]]; then
+  # Lock the screen
+  alias afk='gnome-screensaver-command --lock'
+
+  # Hide/show all desktop icons
+  alias hidedesktop='gsettings set org.gnome.desktop.background show-desktop-icons false'
+  alias showdesktop='gsettings set org.gnome.desktop.background show-desktop-icons true'
+fi
 
 # --------------------------------------------
 # Network
