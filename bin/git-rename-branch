@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 #
 # Rename current git branch.
 # Usage: git rename-branch `new_branch_name`

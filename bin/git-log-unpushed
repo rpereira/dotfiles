@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 #
 # Check unpushed Git commits.
 # Usage: git log-unpushed
