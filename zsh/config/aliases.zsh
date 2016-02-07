@@ -70,6 +70,9 @@ if [[ $platform == 'darwin' ]]; then
   # Lock the screen
   alias afk='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
 
+  # Copy the contents of the id_rsa.pub file to the clipboard.
+  alias sshkey='pbcopy < ~/.ssh/id_rsa.pub | echo "=> SSH key was copied to the clipboard."'
+
 # Linux with GNOME
 elif [[ $platform == 'linux' ]]; then
   # Lock the screen
