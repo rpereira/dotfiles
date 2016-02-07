@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#
+# Prints the days you have worked on the current project.
+#
+# Usage:
+#
+#   $ git days-worked
+
+git log --date=short --format=%ci | awk '{print $1}' | uniq
