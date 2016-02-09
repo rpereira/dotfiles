@@ -21,8 +21,8 @@ ln -sf $DOTFILES/git/gitconfig $HOME/.gitconfig
 
 # git diff-highlight
 # See https://github.com/git/git/tree/master/contrib/diff-highlight
-sudo ln -sf /usr/share/doc/git/contrib/diff-highlight/diff-highlight /bin/
-sudo chmod +x /bin/diff-highlight
+sudo ln -sf /usr/local/share/git-core/contrib/diff-highlight/diff-highlight \
+  /usr/local/bin
 
 # TheSilverSearcher ignore list
 ln -sf $DOTFILES/ag/agignore $HOME/.agignore
