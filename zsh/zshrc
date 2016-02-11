@@ -20,6 +20,23 @@ done
 # Solarized dircolors for GNOME ls
 #eval `dircolors $HOME/.dircolors`
 
+# Solarized dircolors for FreeBSD/OS X
+LSCOLORS=''
+
+LSCOLORS+='gx' # Directory
+LSCOLORS+='fx' # Symbolic link
+LSCOLORS+='cx' # Socket
+LSCOLORS+='dx' # Pipe
+LSCOLORS+='cx' # Executable
+LSCOLORS+='eg' # Block special
+LSCOLORS+='ed' # Character special
+LSCOLORS+='ab' # Executable with setuid bit set
+LSCOLORS+='ag' # Executable with setgid bit set
+LSCOLORS+='cc' # Directory writable to others, with sticky bit
+LSCOLORS+='bd' # Directory writable to others, without sticky bit
+
+export LSCOLORS
+
 # If zshrc.local exists, load it.
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
