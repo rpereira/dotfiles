@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#
+# Replace an old shebang line by a new one in the specified files.
+#
+# Example:
+#   $ replace-shebang '/bin/sh' '/usr/env/bin bash' *.sh
+
+if [ $# -ne 3 ]; then
+  command=`basename $0`
+  >&2 echo "Usage: $command <current-shebang> <new-shebang> <target-files>"
+  exit 1
+fi
+
+CURRENT_SHEBANG=$1
+NEW_SHEBANG=$2
+TARGET_FILES=$3
+
+perl -i -pe "s{^#!$CURRENT_SHEBANG}{#!$NEW_SHEBANG}" $TARGET_FILES
