@@ -16,8 +16,11 @@ mkdir -p ${SOLARIZED:=$HOME/.solarized}
 git clone git@github.com:tomislav/osx-terminal.app-colors-solarized.git \
   $SOLARIZED/osx-terminal.app-colors-solarized
 
+# Install brew formulaes
+./system/osx/brew.sh
+
 # symlink it up!
-./system/osx/symlink_setup.sh
+#./system/osx/symlink_setup.sh
 
 # Install vim plugin manager
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -25,3 +28,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 # Install vim plugins
 vim +PlugInstall +qall
+
+# Set user preferences
+./system/osx/defaults.sh
