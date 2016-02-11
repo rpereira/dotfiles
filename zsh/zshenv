@@ -9,7 +9,15 @@ export EDITOR=$VISUAL
 # Dotfiles location
 export DOTFILES=$HOME/.dotfiles
 
-export PATH="$HOME/.dotfiles/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+# Path
+PATH="/usr/local/bin:"
+PATH+="/usr/sbin:"
+PATH+="/usr/bin:"
+PATH+="/sbin:"
+PATH+="/bin:"
+PATH+="$HOME/.dotfiles/bin"
+
+export PATH
 
 # Setting ag as the default source for fzf
 export FZF_DEFAULT_COMMAND='ag -g ""'
@@ -17,3 +25,6 @@ export FZF_DEFAULT_COMMAND='ag -g ""'
 # load rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - --no-rehash)"
+
+# Remove duplicate entries in $PATH
+typeset -U PATH
