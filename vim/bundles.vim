@@ -11,6 +11,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf',            { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'pbrisbin/vim-mkdir'
 Plug 'scrooloose/syntastic'
+Plug 'sirver/ultisnips'
 
 " Edit
 Plug 'jiangmiao/auto-pairs'
