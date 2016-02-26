@@ -59,3 +59,7 @@ Inspiration and some code was taken from several sources, including:
 
 See the
 [LICENSE](https://github.com/ruiafonsopereira/dotfiles/blob/master/LICENSE.md) file for license rights and limitations (MIT).
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ruiafonsopereira/dotfiles/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
