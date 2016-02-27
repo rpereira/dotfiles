@@ -21,12 +21,13 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 
 " Languages
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffee'  }
-Plug 'pangloss/vim-javascript',  { 'for': 'javascript'  }
-Plug 'plasticboy/vim-markdown',  { 'for': 'markdown'  }
-Plug 'tpope/vim-haml',           { 'for': 'haml'  }
-Plug 'tpope/vim-rails',          { 'for': ['ruby', 'haml']  }
-Plug 'vim-ruby/vim-ruby',        { 'for': 'ruby'   }
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+Plug 'pangloss/vim-javascript',  { 'for': 'javascript' }
+Plug 'mxw/vim-jsx',              { 'for': 'javascript' }
+Plug 'plasticboy/vim-markdown',  { 'for': 'markdown' }
+Plug 'tpope/vim-haml',           { 'for': 'haml' }
+Plug 'tpope/vim-rails',          { 'for': ['ruby', 'haml'] }
+Plug 'vim-ruby/vim-ruby',        { 'for': 'ruby' }
 
 " Git
 Plug 'airblade/vim-gitgutter'
