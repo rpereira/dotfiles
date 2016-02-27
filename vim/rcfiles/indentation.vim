@@ -1,5 +1,5 @@
 " ----------------------------------------------------------------------------
-" Identation
+" Indentation
 " ----------------------------------------------------------------------------
 " Copy indent from current line when starting a new line
 set autoindent
@@ -22,7 +22,7 @@ set softtabstop=2
 " Number of visual spaces per TAB
 set tabstop=2
 
-" Fix code identation
+" Fix code indentation
 map <F7> mzgg=G`z
 
 " Shortcut to rapidly toggle `set list`
