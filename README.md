@@ -1,5 +1,7 @@
 # Rui's dotfiles
 
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ruiafonsopereira/dotfiles/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 These are the base dotfiles I use when setting up a new environment. For private
 configuration I use `.local` files, as described in the [Local Settings
 section](https://github.com/ruiafonsopereira/dotfiles#local-settings).
