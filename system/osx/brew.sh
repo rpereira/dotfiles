@@ -23,10 +23,15 @@ brew upgrade --all
 
 fancy_echo "Updating Unix tools..."
 brew install git
-brew install vim --override-system-vi
-brew install tmux
+brew install homebrew/dupes/screen
 brew install the_silver_searcher
+brew install tmux
+brew install vim --override-system-vi
 brew install zsh
+
+fancy_echo "Updating programming languages..."
+brew install node
+brew install rbenv
 
 # Remove outdated versions from the cellar.
 brew cleanup
