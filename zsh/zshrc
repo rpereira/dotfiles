@@ -47,6 +47,10 @@ export LSCOLORS
 
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 
+# load nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
 # Must be sourced at the end of this file.
 # NOTE: Documentation states that using oh-my-zsh it's only required to add the
 # plugin as the last entry in the plugins array. In order to get this to work,
