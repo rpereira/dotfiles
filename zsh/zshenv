@@ -10,7 +10,8 @@ export EDITOR=$VISUAL
 export DOTFILES=$HOME/.dotfiles
 
 # Path
-PATH="/usr/local/bin:"
+PATH="$(which node):"
+PATH+="/usr/local/bin:"
 PATH+="/usr/sbin:"
 PATH+="/usr/bin:"
 PATH+="/sbin:"
