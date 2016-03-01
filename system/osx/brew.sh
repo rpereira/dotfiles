@@ -29,6 +29,9 @@ brew install tmux
 brew install vim --override-system-vi
 brew install zsh
 
+fancy_echo "Installing ZSH plugins ..."
+brew install zsh-syntax-highlighting
+
 fancy_echo "Updating programming languages..."
 brew install node
 brew install rbenv
