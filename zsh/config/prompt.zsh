@@ -1,16 +1,18 @@
 #!/usr/bin/env zsh
 #
-# Rui Afonso Pereira oh-my-zsh theme
+# Rui Afonso Pereira prompt based on the Solarized Dark theme.
+# Use 14pt Monaco for Powerline with 1.1 vertical space.
 #
 # # README
 #
-# This theme needs the Git plugin in order to work as expected.
+# This theme needs the zsh/config/git.zsh file in order to work as expected.
 #
 # # Goals
 #
 # The aim of this theme is to only show you *relevant* information. For
 # instance, it will only show git information when in a git working directory;
 # gives feedback on whether the last call exited with an error.
+#
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
@@ -31,7 +33,7 @@ local prompt_char="%(?:%{$fg_bold[white]%}$ :%{$fg_bold[red]%}$ %s)"
 # Display the whole current directory path.
 local current_dir="%{$fg[blue]%}%~%{$reset_color%} %s"
 
-# Determine the time since last commit.
+# Determine the time elapsed since last commit.
 function _git_time_since_commit() {
   # Only proceed if there is actually a commit.
   if git log -1 > /dev/null 2>&1; then
@@ -60,6 +62,8 @@ function _git_time_since_commit() {
     echo "%{$reset_color%}$commit_age"
   fi
 }
+
+setopt PROMPT_SUBST
 
 PROMPT='
 ${current_dir} $(git_prompt_info)
