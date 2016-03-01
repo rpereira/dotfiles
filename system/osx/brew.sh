@@ -23,6 +23,7 @@ brew upgrade --all
 
 fancy_echo "Updating Unix tools..."
 brew install git
+brew install fzf
 brew install homebrew/dupes/screen
 brew install the_silver_searcher
 brew install tmux
