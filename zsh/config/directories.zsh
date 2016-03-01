@@ -1,7 +1,7 @@
 #------------------------------------------------
 # Change, make and remove directory
 #------------------------------------------------
-setopt AUTOCD
+setopt AUTO_CD
 setopt AUTO_PUSHD
 setopt PUSHDMINUS
 setopt PUSHD_IGNORE_DUPS
