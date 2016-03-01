@@ -10,14 +10,13 @@ export EDITOR=$VISUAL
 export DOTFILES=$HOME/.dotfiles
 
 # Path
-PATH="$(which node):"
-PATH+="/usr/local/bin:"
-PATH+="/usr/sbin:"
-PATH+="/usr/bin:"
-PATH+="/sbin:"
-PATH+="/bin:"
-PATH+="$HOME/.dotfiles/bin"
-
+PATH=''
+PATH+="$HOME/.dotfiles/bin:"
+PATH+='/usr/local/bin:'
+PATH+='/usr/sbin:'
+PATH+='/usr/bin:'
+PATH+='/sbin:'
+PATH+='/bin'
 export PATH
 
 # Setting ag as the default source for fzf
@@ -29,3 +28,6 @@ eval "$(rbenv init - --no-rehash)"
 
 # Remove duplicate entries in $PATH
 typeset -U PATH
+
+export ZSH=$HOME/.zsh
+export ZSH_CACHE_DIR="$ZSH/cache/"
