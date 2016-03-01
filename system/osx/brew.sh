@@ -36,6 +36,7 @@ brew install zsh-syntax-highlighting
 fancy_echo "Updating programming languages..."
 brew install node
 brew install rbenv
+brew install ruby-build
 
 # Remove outdated versions from the cellar.
 brew cleanup
