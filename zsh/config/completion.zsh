@@ -1,5 +1,3 @@
-autoload -Uz compinit && compinit
-
 unsetopt FLOWCONTROL
 unsetopt MENU_COMPLETE
 
@@ -7,8 +5,6 @@ setopt ALWAYS_TO_END
 setopt AUTO_MENU
 setopt COMPLETE_IN_WORD
 setopt EXTENDEDGLOB
-
-WORDCHARS=''
 
 zmodload -i zsh/complist
 
