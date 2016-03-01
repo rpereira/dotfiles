@@ -1,15 +1,26 @@
+autoload -U compinit
+compinit -i
+
 # Load configuration files
-for zsh_source in $HOME/code/dotfiles/zsh/config/*.zsh; do
-  source $zsh_source
+for file ($DOTFILES/zsh/config/*.zsh(N)); do
+  source $file
 done
 
-# If zshrc.local exists, load it.
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+# Load modules files
+for file ($DOTFILES/zsh/modules/*.zsh(N)); do
+  source $file
+done
 
-[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+unset file
 
 # load nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
+[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+
+# If zshrc.local exists, load it.
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# Must be sourced at the end of the file
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
