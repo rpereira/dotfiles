@@ -47,14 +47,6 @@ alias rdbm='rake db:migrate'
 alias devlog='tail -f log/development.log'
 
 # --------------------------------------------
-# Vagrant
-# --------------------------------------------
-alias v="vagrant"
-alias vs="vagrant status"
-alias vh="vagrant halt"
-alias vu="vagrant up"
-
-# --------------------------------------------
 # System specific
 # --------------------------------------------
 # OSX
