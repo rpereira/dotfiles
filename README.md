@@ -27,8 +27,6 @@ sh -c "$(curl -fsSL \
   projects
 * [Vim](http://www.vim.org/) as your core editor
 * [Zsh](http://www.zsh.org/) as your shell
-* [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh) for managing your zsh
-  configuration
 
 ## Local Settings
 This configuration can be extended or overriden to suit user-specific
