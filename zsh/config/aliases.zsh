@@ -6,14 +6,6 @@ if [[ $unamestr == 'Linux' ]]; then
 elif [[ $unamestr == 'Darwin' ]]; then
   platform='darwin'
 fi
-
-# --------------------------------------------
-# Navigation
-# --------------------------------------------
-alias l='ls'
-alias ll='ls -al'
-alias ln='ln -v'
-
 # --------------------------------------------
 # Sortcuts
 # --------------------------------------------
