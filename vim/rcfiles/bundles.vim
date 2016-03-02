@@ -1,17 +1,18 @@
 call plug#begin('~/.vim/bundle')
 
+set rtp+=/usr/local/opt/fzf
+
 "------------------------------------------------
 " Theme
 "------------------------------------------------
 Plug 'altercation/vim-colors-solarized'
-Plug 'edkolev/tmuxline.vim'
+Plug 'edkolev/tmuxline.vim',            { 'on': [] }
 
 "------------------------------------------------
 " Tools
 "------------------------------------------------
 Plug 'vim-airline/vim-airline-themes' | Plug 'vim-airline/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'junegunn/fzf',                  { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'pbrisbin/vim-mkdir'
 Plug 'scrooloose/syntastic'
 
