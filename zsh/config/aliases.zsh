@@ -22,6 +22,12 @@ alias path='echo $PATH | tr -s ":" "\n"'
 # A list of directories for TheSilverSearcher ignore
 alias ag='ag --path-to-agignore=~/.agignore'
 
+# Update OS X and all installed brews
+alias update='sudo softwareupdate -i -a; \
+              brew update; \
+              brew upgrade --all; \
+              brew cleanup;'
+
 # --------------------------------------------
 # Bundler
 # --------------------------------------------
