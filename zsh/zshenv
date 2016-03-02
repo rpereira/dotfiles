@@ -6,26 +6,31 @@
 export VISUAL=vim
 export EDITOR=$VISUAL
 
-# Dotfiles location
-export DOTFILES=$HOME/.dotfiles
+DOTFILES="$HOME/.dotfiles"
+ZSH="$HOME/.zsh"
+ZSH_CACHE_DIR="$ZSH/cache/"
 
-# Path
-PATH="$(which node):"
-PATH+="/usr/local/bin:"
-PATH+="/usr/sbin:"
-PATH+="/usr/bin:"
-PATH+="/sbin:"
-PATH+="/bin:"
-PATH+="$HOME/.dotfiles/bin"
+# Paths
+path=(
+  $DOTFILES/bin
+  /usr/local/bin
+  /usr/{sbin,bin}
+  /{sbin,bin}
+)
 
-export PATH
+cdpath=(
+  $HOME/code
+  $HOME/Downloads
+  $HOME
+)
 
-# Setting ag as the default source for fzf
+# Ensure path arrays do not contain duplicates.
+typeset -gU path cdpath
+
+# Set Ag as the default source for fzf
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
-# load rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - --no-rehash)"
-
-# Remove duplicate entries in $PATH
-typeset -U PATH
+# load rbenv if available
+if command -v rbenv >/dev/null; then
+  eval "$(rbenv init - --no-rehash)"
+fi

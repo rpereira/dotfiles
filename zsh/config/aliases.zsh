@@ -6,14 +6,6 @@ if [[ $unamestr == 'Linux' ]]; then
 elif [[ $unamestr == 'Darwin' ]]; then
   platform='darwin'
 fi
-
-# --------------------------------------------
-# Navigation
-# --------------------------------------------
-alias l='ls'
-alias ll='ls -al'
-alias ln='ln -v'
-
 # --------------------------------------------
 # Sortcuts
 # --------------------------------------------
@@ -29,6 +21,12 @@ alias path='echo $PATH | tr -s ":" "\n"'
 
 # A list of directories for TheSilverSearcher ignore
 alias ag='ag --path-to-agignore=~/.agignore'
+
+# Update OS X and all installed brews
+alias update='sudo softwareupdate -i -a; \
+              brew update; \
+              brew upgrade --all; \
+              brew cleanup;'
 
 # --------------------------------------------
 # Bundler
@@ -53,14 +51,6 @@ alias rdbm='rake db:migrate'
 
 # Other
 alias devlog='tail -f log/development.log'
-
-# --------------------------------------------
-# Vagrant
-# --------------------------------------------
-alias v="vagrant"
-alias vs="vagrant status"
-alias vh="vagrant halt"
-alias vu="vagrant up"
 
 # --------------------------------------------
 # System specific

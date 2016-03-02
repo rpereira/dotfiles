@@ -23,15 +23,21 @@ brew upgrade --all
 
 fancy_echo "Updating Unix tools..."
 brew install git
+brew install diff-so-fancy
+brew install fzf
 brew install homebrew/dupes/screen
 brew install the_silver_searcher
 brew install tmux
 brew install vim --override-system-vi
 brew install zsh
 
+fancy_echo "Installing ZSH plugins ..."
+brew install zsh-syntax-highlighting
+
 fancy_echo "Updating programming languages..."
 brew install node
 brew install rbenv
+brew install ruby-build
 
 # Remove outdated versions from the cellar.
 brew cleanup

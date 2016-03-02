@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-# Install zsh syntax highlighting (as you type)
-git clone git://github.com/zsh-users/zsh-syntax-highlighting.git \
-  ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-
 # Create folder to hold git-completition script
 mkdir -p ${GIT_COMP:=$HOME/.zsh/_git}
 curl -o $GIT_COMP \
