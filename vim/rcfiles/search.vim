@@ -19,8 +19,11 @@ map <C-p> :FZF<CR>
 
 " Use the Silver Searcher
 if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
+  " Use ag over grep.
+  " Output the line and column number of each match, so that we can navigate
+  " results by jumping to the precise position of each match.
+  set grepprg=ag\ --nogroup\ --nocolor\ --column
+  set grepformat=%f:%l:%c%m
 
   " Bind K to grep word under cursor
   nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
