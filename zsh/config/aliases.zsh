@@ -26,7 +26,9 @@ alias ag='ag --path-to-agignore=~/.agignore'
 alias update='sudo softwareupdate -i -a; \
               brew update; \
               brew upgrade --all; \
-              brew cleanup;'
+              brew cleanup; \
+              vim +PlugUpdate +qall; \
+              echo "\nFinished!";'
 
 # --------------------------------------------
 # Bundler
