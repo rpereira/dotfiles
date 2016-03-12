@@ -10,6 +10,13 @@ defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 ###############################################################################
+# Finder                                                                      #
+###############################################################################
+
+# Avoid creating .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+###############################################################################
 # Dock and hot corners                                                        #
 ###############################################################################
 
@@ -64,7 +71,7 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 # Kill affected applications                                                  #
 ###############################################################################
 
-for app in "Dock"; do
+for app in "Dock" "Finder"; do
   killall "${app}" &> /dev/null
 done
 
