@@ -28,7 +28,7 @@ cdpath=(
 typeset -gU path cdpath
 
 # Set Ag as the default source for fzf
-export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 
 # load rbenv if available
 if command -v rbenv >/dev/null; then
