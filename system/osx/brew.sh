@@ -28,6 +28,7 @@ brew install fzf
 brew install homebrew/dupes/screen
 brew install the_silver_searcher
 brew install tmux
+brew install tree
 brew install vim --override-system-vi
 brew install zsh
 
