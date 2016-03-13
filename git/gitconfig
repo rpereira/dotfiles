@@ -27,5 +27,5 @@
   default = current
 
 [user]
-  name = Rui Pereira
-  email = "(none)"
+  useConfigOnly = true
+  name = Rui Afonso Pereira
