@@ -25,3 +25,7 @@
 
 [push]
   default = current
+
+[user]
+  name = Rui Pereira
+  email = "(none)"
