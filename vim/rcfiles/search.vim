@@ -22,7 +22,7 @@ if executable('ag')
   " Use ag over grep.
   " Output the line and column number of each match, so that we can navigate
   " results by jumping to the precise position of each match.
-  set grepprg=ag\ --nogroup\ --nocolor\ --column
+  let &grepprg='ag --nogroup --nocolor --hidden --column'
   set grepformat=%f:%l:%c%m
 
   " Bind K to grep word under cursor
