@@ -1,7 +1,7 @@
 " ----------------------------------------------------------------------------
 " Airline
 " ----------------------------------------------------------------------------
-" Note: The airline theme is defined on the (main) vimrc file.
+" Note: The airline theme is defined on the `theme.vim` file.
 
 let g:airline_extensions = ['hunks', 'syntastic', 'tabline', 'whitespace']
 
