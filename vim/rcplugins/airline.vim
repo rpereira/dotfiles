@@ -3,7 +3,12 @@
 " ----------------------------------------------------------------------------
 " Note: The airline theme is defined on the `theme.vim` file.
 
-let g:airline_extensions = ['hunks', 'syntastic', 'tabline', 'whitespace']
+let g:airline_extensions = ['branch', 'hunks', 'tabline']
+
+" I'm defining these 2 here because if I define them on the array, the
+" statusline is rendered with some red spaces.
+let g:airline#extensions#syntastic#enabled  = 1
+let g:airline#extensions#whitespace#enabled = 1
 
 let g:airline_powerline_fonts = 1
 
