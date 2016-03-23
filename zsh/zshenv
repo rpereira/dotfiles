@@ -16,6 +16,7 @@ ZSH_CACHE_DIR="$ZSH/cache/"
 
 # Paths
 path=(
+  /usr/local/opt/coreutils/libexec/gnubin
   $DOTFILES/bin
   /usr/local/bin
   /usr/{sbin,bin}
@@ -28,8 +29,12 @@ cdpath=(
   $HOME
 )
 
+manpath=(
+  /usr/local/opt/coreutils/libexec/gnuman
+)
+
 # Ensure path arrays do not contain duplicates.
-typeset -gU path cdpath
+typeset -gU path cdpath manpath
 
 # Set Ag as the default source for fzf
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
