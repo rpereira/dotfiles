@@ -12,6 +12,9 @@ mkdir -p ${SOLARIZED:=$HOME/.solarized}
 git clone git@github.com:tomislav/osx-terminal.app-colors-solarized.git \
   $SOLARIZED/osx-terminal.app-colors-solarized
 
+git clone git@github.com:seebi/dircolors-solarized.git \
+  $SOLARIZED/dircolors-solarized
+
 # Install brew formulaes
 ./system/osx/brew.sh
 
