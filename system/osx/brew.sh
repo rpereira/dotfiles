@@ -21,11 +21,22 @@ brew update
 # Upgrade any already-installed formulae.
 brew upgrade --all
 
+fancy_echo "Updating GNU tools..."
+# Install GNU core utilities (those that come with OS X are outdated).
+brew install coreutils
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
+brew install findutils
+# Install GNU `sed`, overwriting the built-in `sed`.
+brew install gnu-sed --with-default-names
+# Install `wget` with IRI support.
+brew install wget --with-iri
+
 fancy_echo "Updating Unix tools..."
 brew install git
 brew install diff-so-fancy
 brew install fzf
 brew install homebrew/dupes/screen
+brew install less
 brew install reattach-to-user-namespace
 brew install the_silver_searcher
 brew install tmux
@@ -33,7 +44,7 @@ brew install tree
 brew install vim --override-system-vi
 brew install zsh
 
-fancy_echo "Installing ZSH plugins ..."
+fancy_echo "Installing ZSH plugins..."
 brew install zsh-syntax-highlighting
 
 fancy_echo "Updating programming languages..."
