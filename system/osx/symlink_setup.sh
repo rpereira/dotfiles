@@ -5,6 +5,8 @@ local DOTFILES=$HOME/.dotfiles
 # Symlink dotfiles to our home.
 ln -sf $HOME/code/dotfiles $DOTFILES/.dotfiles
 
+ln -sf $HOME/.solarized/dircolors-solarized/dircolors.256dark $HOME/.dircolors
+
 # zsh
 ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
 ln -sf $DOTFILES/zsh/zshenv $HOME/.zshenv
