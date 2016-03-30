@@ -3,7 +3,7 @@
 [[ -z "$TMUX" ]] && export TERM="xterm-256color"
 
 # Use vim as the visual editor
-export VISUAL=vim
+export VISUAL='mvim -v'
 export EDITOR=$VISUAL
 
 # Reduce to 0.1 secs the delay after hitting the <ESC> key.

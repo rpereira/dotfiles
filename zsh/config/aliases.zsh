@@ -11,7 +11,8 @@ fi
 # --------------------------------------------
 alias e="$EDITOR"
 alias v="$VISUAL"
-alias vi=vim
+alias vi="$VISUAL"
+alias vim="$VISUAL"
 
 # This actually happens a lot
 alias :q='exit'

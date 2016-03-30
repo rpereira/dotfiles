@@ -42,6 +42,7 @@ brew install the_silver_searcher
 brew install tmux
 brew install tree
 brew install vim --override-system-vi
+brew install --HEAD macvim-dev/macvim/macvim
 brew install zsh
 
 fancy_echo "Installing ZSH plugins..."
