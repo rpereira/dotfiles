@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+#
+# Check out a pull request from GitHub.
+#
+# Usage:
+#
+# $ git pr 8
+# From https://github.com/ruiafonsopereira/dotfiles
+#  * [new ref]       refs/pulls/8/head -> pr/8
+# Switched to branch 'pr/8'
+#
+# $ git pr https://github.com/ruiafonsopereira/dotfiles/pull/8
+# From https://github.com/ruiafonsopereira/dotfiles
+#  * [new ref]         refs/pull/8/head -> pr/8
+# Switched to branch 'pr/8'
+#
+# To use a remote other than origin, e.g. upstream if working in a fork, specify
+# it as the second parameter:
+# $ git pr 8 upstream
+# From https://github.com/ruiafonsopereira/dotfiles
+#  * [new ref]       refs/pulls/8/head -> pr/8
+#  Switched to branch 'pr/8'
+#
+# To remove all local pull request branches:
+# $ git pr clean
+# Deleted branch 'pr/8' (was 09578b4).
+
+if test "$1" = "clean"; then
+  git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref; do
+    git branch -D ${ref#refs/heads/}
+  done
+  exit 0
+elif [[ $1 =~ ^(https?://[^/]+/(.+))/pull/([0-9]+).*$ ]]; then
+  remote=${BASH_REMATCH[1]}.git
+  id=${BASH_REMATCH[3]}
+  branch=pr/$id
+else
+  test -z $1 && echo "missing PR number." 1>&2 && exit 1
+  remote=${2:-origin}
+  id=$1
+  branch=pr/$id
+fi
+git fetch -fu $remote refs/pull/$id/head:$branch && git checkout $branch
