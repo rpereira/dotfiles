@@ -10,6 +10,7 @@ ln -sf $HOME/.solarized/dircolors-solarized/dircolors.256dark $HOME/.dircolors
 # zsh
 ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
 ln -sf $DOTFILES/zsh/zshenv $HOME/.zshenv
+ln -sf $DOTFILES/zsh/zprofile $HOME/.zprofile
 
 # vim
 ln -sf $DOTFILES/vim/vimrc $HOME/.vimrc

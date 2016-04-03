@@ -15,6 +15,7 @@ ln -sf $HOME/repos/dotfiles $DOTFILES/.dotfiles
 # zsh
 ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
 ln -sf $DOTFILES/zsh/zshenv $HOME/.zshenv
+ln -sf $DOTFILES/zsh/zprofile $HOME/.zprofile
 
 # vim
 ln -sf $DOTFILES/vim/vimrc $HOME/.vimrc
