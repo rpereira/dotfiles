@@ -1,6 +1,9 @@
 #!/usr/bin/env ruby
 #
 # Open the GitHub page for the given gem.
+#
+# Usage:
+# $ gem-github <gem-name>
 
 require 'open-uri'
 
