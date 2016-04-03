@@ -14,32 +14,5 @@ SHELL="/usr/local/bin/zsh"
 ZSH="$HOME/.zsh"
 ZSH_CACHE_DIR="$ZSH/cache/"
 
-# Paths
-path=(
-  /usr/local/opt/coreutils/libexec/gnubin
-  $DOTFILES/bin
-  /usr/local/bin
-  /usr/{sbin,bin}
-  /{sbin,bin}
-)
-
-cdpath=(
-  $HOME/code
-  $HOME/Downloads
-  $HOME
-)
-
-manpath=(
-  /usr/local/opt/coreutils/libexec/gnuman
-)
-
-# Ensure path arrays do not contain duplicates.
-typeset -gU path cdpath manpath
-
 # Set Ag as the default source for fzf
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
-
-# load rbenv if available
-if command -v rbenv >/dev/null; then
-  eval "$(rbenv init - --no-rehash)"
-fi
