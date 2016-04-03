@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#
+# Hide the specified file by prefixing its name with a dot.
+#
+# Usage:
+# $ hide FILE [FILE]...
+
+set -e
+
+for f in "$@"
+do
+  mv -v "$f" $(dirname "$f")/.$(basename "$f")
+done
