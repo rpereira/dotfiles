@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+#
+# Open the GitHub page for the given gem.
+
+require 'open-uri'
+
+if ARGV.size != 1
+  begin
+    raise ArgumentError, 'Provide a gem name'
+  rescue ArgumentError => e
+    puts e.message
+    exit(2)
+  end
+end
+
+begin
+  gem = ARGV[0]
+  json = open("https://rubygems.org/api/v1/gems/#{gem}.json").read
+  uri = json[/[^"]+github.com[^"]+/]
+rescue OpenURI::HTTPError => e
+  puts "#{e.message}: Did not find homepage for #{gem}"
+  uri = "https://rubygems.org/gems/#{gem}"
+end
+
+exec "open #{uri}"
