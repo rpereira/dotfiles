@@ -1,0 +1,26 @@
+# Paths
+path=(
+  /usr/local/opt/coreutils/libexec/gnubin
+  $DOTFILES/bin
+  /usr/local/bin
+  /usr/{sbin,bin}
+  /{sbin,bin}
+)
+
+cdpath=(
+  $HOME
+  $HOME/code
+  $HOME/Downloads
+)
+
+manpath=(
+  /usr/local/opt/coreutils/libexec/gnuman
+)
+
+# Ensure path arrays do not contain duplicates.
+typeset -gU path cdpath manpath
+
+# load rbenv if available
+if command -v rbenv >/dev/null; then
+  eval "$(rbenv init - --no-rehash)"
+fi
