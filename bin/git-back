@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#
+# Undo commit and keep changes.
+# See for details: http://stackoverflow.com/a/6866485/1319249
+#
+# Usage:
+#   Undo the last commit:
+#   $ git back
+#
+#   Specify a number of commits to reset:
+#   $ git back 3
+
+if test $# -eq 0; then
+  git reset --soft HEAD~1
+else
+  if `echo $1 | grep -q [^[:digit:]]`; then
+    echo "$1 is not a number" 1>&2
+  else
+    git reset --soft HEAD~$1
+  fi
+fi
