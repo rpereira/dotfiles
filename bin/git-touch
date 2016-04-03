@@ -2,8 +2,14 @@
 #
 # Creates a new empty file and add its content to the index.
 
-filename="$*"
+print_usage() {
+  echo "git touch <filename> [ <filename> . . . ]" 1>&2
+  exit 1
+}
 
-test -z "$filename" && echo "filename required" 1>&2 && exit 1
+test $# -lt 1 && print_usage
 
-touch "$filename" && git add "$filename"
+for filename in $@; do
+  touch "$filename" \
+    && git add "$filename"
+done
