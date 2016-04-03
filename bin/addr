@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#
+# Show IPv4 address of localhost.
+#
+# Usage:
+# $ addr [<if>]
+
+ifconfig -a        |
+grep 'inet '       |
+grep broadcast     |
+awk '{ print $2 }'
