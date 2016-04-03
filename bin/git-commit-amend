@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 #
-# Amends a commit without changing its commit message.
+# Amend the tip of the current branch with the current date
 
-git commit --amend --no-edit
+git commit --amend -v --date="$(date +%Y-%m-%dT%H:%M:%S)"
