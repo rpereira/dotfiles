@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#
+# Output commit count. In order to see a detailed commit count pass `--all`.
+#
+# Usage:
+#   $ git count
+#
+#   $ git count --all
+
+if test "$1" = "--all"; then
+  git shortlog -n -s $@ | awk '{print substr($0,index($0,$2)) " (" $1 ")"}'
+  echo
+fi
+
+echo `git rev-list --count HEAD` commits
