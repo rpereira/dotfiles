@@ -1,15 +1,32 @@
 #!/usr/bin/env bash
 #
-# Output commit count. In order to see a detailed commit count pass `--all`.
+# Output commit count. In order to see a detailed commit count pass `-a` or
+# `--all`.
 #
 # Usage:
 #   $ git count
+#   401 commits
 #
 #   $ git count --all
+#   $ git count -a
+#   Rui Afonso Pereira (400)
+#   Bitdeli Chef (1)
+#   -----------------------
+#   401 commits
 
-if test "$1" = "--all"; then
-  git shortlog -n -s $@ | awk '{print substr($0,index($0,$2)) " (" $1 ")"}'
-  echo
-fi
+key=${1:---default}
+
+case $key in
+  -a|--all)
+    git shortlog -n -s $@ | awk '{print substr($0,index($0,$2)) " (" $1 ")"}'
+    echo '-----------------------'
+    ;;
+  --default)
+    ;;
+  *)
+    echo "count: invalid option $key"
+    exit 1
+    ;;
+esac
 
 echo `git rev-list --count HEAD` commits
