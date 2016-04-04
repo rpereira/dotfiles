@@ -13,12 +13,17 @@ cdpath=(
   $HOME/Downloads
 )
 
+fpath=(
+  /usr/local/share/zsh-completions
+  $fpath
+)
+
 manpath=(
   /usr/local/opt/coreutils/libexec/gnuman
 )
 
 # Ensure path arrays do not contain duplicates.
-typeset -gU path cdpath manpath
+typeset -gU path cdpath fpath manpath
 
 # load rbenv if available
 if command -v rbenv >/dev/null; then
