@@ -29,3 +29,5 @@ typeset -gU path cdpath fpath manpath
 if command -v rbenv >/dev/null; then
   eval "$(rbenv init - --no-rehash)"
 fi
+
+# vim: ft=zsh sw=2 ts=2 et
