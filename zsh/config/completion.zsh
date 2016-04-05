@@ -1,3 +1,6 @@
+# Load and initialize the completion system ignoring insecure directories.
+autoload -Uz compinit && compinit -i
+
 unsetopt FLOWCONTROL
 unsetopt MENU_COMPLETE
 
