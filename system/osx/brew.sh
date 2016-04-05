@@ -21,7 +21,7 @@ brew update
 # Upgrade any already-installed formulae.
 brew upgrade --all
 
-fancy_echo "Updating GNU tools..."
+fancy_echo "Installing GNU tools..."
 # Install GNU core utilities (those that come with OS X are outdated).
 brew install coreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
@@ -31,7 +31,7 @@ brew install gnu-sed --with-default-names
 # Install `wget` with IRI support.
 brew install wget --with-iri
 
-fancy_echo "Updating Unix tools..."
+fancy_echo "Installing Unix tools..."
 brew install git
 brew install diff-so-fancy
 brew install fzf
@@ -48,10 +48,13 @@ brew install zsh
 fancy_echo "Installing ZSH plugins..."
 brew install zsh-syntax-highlighting
 
-fancy_echo "Updating programming languages..."
+fancy_echo "Installing programming languages..."
 brew install node
 brew install rbenv
 brew install ruby-build
+
+fancy_echo "Installing other useful binaries..."
+brew install imagemagick --with-webp
 
 # Remove outdated versions from the cellar.
 brew cleanup
