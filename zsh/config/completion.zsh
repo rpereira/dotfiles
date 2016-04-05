@@ -12,6 +12,9 @@ zmodload -i zsh/complist
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
        'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
+# Use GNU ls color specification
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
 # Autocompletion with an arrow-key driven interface
 zstyle ':completion:*:*:*:*:*' menu select
 
