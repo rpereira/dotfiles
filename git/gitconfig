@@ -12,6 +12,7 @@
 
 [commit]
   template = ~/.dotfiles/git/gitmessage.txt
+  gpgsign = true
 
 [fetch]
   prune = true
@@ -29,3 +30,4 @@
 [user]
   useConfigOnly = true
   name = Rui Afonso Pereira
+  signingkey = 89CBF106
