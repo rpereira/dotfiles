@@ -11,6 +11,10 @@ brew update
 brew upgrade --all
 brew cleanup
 
+# TODO: improve this, since this submodule update only works if I'm inside the
+# $DOTFILES dir.
+git submodule foreach git pull origin master
+
 vim +PlugUpgrade +PlugUpdate +qall
 
 printf "\nFinished!\n"

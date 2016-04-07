@@ -13,6 +13,7 @@ DOTFILES="$HOME/.dotfiles"
 SHELL="/usr/local/bin/zsh"
 ZSH="$HOME/.zsh"
 ZSH_CACHE_DIR="$ZSH/cache/"
+ZSH_MODULES_DIR="$DOTFILES/zsh/modules"
 
 # Set Ag as the default source for fzf
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
