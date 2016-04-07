@@ -25,3 +25,7 @@ ln -sf $DOTFILES/git/gitconfig $HOME/.gitconfig
 
 # TheSilverSearcher ignore list
 ln -sf $DOTFILES/ag/agignore $HOME/.agignore
+
+# GnuPG
+ln -sf $DOTFILES/gnupg/gpg.conf $HOME/.gnupg/gpg.conf
+ln -sf $DOTFILES/gnupg/gpg-agent.conf $HOME/.gnupg/gpg-agent.conf
