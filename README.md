@@ -29,6 +29,13 @@ sh -c "$(curl -fsSL \
     [MacVim](https://github.com/macvim-dev/macvim) if you're on OS X
 * [Zsh](http://www.zsh.org/) as your shell
 
+
+## Updating
+
+Pull the latest changes and update modules.
+
+    git pull && git submodule update --init --recursive
+
 ## Local Settings
 This configuration can be extended or overriden to suit user-specific
 requirements. In order to accomplish that, just create and edit the following
