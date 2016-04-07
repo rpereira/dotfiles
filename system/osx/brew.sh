@@ -45,9 +45,6 @@ brew install vim --override-system-vi
 brew install --HEAD macvim-dev/macvim/macvim
 brew install zsh
 
-fancy_echo "Installing ZSH plugins..."
-brew install zsh-syntax-highlighting
-
 fancy_echo "Installing programming languages..."
 brew install node
 brew install rbenv
