@@ -11,11 +11,14 @@
   untracked = yellow
 
 [commit]
-  template = ~/.dotfiles/git/gitmessage.txt
   gpgsign = true
+  template = ~/.dotfiles/git/gitmessage.txt
 
 [fetch]
   prune = true
+
+[gpg]
+  program = gpg2
 
 [include]
   path = ~/.gitconfig.local
@@ -28,6 +31,6 @@
   default = current
 
 [user]
-  useConfigOnly = true
   name = Rui Afonso Pereira
   signingkey = 6C1EEE05
+  useConfigOnly = true

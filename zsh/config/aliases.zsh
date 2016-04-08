@@ -14,6 +14,8 @@ alias v="$VISUAL"
 alias vi="$VISUAL"
 alias vim="$VISUAL"
 
+alias gpg="gpg2"
+
 # This actually happens a lot
 alias :q='exit'
 
