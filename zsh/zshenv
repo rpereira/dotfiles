@@ -10,6 +10,7 @@ export EDITOR=$VISUAL
 export KEYTIMEOUT=1
 
 DOTFILES="$HOME/.dotfiles"
+GNUPGHOME="$DOTFILES/gnupg"
 SHELL="/usr/local/bin/zsh"
 ZSH="$HOME/.zsh"
 ZSH_CACHE_DIR="$ZSH/cache/"
