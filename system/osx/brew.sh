@@ -54,7 +54,7 @@ fancy_echo "Installing other useful binaries..."
 brew install imagemagick --with-webp
 
 fancy_echo "Installing OpenPG tools..."
-brew install gnupg gpg-agent pinentry-mac
+brew install gnupg2 gpg-agent pinentry-mac
 
 # Remove outdated versions from the cellar.
 brew cleanup
