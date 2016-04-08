@@ -34,11 +34,11 @@ fi
 # be an env variable pointing GPG to the gpg-agent socket. The following will
 # either start gpg-agent or set up the GPG_AGENT_INFO variable if it's already
 # running.
-if [[ -f ~/.gnupg/.gpg-agent-info ]] && [[ -n "$(pgrep gpg-agent)" ]]; then
-  source ~/.gnupg/.gpg-agent-info
+if [[ -f $GNUPGHOME/.gpg-agent-info ]] && [[ -n "$(pgrep gpg-agent)" ]]; then
+  source $GNUPGHOME/.gpg-agent-info
   export GPG_AGENT_INFO
 else
-  eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+  eval $(gpg-agent --daemon --write-env-file $GNUPGHOME/.gpg-agent-info)
 fi
 
 # vim: ft=zsh sw=2 ts=2 et
