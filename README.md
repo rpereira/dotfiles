@@ -19,7 +19,7 @@ sh -c "$(curl -fsSL \
   https://raw.githubusercontent.com/ruiafonsopereira/dotfiles/master/system/ubuntu/ubuntu.sh)"
 ```
 ### What is set up?
-* [Solarized Light](http://ethanschoonover.com/solarized) as the colorscheme for
+* [Solarized Dark](http://ethanschoonover.com/solarized) as the color scheme for
   terminal and Vim
 * [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) for
   finding things in files
