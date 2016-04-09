@@ -135,7 +135,7 @@ We should start by installing the following binaries:
 
     ➔ brew install gpg-agent pinentry-mac
 
-Now nativate to your `GPGHOMEDIR`, which is `$HOME/.gnupg` by default, and add
+Now navigate to your `GPGHOMEDIR`, which is `$HOME/.gnupg` by default, and add
 the following to your `gpg.conf` file:
 
 ```conf
