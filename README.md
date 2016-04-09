@@ -6,7 +6,7 @@ These are the base dotfiles I use when setting up a new environment. For private
 configuration I use `.local` files, as described in the [Local Settings
 section](https://github.com/ruiafonsopereira/dotfiles#local-settings).
 
-![image](https://cloud.githubusercontent.com/assets/3859158/11144772/2fabb750-89f7-11e5-9f25-7813f3af4b64.png)
+[Screenshot of my shell prompt using Solarized Dark Theme](http://i.imgur.com/tyXR3p3.png)
 
 ## Installation
 
