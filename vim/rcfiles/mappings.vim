@@ -40,4 +40,4 @@ vnoremap <Right> <NOP>
 "inoremap <Esc> <NOP>
 
 " Surround the word under the cursor in double quotes.
-:nnoremap <Leader>" viw<Esc>a"<Esc>hbi"<Esc>lel
+nnoremap <Leader>" viw<Esc>a"<Esc>hbi"<Esc>lel
