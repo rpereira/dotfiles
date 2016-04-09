@@ -51,7 +51,7 @@ included.
 
 ## Cheat sheet
 
-[The cheat sheet](./blob/master/docs/cheat-sheet.md) is intended as a reference
+[The cheat sheet](./docs/cheat-sheet.md) is intended as a reference
 to _some_ Vim and tmux commands.
 
 ## Acknowledgements
@@ -64,5 +64,5 @@ Inspiration and some code was taken from several sources, including:
 
 ## License
 
-These dotfiles are [MIT licensed](./blob/master/LICENSE). Documentation is
-[Creative Commons licensed](./blob/master/LICENSE-docs).
+These dotfiles are [MIT licensed](./LICENSE). Documentation is
+[Creative Commons licensed](./LICENSE-docs).
