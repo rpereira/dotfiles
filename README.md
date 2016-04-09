@@ -49,11 +49,12 @@ files:
 If it exists in your `$HOME`, each of these files will be automatically
 included.
 
-## Key bindings
+## Cheat sheet
 
-The set of key bindings that come as default with this package are specified in
-the [key
-bindings](https://github.com/ruiafonsopereira/dotfiles/blob/master/key_bindings.md) file.
+[The cheat sheet](cheatsheet) is intended as a reference to _some_ Vim and tmux
+commands.
+
+[sheetcheat]: (./blob/master/docs/cheat-sheet.md)
 
 ## Acknowledgements
 
@@ -65,5 +66,8 @@ Inspiration and some code was taken from several sources, including:
 
 ## License
 
-See the
-[LICENSE](https://github.com/ruiafonsopereira/dotfiles/blob/master/LICENSE.md) file for license rights and limitations (MIT).
+These dotfiles are [MIT licensed][MIT]. Documentation is [Creative Commons
+licensed][CC].
+
+[MIT]: (./blob/master/LICENSE)
+[CC]: (./blob/master/LICENSE-docs)
