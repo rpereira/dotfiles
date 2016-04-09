@@ -11,6 +11,10 @@ let mapleader = ','
 " Automatically reload files changed outside vim.
 set autoread
 
+" No more beeps, please!
+set visualbell
+set noerrorbells
+
 " Source all of the .vim files under the specified directory.
 function! s:SourceConfigFilesIn(directory)
   let dir_splat = '~/.dotfiles/vim/' . a:directory . '/*.vim'
