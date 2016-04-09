@@ -9,9 +9,6 @@ nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
 " Think of this command as 'Source my Vimrc file'.
 nnoremap <Leader>sv :source $MYVIMRC<CR>
 
-" Toggle auto-indenting for code paste.
-set pastetoggle=<F5>
-
 " ----------------------------------------------------------------------------
 " Learn Vim the hard way
 " ----------------------------------------------------------------------------
