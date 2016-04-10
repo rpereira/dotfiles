@@ -6,7 +6,6 @@ nnoremap th :tabfirst<CR>
 nnoremap tj :tabnext<CR>
 nnoremap tk :tabprevious<CR>
 nnoremap tl :tablast<CR>
-nnoremap tn :tabnext<CR>
 
 " Open tabpage after the last one
 nnoremap tn :$tabnew<CR>
@@ -25,9 +24,3 @@ nnoremap t7 7gt
 nnoremap t8 8gt
 nnoremap t9 9gt
 nnoremap t0 10gt
-
-" ----------------------------------------------------------------------------
-" Tab Actions
-" ----------------------------------------------------------------------------
-autocmd VimEnter * tab all
-"autocmd BufAdd * exe 'tablast | tabe "' . expand( "<afile") .'"'
