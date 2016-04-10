@@ -5,7 +5,7 @@
 set autoindent
 
 " Backspace deletes like most programs in insert mode
-set backspace=2
+set backspace=indent,eol,start
 
 " Tabs are spaces: shortcut for inserting 2 spaces
 set expandtab
