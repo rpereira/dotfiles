@@ -1,0 +1,4 @@
+set guifont=Monaco\ for\ Powerline:h14
+
+" Don't show right scrollbar
+set guioptions-=r

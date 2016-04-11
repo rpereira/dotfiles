@@ -14,6 +14,7 @@ ln -sf $DOTFILES/zsh/zprofile $HOME/.zprofile
 
 # vim
 ln -sf $DOTFILES/vim/vimrc $HOME/.vimrc
+ln -sf $DOTFILES/vim/gvimrc $HOME/.gvimrc
 ln -sf $DOTFILES/vim/ftplugin $HOME/.vim/ftplugin
 ln -sf $DOTFILES/vim/UltiSnips ~/.vim
 
@@ -25,7 +26,3 @@ ln -sf $DOTFILES/git/gitconfig $HOME/.gitconfig
 
 # TheSilverSearcher ignore list
 ln -sf $DOTFILES/ag/agignore $HOME/.agignore
-
-# GnuPG
-ln -sf $DOTFILES/gnupg/gpg.conf $HOME/.gnupg/gpg.conf
-ln -sf $DOTFILES/gnupg/gpg-agent.conf $HOME/.gnupg/gpg-agent.conf
