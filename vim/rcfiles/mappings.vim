@@ -41,3 +41,6 @@ vnoremap <Right> <NOP>
 
 " Surround the word under the cursor in double quotes.
 nnoremap <Leader>" viw<Esc>a"<Esc>hbi"<Esc>lel
+
+" Open the file explorer in a new tab
+map <C-t> :Texplore<CR>
