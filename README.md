@@ -25,8 +25,7 @@ sh -c "$(curl -fsSL \
   finding things in files
 * [Tmux](https://tmux.github.io/) for saving project state and switching between
   projects
-* [Vim](http://www.vim.org/) as your core editor on Ubuntu;
-    [MacVim](https://github.com/macvim-dev/macvim) if you're on OS X
+* [Vim](http://www.vim.org/) as your core editor
 * [Zsh](http://www.zsh.org/) as your shell
 
 
