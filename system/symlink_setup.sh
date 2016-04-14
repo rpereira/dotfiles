@@ -26,6 +26,7 @@ ln -sf $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
 
 # git
 ln -sf $DOTFILES/git/gitconfig $HOME/.gitconfig
+ln -sf $DOTFILES/git/gitignore_global $HOME/.gitignore_global
 
 # Gnome Colors Solarized
 cd $SOLARIZED/gnome-terminal-colors-solarized || exit
