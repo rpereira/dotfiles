@@ -23,6 +23,7 @@ ln -sf $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
 
 # git
 ln -sf $DOTFILES/git/gitconfig $HOME/.gitconfig
+ln -sf $DOTFILES/git/gitignore_global $HOME/.gitignore_global
 
 # TheSilverSearcher ignore list
 ln -sf $DOTFILES/ag/agignore $HOME/.agignore

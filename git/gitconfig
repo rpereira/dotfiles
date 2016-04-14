@@ -5,6 +5,7 @@
 
 [core]
   autocrlf = input
+  excludesfile = ~/.gitignore_global
 
 [color "status"]
   added = cyan
