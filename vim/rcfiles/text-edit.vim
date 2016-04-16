@@ -1,5 +1,6 @@
 " Fast saving
-nmap <leader>w :w!<CR>
+map  ,, :w<CR>
+imap ,, <C-o>:w<CR>
 
 " Fast saving & exiting
 nmap <leader>x :x<CR>
