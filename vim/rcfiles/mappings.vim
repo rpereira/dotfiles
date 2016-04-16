@@ -43,4 +43,4 @@ vnoremap <Right> <NOP>
 nnoremap <Leader>" viw<Esc>a"<Esc>hbi"<Esc>lel
 
 " Open the file explorer in a new tab
-map <C-t> :Texplore<CR>
+map <leader>T :Texplore<CR>
