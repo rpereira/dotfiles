@@ -42,3 +42,6 @@ sudo chmod +x /bin/diff-highlight
 
 # TheSilverSearcher ignore list
 ln -sf $DOTFILES/ag/agignore $HOME/.agignore
+
+# ctags
+ln -sf $DOTFILES/ctags/ctags $HOME/.ctags

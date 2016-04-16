@@ -33,6 +33,7 @@ brew install wget --with-iri
 
 fancy_echo "Installing Unix tools..."
 brew install git
+brew install ctags
 brew install diff-so-fancy
 brew install fzf
 brew install homebrew/dupes/screen

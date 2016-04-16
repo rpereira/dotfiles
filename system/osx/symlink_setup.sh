@@ -27,3 +27,6 @@ ln -sf $DOTFILES/git/gitignore_global $HOME/.gitignore_global
 
 # TheSilverSearcher ignore list
 ln -sf $DOTFILES/ag/agignore $HOME/.agignore
+
+# ctags
+ln -sf $DOTFILES/ctags/ctags $HOME/.ctags
