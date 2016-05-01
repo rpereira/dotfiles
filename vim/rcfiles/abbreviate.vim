@@ -2,6 +2,9 @@
 iab Ydate <C-R>=strftime("%d-%b-%Y")<CR>
 " Example: 16-Apr-2016
 
+iab Ytoday <C-R>=strftime("%a %b %e")<CR>
+" Example: Fri Apr 29
+
 iab Ytime <C-R>=strftime("%H:%M")<CR>
 " Example: 22:21
 
