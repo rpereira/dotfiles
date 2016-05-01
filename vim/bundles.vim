@@ -49,6 +49,7 @@ Plug 'vim-ruby/vim-ruby',        { 'for': 'ruby' }
 "------------------------------------------------
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 
 " Local bundles
 if filereadable(expand("~/.vimrc_bundles.local"))
