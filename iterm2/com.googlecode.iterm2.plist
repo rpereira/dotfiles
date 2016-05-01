@@ -337,8 +337,10 @@
 	<string>703 37 445 77 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>215 406 606 456 0 0 1440 877 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>410 382 620 392 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>131 261 650 552 0 0 1440 877 </string>
+	<string>0 4 650 552 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>183 68 650 551 0 0 1440 900 </string>
 	<key>New Bookmarks</key>
@@ -1069,10 +1071,14 @@
 	<integer>1</integer>
 	<key>NoSyncHaveShownPromoWithId_4</key>
 	<true/>
+	<key>NoSyncInstallationId</key>
+	<string>926E9619-DC51-4FED-9A9F-BA1F6EC349EF</string>
 	<key>NoSyncLastTipTime</key>
 	<real>483054365.34209299</real>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
 	<true/>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>483054213.95947999</real>
 	<key>NoSyncTimeOfLastPromo</key>
@@ -1132,6 +1138,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/ruipereira/code/dotfiles/iterm2</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -1145,11 +1153,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing3.xml</string>
+	<string>https://iterm2.com/appcasts/testing3.xml?shard=32</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-04-23T21:11:37Z</date>
+	<date>2016-04-27T22:56:08Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1197,6 +1205,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20160313</string>
+	<string>2.9.20160426</string>
 </dict>
 </plist>
