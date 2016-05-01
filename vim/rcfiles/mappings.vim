@@ -9,6 +9,25 @@ nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
 " Think of this command as 'Source my Vimrc file'.
 nnoremap <Leader>sv :source $MYVIMRC<CR>
 
+" Surround the word under the cursor in double quotes.
+nnoremap <Leader>" viw<Esc>a"<Esc>hbi"<Esc>lel
+
+" Open the file explorer in a new tab
+map <leader>T :Texplore<CR>
+
+" Supper toggling powers.
+" Example: When I hit `0` for the first time, I want it be be like `^`. If I hit
+" it again, I want it to finish its travels and go to the first column.
+function! ToggleMovement(firstOp, thenOp)
+  let pos = getpos('.')
+  execute "normal! " . a:firstOp
+  if pos == getpos('.')
+    execute "normal! " . a:thenOp
+  endif
+endfunction
+
+nnoremap <silent> 0 :call ToggleMovement('^', '0')<CR>
+
 " ----------------------------------------------------------------------------
 " Learn Vim the hard way
 " ----------------------------------------------------------------------------
@@ -38,9 +57,3 @@ vnoremap <Right> <NOP>
 
 " Disable <Esc> key in insert mode. Use <jk> mapping to exit insert mode.
 "inoremap <Esc> <NOP>
-
-" Surround the word under the cursor in double quotes.
-nnoremap <Leader>" viw<Esc>a"<Esc>hbi"<Esc>lel
-
-" Open the file explorer in a new tab
-map <leader>T :Texplore<CR>
