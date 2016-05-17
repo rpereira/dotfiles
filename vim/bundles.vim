@@ -37,8 +37,8 @@ Plug 'tpope/vim-surround'
 " Languages
 "------------------------------------------------
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
-Plug 'pangloss/vim-javascript',  { 'for': 'javascript', 'branch': 'develop' }
 Plug 'mxw/vim-jsx',              { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript',  { 'for': 'javascript', 'branch': 'develop' }
 Plug 'plasticboy/vim-markdown',  { 'for': 'markdown' }
 Plug 'rust-lang/rust.vim',       { 'for': 'rust' }
 Plug 'tpope/vim-haml',           { 'for': 'haml' }
