@@ -47,6 +47,7 @@ brew install zsh
 
 fancy_echo "Installing programming languages..."
 brew install node
+brew install nodenv
 brew install rbenv
 brew install ruby-build
 brew install rust
