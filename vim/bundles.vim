@@ -40,6 +40,7 @@ Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'pangloss/vim-javascript',  { 'for': 'javascript', 'branch': 'develop' }
 Plug 'mxw/vim-jsx',              { 'for': 'javascript' }
 Plug 'plasticboy/vim-markdown',  { 'for': 'markdown' }
+Plug 'rust-lang/rust.vim',       { 'for': 'rust' }
 Plug 'tpope/vim-haml',           { 'for': 'haml' }
 Plug 'tpope/vim-rails',          { 'for': ['ruby', 'haml'] }
 Plug 'vim-ruby/vim-ruby',        { 'for': 'ruby' }
