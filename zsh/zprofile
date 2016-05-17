@@ -30,6 +30,11 @@ if command -v rbenv >/dev/null; then
   eval "$(rbenv init - --no-rehash)"
 fi
 
+# load nodenv if available
+if command -v nodenv >/dev/null; then
+  eval "$(nodenv init -)"
+fi
+
 # In order for gpg to find gpg-agent, gpg-agent must be running, and there must
 # be an env variable pointing GPG to the gpg-agent socket. The following will
 # either start gpg-agent or set up the GPG_AGENT_INFO variable if it's already
