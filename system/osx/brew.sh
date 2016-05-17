@@ -49,6 +49,7 @@ fancy_echo "Installing programming languages..."
 brew install node
 brew install rbenv
 brew install ruby-build
+brew install rust
 
 fancy_echo "Installing other useful binaries..."
 brew install imagemagick --with-webp
