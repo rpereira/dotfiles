@@ -68,10 +68,17 @@ defaults write com.apple.dock wvous-bl-corner -int 5
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
 ###############################################################################
+# Photos                                                                      #
+###############################################################################
+
+# Prevent Photos from opening automatically when devices are plugged in
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
-for app in "Dock" "Finder"; do
+for app in "Dock" "Finder" "Photos"; do
   killall "${app}" &> /dev/null
 done
 
