@@ -250,7 +250,7 @@
 	<key>DimOnlyText</key>
 	<false/>
 	<key>DisableFullscreenTransparency</key>
-	<false/>
+	<true/>
 	<key>EnableRendezvous</key>
 	<false/>
 	<key>FocusFollowsMouse</key>
@@ -1035,6 +1035,8 @@
 			<array/>
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
+			<key>Thin Strokes</key>
+			<integer>1</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Triggers</key>
@@ -1157,7 +1159,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-04-27T22:56:08Z</date>
+	<date>2016-05-28T07:10:40Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1205,6 +1207,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20160426</string>
+	<string>2.9.20160523</string>
 </dict>
 </plist>
