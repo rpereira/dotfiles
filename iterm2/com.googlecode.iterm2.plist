@@ -338,7 +338,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>215 406 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 382 620 392 0 0 1440 900 </string>
+	<string>2090 319 620 392 1440 -180 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 4 650 552 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -1162,6 +1162,8 @@
 	<date>2016-06-02T15:18:04Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
+	<key>Secure Input</key>
+	<true/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
