@@ -1,6 +1,3 @@
-" ----------------------------------------------------------------------------
-" Mappings
-" ----------------------------------------------------------------------------
 " Open ~/.vimrc file in a vertical split.
 " Think of this command as 'Edit my Vimrc file'.
 nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
@@ -9,11 +6,45 @@ nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
 " Think of this command as 'Source my Vimrc file'.
 nnoremap <Leader>sv :source $MYVIMRC<CR>
 
-" Surround the word under the cursor in double quotes.
-nnoremap <Leader>" viw<Esc>a"<Esc>hbi"<Esc>lel
+" ----------------------------------------------------------------------------
+" Basic Mappings
+" ----------------------------------------------------------------------------
+
+" Save
+nnoremap ,, :w<CR>
+inoremap ,, <C-O>:w<CR>
+
+" Save & Quit
+nnoremap <leader>x :x<CR>
+
+" Quit
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>Q :qa!<CR>
 
 " Open the file explorer in a new tab
 map <leader>T :Texplore<CR>
+
+" ----------------------------------------------------------------------------
+" Editing
+" ----------------------------------------------------------------------------
+
+" Smart-insert semicolon
+inoremap <leader>; <C-o>A;<Esc>:w<CR>
+nnoremap <leader>; A;<Esc>:w<CR>
+
+" Surround the word under the cursor in double quotes.
+noremap <Leader>" viw<Esc>a"<Esc>hbi"<Esc>lel
+
+" Make Y consistent with other capitals (e.g. C and D)
+nnoremap Y y$
+
+" Moving lines
+xnoremap < <gv
+xnoremap > >gv
+
+" ----------------------------------------------------------------------------
+" Movement
+" ----------------------------------------------------------------------------
 
 " Supper toggling powers.
 " Example: When I hit `0` for the first time, I want it be be like `^`. If I hit
