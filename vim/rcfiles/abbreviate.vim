@@ -1,3 +1,6 @@
+" Shebang
+inoreabbrev <expr> #!! "#!/usr/bin/env" . (empty(&filetype) ? '' : ' '.&filetype)
+
 " Inserting Dates and Times
 iab Ydate <C-R>=strftime("%d-%b-%Y")<CR>
 " Example: 16-Apr-2016
