@@ -19,7 +19,7 @@ Plug 'scrooloose/syntastic'
 Plug 'sirver/ultisnips', { 'on': [] }
 augroup ulti_snips_lazy_load_on_file_type
   autocmd!
-  autocmd FileType javascript call plug#load('ultisnips')
+  autocmd FileType javascript,java call plug#load('ultisnips')
         \| call UltiSnips#FileTypeChanged()
         \| autocmd! ulti_snips_lazy_load_on_file_type
 augroup END

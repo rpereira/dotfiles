@@ -1,0 +1,39 @@
+# Modifiers
+snippet pr "private"
+private $0
+endsnippet
+
+snippet po "protected"
+protected $0
+endsnippet
+
+snippet pu "public"
+public $0
+endsnippet
+
+snippet re "return"
+return $0
+endsnippet
+
+snippet st "static"
+static $0
+endsnippet
+
+# Miscellaneous
+snippet md "Method With javadoc"
+/**
+ * $0
+ */
+endsnippet
+
+snippet pl "println"
+System.out.println($1);$0
+endsnippet
+
+# jUnit
+snippet t "test"
+@Test
+public void test$1() {
+  $0
+}
+endsnippet
