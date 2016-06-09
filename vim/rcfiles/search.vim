@@ -22,8 +22,6 @@ if executable('ag')
   " Use ag over grep.
   " Output the line and column number of each match, so that we can navigate
   " results by jumping to the precise position of each match.
-  " Bind K to grep word under cursor
-  nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
   set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column
   set grepformat=%f:%l:%c:%m,%f:%l:%m
 
@@ -33,3 +31,6 @@ if executable('ag')
   " Bind \ (backward slash) to grep shortcut
   nnoremap \ :Ag<Space>
 endif
+
+" Bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
