@@ -7,6 +7,9 @@ set autoindent
 " Backspace deletes like most programs in insert mode
 set backspace=indent,eol,start
 
+" A <Tab> in front of a line inserts blanks according to 'shiftwidth'
+set smarttab
+
 " Tabs are spaces: shortcut for inserting 2 spaces
 set expandtab
 

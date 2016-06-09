@@ -11,6 +11,9 @@ let mapleader = ','
 " Automatically reload files changed outside vim.
 set autoread
 
+" Delete comment character when joining commented lines
+set formatoptions+=j
+
 " No more beeps, please!
 set visualbell
 set noerrorbells
