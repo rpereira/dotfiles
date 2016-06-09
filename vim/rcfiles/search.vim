@@ -3,7 +3,7 @@
 " ----------------------------------------------------------------------------
 " Vim only remembers the last 20 commands and search patterns entered. Let's
 " boost this up.
-set history=50
+set history=1000
 
 " Highlight matches
 set hlsearch
