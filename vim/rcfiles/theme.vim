@@ -4,9 +4,9 @@
 " Enable syntax highlighting
 syntax on
 
-" Solarized Light (http://ethanschoonover.com/solarized)
+" Solarized Dark (based on http://ethanschoonover.com/solarized)
 set background=dark
-colorscheme solarized
+colorscheme flattened_dark
 let g:airline_theme='solarized'
 
 " NOTE: If for some reason the colors inside Vim are rendered all messed up, try
