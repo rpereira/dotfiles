@@ -22,11 +22,10 @@ if executable('ag')
   " Use ag over grep.
   " Output the line and column number of each match, so that we can navigate
   " results by jumping to the precise position of each match.
-  let &grepprg='ag --nogroup --nocolor --hidden --column'
-  set grepformat=%f:%l:%c%m
-
   " Bind K to grep word under cursor
   nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+  set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
 
   " Set Ag to search for the provided text and open a 'quickfix' window
   command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
