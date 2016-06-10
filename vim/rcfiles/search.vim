@@ -24,13 +24,13 @@ if executable('ag')
   " results by jumping to the precise position of each match.
   set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column
   set grepformat=%f:%l:%c:%m,%f:%l:%m
-
-  " Set Ag to search for the provided text and open a 'quickfix' window
-  command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-
-  " Bind \ (backward slash) to grep shortcut
-  nnoremap \ :Ag<Space>
 endif
 
+" Search for the provided text and open a 'quickfix' window
+command! -nargs=+ -bar Grep execute 'silent! grep! <q-args>' | redraw! | copen
+
+" Bind \ (backward slash) to grep shortcut
+nnoremap \ :Grep<Space>
+
 " Bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:copen<CR>
