@@ -8,15 +8,19 @@ set nocompatible
 " Change Leader to a comma because the backslash is too far away
 let mapleader = ','
 
+" Automatically save before commands like :next and :make.
+set autowrite
+
 " Automatically reload files changed outside vim.
 set autoread
 
-" Delete comment character when joining commented lines
+" Delete comment character when joining commented lines.
 set formatoptions+=j
 
-" No more beeps, please!
-set visualbell
+" Disable audible and visual bells.
 set noerrorbells
+set novisualbell
+set t_vb=
 
 " Source all of the .vim files under the specified directory.
 function! s:SourceConfigFilesIn(directory)
