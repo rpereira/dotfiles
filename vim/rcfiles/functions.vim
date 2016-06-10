@@ -1,4 +1,32 @@
 " ----------------------------------------------------------------------------
+" :Todo | Grep the specified pattern and open the results on a quickfix window
+" and prevents the output from being displayed on the shell.
+" ----------------------------------------------------------------------------
+function! g:Grep(pattern) abort
+  let entries = []
+  let cmd = 'ag ' . a:pattern . ' 2> /dev/null'
+  let lines = split(system(cmd), '\n')
+
+  if v:shell_error != 0
+    continue
+  endif
+
+  for line in lines
+    let [fname, lnum, text] = matchlist(line, '^\([^:]*\):\([^:]*\):\(.*\)')[1:3]
+    call add(entries, { 'filename': fname, 'lnum': lnum, 'text': text })
+  endfor
+
+  if !empty(entries)
+    call setqflist(entries)
+    copen
+  endif
+endfunction
+
+" TODO: I might not need the previous function at all. Using something like
+" `command! Todo Ag TODO` could be enough.
+command! Todo call g:Grep('TODO\|FIXME\|XXX')
+
+" ----------------------------------------------------------------------------
 " <Leader>?/! | Google it / Feeling lucky
 " ----------------------------------------------------------------------------
 function! s:GoogleIt(pat, feelingLucky)
