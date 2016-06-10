@@ -54,6 +54,7 @@ brew install rust
 
 fancy_echo "Installing other useful binaries..."
 brew install imagemagick --with-webp
+brew install dos2unix
 
 fancy_echo "Installing OpenPG tools..."
 brew install gnupg2 gpg-agent pinentry-mac
