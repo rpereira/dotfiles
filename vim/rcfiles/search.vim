@@ -34,3 +34,5 @@ nnoremap \ :Grep<Space>
 
 " Bind K to grep word under cursor
 nnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:copen<CR>
+
+nnoremap ,I :Ilist<Space>
