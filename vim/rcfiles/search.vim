@@ -12,7 +12,7 @@ set hlsearch
 set incsearch
 
 " Turn off search highlight
-map <silent> <Leader>qs <Esc> :nohlsearch<CR>
+nnoremap <silent> <Leader>qs <Esc> :nohlsearch<CR>
 
 " Look for files under current directory
 map <C-p> :FZF<CR>
