@@ -2,7 +2,7 @@
 augroup file_type_check
   autocmd!
   autocmd BufNewFile,BufRead *named.conf* set ft=named
-  autocmd BufNewFile,BufRead *.txt,INSTALL,NEWS,README,TODO
+  autocmd BufNewFile,BufRead *.txt,INSTALL,LICENSE,NEWS,README,TODO
         \ if &ft == ""  |
         \   set ft=text |
         \ endif
