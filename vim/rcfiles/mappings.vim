@@ -67,7 +67,7 @@ vnoremap <Right> <NOP>
 " Save my left hand. Using <jk> to return to normal mode is greate because these
 " keys are under two of my strongest fingers and I don't have to perform a
 " chord.
-"inoremap jk <Esc>
+inoremap jk <Esc>
 
 " Disable <Esc> key in insert mode. Use <jk> mapping to exit insert mode.
-"inoremap <Esc> <NOP>
+inoremap <Esc> <NOP>
