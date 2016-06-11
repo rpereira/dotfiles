@@ -16,6 +16,12 @@ nnoremap <Leader>Q :qa!<CR>
 " Open the file explorer in a new tab
 nnoremap <leader>T :Texplore<CR>
 
+" Useful for 'getting around'
+nnoremap <leader>e :edit **/*
+nnoremap <leader>f :find *
+nnoremap <leader>s :split **/*
+nnoremap <leader>v :vsplit **/*
+
 " ----------------------------------------------------------------------------
 " Editing
 " ----------------------------------------------------------------------------
