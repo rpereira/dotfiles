@@ -78,6 +78,12 @@ alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias png='ping www.google.pt'
 
 # --------------------------------------------
+# Just for fun
+# --------------------------------------------
+alias weather='curl wttr.in/Porto'
+alias moon='curl wttr.in/Moon'
+
+# --------------------------------------------
 # Custom
 # --------------------------------------------
 [ -f ~/.aliases.local ] && source ~/.aliases.local
