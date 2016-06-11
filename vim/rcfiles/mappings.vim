@@ -22,7 +22,7 @@ nnoremap <Leader>q :q<CR>
 nnoremap <Leader>Q :qa!<CR>
 
 " Open the file explorer in a new tab
-map <leader>T :Texplore<CR>
+nnoremap <leader>T :Texplore<CR>
 
 " ----------------------------------------------------------------------------
 " Editing

@@ -15,7 +15,7 @@ set incsearch
 nnoremap <silent> <Leader>qs <Esc> :nohlsearch<CR>
 
 " Look for files under current directory
-map <C-p> :FZF<CR>
+nnoremap <C-p> :FZF<CR>
 
 " Use the Silver Searcher
 if executable('ag')
