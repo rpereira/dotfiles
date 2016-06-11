@@ -1,11 +1,3 @@
-" Open ~/.vimrc file in a vertical split.
-" Think of this command as 'Edit my Vimrc file'.
-nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
-
-" Source the ~/.vimrc file so that changes take effect.
-" Think of this command as 'Source my Vimrc file'.
-nnoremap <Leader>sv :source $MYVIMRC<CR>
-
 " ----------------------------------------------------------------------------
 " Basic Mappings
 " ----------------------------------------------------------------------------
