@@ -10,6 +10,7 @@ path=(
 cdpath=(
   $HOME
   $HOME/code
+  $HOME/code/work
   $HOME/Downloads
 )
 
