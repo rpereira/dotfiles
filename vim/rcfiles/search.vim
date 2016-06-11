@@ -14,9 +14,6 @@ set incsearch
 " Turn off search highlight
 nnoremap <silent> <Leader>qs <Esc> :nohlsearch<CR>
 
-" Look for files under current directory
-nnoremap <C-p> :FZF<CR>
-
 " Use the Silver Searcher
 if executable('ag')
   " Use ag over grep.
