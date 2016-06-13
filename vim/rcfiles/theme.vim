@@ -1,8 +1,6 @@
 " ----------------------------------------------------------------------------
 " Theme & Colors
 " ----------------------------------------------------------------------------
-" Enable syntax highlighting
-syntax on
 
 " Solarized Dark (based on http://ethanschoonover.com/solarized)
 set background=dark

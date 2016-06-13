@@ -5,6 +5,11 @@
 " Change Leader to a comma because the backslash is too far away
 let mapleader = ','
 
+" Enabling filetype support provides filetype-specific indenting, syntax
+" highlighting, omni-completion and other useful settings.
+filetype plugin indent on
+syntax on
+
 " Automatically save before commands like :next and :make.
 set autowrite
 
