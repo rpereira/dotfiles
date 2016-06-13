@@ -32,7 +32,8 @@ nnoremap <F7> mzgg=G`z
 nnoremap <Leader>l :set list!<CR>
 
 " Display extra whitespace.
-set list listchars=tab:»·,trail:·,nbsp:·
+set list
+set listchars=tab:»·,trail:·,nbsp:·
 
 " Ident like most editors do.
 " Note: In insert mode, you can just use Ctrl-t and Ctrl-d to indent/dedent.
