@@ -22,6 +22,9 @@
 [gpg]
   program = gpg2
 
+[help]
+  autocorrect = 1
+
 [include]
   path = ~/.gitconfig.local
 
