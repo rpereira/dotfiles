@@ -11,6 +11,15 @@ set hlsearch
 " Search as characters are entered
 set incsearch
 
+" When using a ':substitute' command, all matches in a line are substituted
+" instead of one.
+set gdefault
+
+" Ignore the case of normal letters. 'smartcase' is set to ignore case when the
+" pattern contains lowercase letters only.
+set ignorecase
+set smartcase
+
 " Turn off search highlight
 nnoremap <silent> <Leader>qs <Esc> :nohlsearch<CR>
 
