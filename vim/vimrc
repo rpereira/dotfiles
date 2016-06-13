@@ -1,9 +1,6 @@
 " ============================================================================
 " General Configuration
 " ============================================================================
-" Use Vim settings. Better safe than sorry.
-" This must be first, because it changes other options as a side effect.
-set nocompatible
 
 " Change Leader to a comma because the backslash is too far away
 let mapleader = ','
