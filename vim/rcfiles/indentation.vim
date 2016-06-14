@@ -28,9 +28,6 @@ set tabstop=2
 " Fix code indentation
 nnoremap <F7> mzgg=G`z
 
-" Shortcut to rapidly toggle `set list`
-nnoremap <Leader>l :set list!<CR>
-
 " Display extra whitespace.
 set list
 set listchars=tab:»·,trail:·,nbsp:·
