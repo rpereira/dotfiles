@@ -1,3 +1,5 @@
+packadd! matchit
+
 call plug#begin('~/.vim/bundle')
 
 "------------------------------------------------
