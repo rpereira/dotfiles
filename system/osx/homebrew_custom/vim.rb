@@ -1,38 +1,20 @@
 class Vim < Formula
   desc "Vi \"workalike\" with many additional features"
   homepage "http://www.vim.org/"
-  # *** Vim should be updated no more than once every 7 days ***
-  url "https://github.com/vim/vim/archive/v7.4.1795.tar.gz"
-  sha256 "609c04c0fd9365c636de2a7183343a99d152fbaaceb399f2de6176c80c59aed3"
   head "https://github.com/vim/vim.git"
 
   bottle :disable, "To use the user's Python."
 
-  # We only have special support for finding depends_on :python, but not yet for
   # :ruby, :perl etc., so we use the standard environment that leaves the
   # PATH as the user has set it right now.
   env :std
-
-  option "override-system-vi", "Override system vi"
-  option "disable-nls", "Build vim without National Language Support (translated messages, keymaps)"
-  option "with-client-server", "Enable client/server mode"
-
-  LANGUAGES_OPTIONAL = %w[lua mzscheme python3 tcl]
-  LANGUAGES_DEFAULT  = %w[perl python ruby]
-
-  option "with-python3", "Build vim with python3 instead of python[2] support"
-  LANGUAGES_OPTIONAL.each do |language|
-    option "with-#{language}", "Build vim with #{language} support"
-  end
-  LANGUAGES_DEFAULT.each do |language|
-    option "without-#{language}", "Build vim without #{language} support"
-  end
 
   depends_on :python => :recommended
   depends_on :python3 => :optional
   depends_on "lua" => :optional
   depends_on "luajit" => :optional
-  depends_on :x11 if build.with? "client-server"
+
+  LANGUAGES_DEFAULT  = %w[perl python ruby]
 
   conflicts_with "ex-vi",
     :because => "vim and ex-vi both install bin/ex and bin/view"
@@ -50,8 +32,7 @@ class Vim < Formula
     end
 
     opts = []
-
-    (LANGUAGES_OPTIONAL + LANGUAGES_DEFAULT).each do |language|
+    LANGUAGES_DEFAULT.each do |language|
       opts << "--enable-#{language}interp" if build.with? language
     end
 
@@ -65,34 +46,25 @@ class Vim < Formula
     opts << "--disable-nls" if build.include? "disable-nls"
     opts << "--enable-gui=no"
 
-    if build.with? "client-server"
-      opts << "--with-x"
-    else
-      opts << "--without-x"
-    end
-
     if build.with? "luajit"
       opts << "--with-luajit"
       opts << "--enable-luainterp"
     end
 
-    # XXX: Please do not submit a pull request that hardcodes the path
-    # to ruby: vim can be compiled against 1.8.x or 1.9.3-p385 and up.
-    # If you have problems with vim because of ruby, ensure a compatible
-    # version is first in your PATH when building vim.
-
     # We specify HOMEBREW_PREFIX as the prefix to make vim look in the
     # the right place (HOMEBREW_PREFIX/share/vim/{vimrc,vimfiles}) for
     # system vimscript files. We specify the normal installation prefix
     # when calling "make install".
-    system "./configure", "--prefix=#{HOMEBREW_PREFIX}",
-                          "--mandir=#{man}",
-                          "--enable-multibyte",
-                          "--with-tlib=ncurses",
-                          "--enable-cscope",
-                          "--enable-termtruecolor",
-                          "--with-compiledby=Homebrew",
-                          *opts
+    system "./configure",
+      "--prefix=#{HOMEBREW_PREFIX}",
+      "--mandir=#{man}",
+      "--enable-multibyte",
+      "--enable-cscope",
+      "--enable-termtruecolor",
+      "--with-tlib=ncurses",
+      "--with-compiledby=Rui Afonso Pereira <ruiafonsopereira@gmail.com>",
+      "--without-x",
+      *opts
     system "make"
     # If stripping the binaries is enabled, vim will segfault with
     # statically-linked interpreters like ruby
