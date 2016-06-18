@@ -22,7 +22,7 @@ brew update
 brew upgrade --all
 
 fancy_echo "Installing GNU tools..."
-# Install GNU core utilities (those that come with OS X are outdated).
+# Install GNU core utilities (those that come with macOS are outdated).
 brew install coreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
