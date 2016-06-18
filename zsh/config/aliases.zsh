@@ -52,7 +52,7 @@ alias devlog='tail -f log/development.log'
 # --------------------------------------------
 # System specific
 # --------------------------------------------
-# OSX
+# macOS
 if [[ $platform == 'darwin' ]]; then
   # Lock the screen
   alias afk='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
