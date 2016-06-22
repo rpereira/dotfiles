@@ -42,7 +42,7 @@ brew install reattach-to-user-namespace
 brew install the_silver_searcher
 brew install tmux
 brew install tree
-brew install vim --override-system-vi
+brew install vim --HEAD --without-nls --with-override-system-vi
 brew install zsh
 
 fancy_echo "Installing programming languages..."
