@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+#
+# Show unpushed work.
+#
+# Usage:
+#   List unpushed commits:
+#     git unpushed
+#
+#   Show unpushed changes:
+#     git unpushed -d
+
+usage() {
+  cat <<- EOF
+usage: git unpushed [<options>]
+
+  Show unpushed work
+
+If no options are given, unpushed commit logs are shown.
+
+  -d, --diff        View the changes made relative to HEAD
+EOF
+}
+
+main() {
+  if [[ $# -gt 1 ]]; then
+    usage
+    exit 1
+  fi
+
+  current_branch="$(git current-branch)"
+
+  if [[ "$1" == '-h' ]]; then
+    usage
+
+  elif [[ "$1" == '-d' || "$1" == '--diff' ]]; then
+    git diff origin/"$current_branch"..HEAD
+
+  elif [[ $# -eq 0 ]]; then
+    git log --stat origin/"$current_branch"..HEAD
+
+  else
+    echo "fatal: unrecognized argument: $1. See 'git help unpushed'."
+    exit 1
+  fi
+}
+
+main "$@"
