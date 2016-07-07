@@ -31,6 +31,7 @@ Plug 'rust-lang/rust.vim',       { 'for': 'rust' }
 Plug 'tpope/vim-haml',           { 'for': 'haml' }
 Plug 'tpope/vim-rails',          { 'for': ['ruby', 'haml'] }
 Plug 'vim-ruby/vim-ruby',        { 'for': 'ruby' }
+Plug 'flowtype/vim-flow'
 
 "------------------------------------------------
 " Motion
