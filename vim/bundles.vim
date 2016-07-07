@@ -1,5 +1,7 @@
 packadd! matchit
 
+set rtp+=/usr/local/opt/fzf
+
 call plug#begin('~/.vim/bundle')
 
 "------------------------------------------------

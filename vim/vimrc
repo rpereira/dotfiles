@@ -24,6 +24,8 @@ set noerrorbells
 set novisualbell
 set t_vb=
 
+set path=.,**
+
 " Source all of the .vim files under the specified directory.
 function! s:SourceConfigFilesIn(directory)
   let dir_splat = '~/.dotfiles/vim/' . a:directory . '/*.vim'
