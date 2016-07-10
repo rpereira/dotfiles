@@ -8,6 +8,11 @@ defaults write com.apple.screensaver askForPassword -int 1
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
+# ==============================================
+# Calendar (iCal)
+# ==============================================
+# Days per week: 7
+defaults write com.apple.iCal "n days of week" -int 7
 
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
@@ -20,10 +25,14 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+# Start week on: Monday
+defaults write com.apple.iCal "first day of week" -int 1
 
 ###############################################################################
 # Dock and hot corners                                                        #
 ###############################################################################
+# Show week numbers
+defaults write com.apple.iCal "Show Week Numbers" -bool true
 
 # Enable highlight hover effect for the grid view of a stack (Dock)
 defaults write com.apple.dock mouse-over-hilite-stack -bool true
