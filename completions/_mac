@@ -1,0 +1,25 @@
+#compdef mac
+
+_mac() {
+  local -a commands
+  commands=(
+    'check-internet:test network connectivity'
+    'close-all-apps:close all opened apps except Finder, iTerm, and Dropbox'
+    'empty-trash:empty trash'
+    'free-port:kill process running on the specified port'
+    'info:show macOS version information'
+    'ip:show local and public IP addresses'
+    'lock:lock screen and launch screen saver'
+    'ports:list all used ports'
+    'update:update system'
+    'wifi-history:list previously used Wi-Fi networks'
+  )
+
+  if (( CURRENT == 2 )); then
+    _describe -t commands 'commands' commands
+  fi
+
+  return 0
+}
+
+_mac "$@"

@@ -1,11 +1,3 @@
-" Open ~/.vimrc file in a vertical split.
-" Think of this command as 'Edit my Vimrc file'.
-nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
-
-" Source the ~/.vimrc file so that changes take effect.
-" Think of this command as 'Source my Vimrc file'.
-nnoremap <Leader>sv :source $MYVIMRC<CR>
-
 " ----------------------------------------------------------------------------
 " Basic Mappings
 " ----------------------------------------------------------------------------
@@ -22,7 +14,15 @@ nnoremap <Leader>q :q<CR>
 nnoremap <Leader>Q :qa!<CR>
 
 " Open the file explorer in a new tab
-map <leader>T :Texplore<CR>
+nnoremap <leader>T :Texplore<CR>
+
+" Useful for 'getting around'.
+nnoremap <leader>e :edit **/*
+nnoremap <leader>f :find *
+nnoremap <leader>s :split **/*
+nnoremap <leader>v :vsplit **/*
+
+nnoremap <C-p> :FZF<CR>
 
 " ----------------------------------------------------------------------------
 " Editing
@@ -67,7 +67,7 @@ vnoremap <Right> <NOP>
 " Save my left hand. Using <jk> to return to normal mode is greate because these
 " keys are under two of my strongest fingers and I don't have to perform a
 " chord.
-"inoremap jk <Esc>
+inoremap jk <Esc>
 
 " Disable <Esc> key in insert mode. Use <jk> mapping to exit insert mode.
-"inoremap <Esc> <NOP>
+inoremap <Esc> <NOP>

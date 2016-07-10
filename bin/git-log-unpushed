@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-#
-# Check unpushed Git commits.
-# Usage: git log-unpushed
-#
-# See: http://stackoverflow.com/questions/2016901/viewing-unpushed-git-commits
-
-git log @{upstream}..

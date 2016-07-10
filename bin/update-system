@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 #
 # Updates:
-#   - OS X
+#   - macOS
 #   - Homebrew as well all of the installed formulas
 #   - Vim plugin manager and all of its plugins
 #   - Solarized repositories
