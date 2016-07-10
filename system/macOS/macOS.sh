@@ -16,10 +16,10 @@ git clone git@github.com:seebi/dircolors-solarized.git \
   $SOLARIZED/dircolors-solarized
 
 # Install brew formulaes
-./system/osx/brew.sh
+./system/macOS/brew.sh
 
 # symlink it up!
-#./system/osx/symlink_setup.sh
+#./system/macOS/symlink_setup.sh
 
 # Install vim plugin manager
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -29,4 +29,4 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 vim +PlugInstall +qall
 
 # Set user preferences
-./system/osx/defaults.sh
+./system/macOS/defaults.sh

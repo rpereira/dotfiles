@@ -3,6 +3,9 @@
   gsb = gss --branch
   verbs = !git log --pretty=format:'%s' | cut -d \" \" -f 1 | sort | uniq -c | sort -nr | head -15
 
+[branch]
+  autosetuprebase = always
+
 [core]
   autocrlf = input
   excludesfile = ~/.gitignore_global
@@ -21,6 +24,9 @@
 
 [gpg]
   program = gpg2
+
+[help]
+  autocorrect = 1
 
 [include]
   path = ~/.gitconfig.local

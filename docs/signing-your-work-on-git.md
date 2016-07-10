@@ -6,7 +6,7 @@ Let's start by installing the GNU Privacy Guard, which is a complete and free
 implementation of the OpenPGP standard as defined by [RFC4880][1] (also known as
 PGP).
 
-On OS X, you can grab it using Homebrew:
+On macOS, you can grab it using Homebrew:
 
     brew install gpg2
 
@@ -118,14 +118,14 @@ git commits.
     ➔ git config --global user.signingkey <YOUR-SIGNING-KEY-PUB-ID>
     ➔ git config --global commit.gpgsign true
 
-Furthermore, since we are using the `gpg2` binary on OS X, we should also tell
+Furthermore, since we are using the `gpg2` binary on macOS, we should also tell
 this to Git:
 
     ➔ git config --global gpg.program gpg2
 
 Finally, from now on every commit will be _automatically_ signed.
 
-### Automatic commit signing on OS X
+### Automatic commit signing on macOS
 
 Well, I lied. Your commits won't be automatically signed. You still need to
 insert your GPG key's passphrase every time you commit something. It sounds like
@@ -153,8 +153,8 @@ While inside the same directory, let's configure our `gpg-agent.conf`:
 # Enables GPG to find gpg-agent
 use-standard-socket
 
-# Connects gpg-agent to the OSX keychain via the brew-installed pinentry program
-# from GPGtools. This is the OSX magic, allowing the gpg key's passphrase to be
+# Connects gpg-agent to the macOS keychain via the brew-installed pinentry program
+# from GPGtools. This is the macOS magic, allowing the gpg key's passphrase to be
 # stored in the login keychain, enabling automatic key signing.
 pinentry-program /usr/local/bin/pinentry-mac
 ```

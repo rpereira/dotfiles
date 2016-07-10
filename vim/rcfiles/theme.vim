@@ -1,15 +1,13 @@
 " ----------------------------------------------------------------------------
 " Theme & Colors
 " ----------------------------------------------------------------------------
-" Enable syntax highlighting
-syntax on
 
-" Solarized Dark (based on http://ethanschoonover.com/solarized)
-set background=dark
+" 24-bit colors
+set t_8f=[38;2;%lu;%lu;%lum
+set t_8b=[48;2;%lu;%lu;%lum
+set termguicolors
+
+" Solarized Dark (based on http;//ethanschoonover.com/solarized)
+" No need to `set background=dark` since the colorscheme does it for me.
 colorscheme flattened_dark
 let g:airline_theme='solarized'
-
-" NOTE: If for some reason the colors inside Vim are rendered all messed up, try
-" either `let g:solarized_termcolors=16` or `set t_Co=16`, even though `16` is
-" the value set by default. Because I have loaded the solarized color palette
-" into my terminal.

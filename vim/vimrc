@@ -1,12 +1,14 @@
 " ============================================================================
 " General Configuration
 " ============================================================================
-" Use Vim settings. Better safe than sorry.
-" This must be first, because it changes other options as a side effect.
-set nocompatible
 
 " Change Leader to a comma because the backslash is too far away
 let mapleader = ','
+
+" Enabling filetype support provides filetype-specific indenting, syntax
+" highlighting, omni-completion and other useful settings.
+filetype plugin indent on
+syntax on
 
 " Automatically save before commands like :next and :make.
 set autowrite
@@ -21,6 +23,8 @@ set formatoptions+=j
 set noerrorbells
 set novisualbell
 set t_vb=
+
+set path=.,**
 
 " Source all of the .vim files under the specified directory.
 function! s:SourceConfigFilesIn(directory)
