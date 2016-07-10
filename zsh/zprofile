@@ -16,11 +16,13 @@ cdpath=(
 
 fpath=(
   /usr/local/share/zsh-completions
+  $DOTFILES/completions
   $fpath
 )
 
 manpath=(
   /usr/local/opt/coreutils/libexec/gnuman
+  $DOTFILES/man/man1
 )
 
 # Ensure path arrays do not contain duplicates.

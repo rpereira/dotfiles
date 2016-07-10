@@ -1,0 +1,135 @@
+#!/usr/bin/env bash
+#
+# CLI to perform macOS common tasks.
+
+usage() {
+  cat <<- EOF
+Usage: mac [OPTIONS]
+
+  Easily perform macOS common tasks.
+
+Available mac commands:
+
+* Apps:
+  close-all-apps    Close all opened apps except Finder, iTerm, and Dropbox
+
+* System:
+  info              Show macOS version information
+  lock              Lock screen and launch screen saver
+  empty-trash       Empty trash
+  update            Install macOS software updates, Homebrew and installed formulas,
+                    Vim and its plugins, Solarized repositories, and dotfiles submodules
+* TCP/IP:
+  free-port         Kill process running on the specified port
+  ports             List all used ports
+
+* WI-FI:
+  check-internet    Test network connectivity
+  ip                Show local and public IP addresses
+  wifi-history      List Previously Used Wi-Fi Networks
+EOF
+}
+
+#-------------------------------------
+# Apps
+#-------------------------------------
+close_all_apps() {
+  whitelist="grep\|iTerm\|Finder\|Dropbox"
+  ps aux             |
+  grep /Applications |
+  grep -v $whitelist |
+  sed "s/\ *\ /\ /g" |
+  cut -d ' ' -f 2    |
+  xargs -I X kill -9 X
+}
+
+#-------------------------------------
+# System
+#-------------------------------------
+empty_trash() {
+  rm -rf ~/.Trash/*
+}
+
+launch_screen_saver() {
+  open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app
+}
+
+#-------------------------------------
+# TCP/IP
+#-------------------------------------
+free_port() {
+  kill "$(lsof -t -i:$2)" 2> /dev/null
+}
+
+list_used_ports() {
+  lsof -iTCP -sTCP:LISTEN -P
+}
+
+#-------------------------------------
+# WI-FI
+#-------------------------------------
+show_ip_address() {
+  local local_ip_addr="$(ipconfig getifaddr en0)"
+  local external_ip_addr="$(dig +short myip.opendns.com @resolver1.opendns.com)"
+
+  printf "Local IP Address:    %s\n" "$local_ip_addr"
+  printf "External IP Address: %s\n" "$external_ip_addr"
+}
+
+show_wifi_history() {
+  defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.preferences |
+  grep LastConnected -A 7 |
+  less
+}
+
+test_network_connectivity() {
+  ping -o google.com
+}
+
+#-------------------------------------
+# Main
+#-------------------------------------
+main() {
+  case $1 in
+    help )
+      usage
+      exit
+      ;;
+
+    #-------------------------------------
+    # Apps
+    #-------------------------------------
+    close-all-apps ) close_all_apps ;;
+
+    #-------------------------------------
+    # System
+    #-------------------------------------
+    empty-trash ) empty_trash ;;
+    info        ) sw_vers ;;
+    lock        ) launch_screen_saver ;;
+    update      ) update-system ;;
+
+    #-------------------------------------
+    # TCP/IP
+    #-------------------------------------
+    free-port  ) free_port "$@" ;;
+    ports      ) list_used_ports ;;
+
+    #-------------------------------------
+    # WI-FI
+    #-------------------------------------
+    check-internet ) test_network_connectivity ;;
+    ip             ) show_ip_address ;;
+    wifi-history   ) show_wifi_history ;;
+
+    #-------------------------------------
+    # Unknown
+    #-------------------------------------
+    * )
+      echo "mac: '$1' is not a mac command. See 'mac help'."
+      exit 1
+      ;;
+  esac
+}
+
+main "$@"
