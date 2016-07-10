@@ -1,9 +1,0 @@
-#!/bin/sh
-
-main() {
-  # Set default font for Terminal app
-  gconftool-2 --set /apps/gnome-terminal/profiles/Default/font --type string \
-    "Monaco for Powerline 13"
-}
-
-main

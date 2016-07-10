@@ -68,4 +68,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # Install vim plugins
 vim +PlugInstall +qall
 
+# Set user preferences
+./system/ubuntu/defaults.sh
+
 echo "\n*** Finished setting up your system! Logout and login again."
