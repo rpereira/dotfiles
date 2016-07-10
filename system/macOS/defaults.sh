@@ -63,6 +63,14 @@ defaults write com.apple.dock autohide -bool true
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 # ==============================================
+# General
+# ==============================================
+# Set the timezone.
+# see `sudo systemsetup -listtimezones` for other values
+# `sudo systemsetup -gettimezone` for current value
+sudo systemsetup -settimezone "Europe/Lisbon" > /dev/null
+
+# ==============================================
 # Hot corners
 # ==============================================
 # Possible values:
