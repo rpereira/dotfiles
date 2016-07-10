@@ -106,6 +106,15 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 defaults write com.apple.screensaver askForPassword -int 1
 
 # ==============================================
+# Screen
+# ==============================================
+# Save screenshots to the desktop
+defaults write com.apple.screencapture location -string "${HOME}/Desktop"
+
+# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
+defaults write com.apple.screencapture type -string "png"
+
+# ==============================================
 # Trackpad
 # ==============================================
 # Enable tap to click for this user and for the login screen
