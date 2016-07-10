@@ -1,39 +1,20 @@
 #!/usr/bin/env bash
 
-###############################################################################
-# Physical Access                                                             #
-###############################################################################
-defaults write com.apple.screensaver askForPassword -int 1
-
-###############################################################################
-# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
-###############################################################################
 # ==============================================
 # Calendar (iCal)
 # ==============================================
 # Days per week: 7
 defaults write com.apple.iCal "n days of week" -int 7
 
-# Trackpad: enable tap to click for this user and for the login screen
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-
-###############################################################################
-# Finder                                                                      #
-###############################################################################
-
-# Avoid creating .DS_Store files on network volumes
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # Start week on: Monday
 defaults write com.apple.iCal "first day of week" -int 1
 
-###############################################################################
-# Dock and hot corners                                                        #
-###############################################################################
 # Show week numbers
 defaults write com.apple.iCal "Show Week Numbers" -bool true
 
+# ==============================================
+# Dock
+# ==============================================
 # Enable highlight hover effect for the grid view of a stack (Dock)
 defaults write com.apple.dock mouse-over-hilite-stack -bool true
 
@@ -59,7 +40,15 @@ defaults write com.apple.dock launchanim -bool false
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
+# ==============================================
+# Finder
+# ==============================================
+# Avoid creating .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# ==============================================
 # Hot corners
+# ==============================================
 # Possible values:
 #  0: no-op
 #  2: Mission Control
@@ -81,17 +70,28 @@ defaults write com.apple.dock wvous-tr-modifier -int 0
 defaults write com.apple.dock wvous-bl-corner -int 5
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
-###############################################################################
-# Photos                                                                      #
-###############################################################################
-
+# ==============================================
+# Photos
+# ==============================================
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
-###############################################################################
-# Kill affected applications                                                  #
-###############################################################################
+# ==============================================
+# Physical Access
+# ==============================================
+defaults write com.apple.screensaver askForPassword -int 1
 
+# ==============================================
+# Trackpad
+# ==============================================
+# Enable tap to click for this user and for the login screen
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+# ==============================================
+# Kill affected applications
+# ==============================================
 for app in "Dock" "Finder" "Photos"; do
   killall "${app}" &> /dev/null
 done
