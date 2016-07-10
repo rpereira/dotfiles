@@ -1,4 +1,4 @@
-% mac(1) Version 0.1 | "Y====="
+% mac(1) Version 0.1
 % Rui Afonso Pereira <ruiafonsopereira@gmail.com>
 % 07/Jul/2016
 
