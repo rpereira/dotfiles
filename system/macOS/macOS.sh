@@ -21,6 +21,11 @@ git clone git@github.com:seebi/dircolors-solarized.git \
 # symlink it up!
 #./system/macOS/symlink_setup.sh
 
+# Compile ZSH-related files for faster autoloading
+zcompile $HOME/.zshrc
+zcompile $HOME/.zshenv
+zcompile $HOME/.zprofile
+
 # Install vim plugin manager
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
