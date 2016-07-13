@@ -27,14 +27,13 @@ sh -c "$(curl -fsSL \
 * [Zsh](http://www.zsh.org/) as your shell
 
 
-## Updating
+## Getting Updates
+In order to update this repository just pull the latest changes.
 
-Pull the latest changes and update modules.
-
-    git pull && git submodule update --init --recursive
+    git pull
 
 ## Local Settings
-This configuration can be extended or overriden to suit user-specific
+This configuration can be extended or overridden to suit user-specific
 requirements. In order to accomplish that, just create and edit the following
 files:
 * `~/.aliases.local`
