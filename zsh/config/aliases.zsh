@@ -60,6 +60,9 @@ if [[ $platform == 'darwin' ]]; then
   # Copy the contents of the id_rsa.pub file to the clipboard.
   alias sshkey='pbcopy < ~/.ssh/id_rsa.pub | echo "=> SSH key was copied to the clipboard."'
 
+  # Open current directory in finder.
+  alias f='open -a Finder ./'
+
 # Linux with GNOME
 elif [[ $platform == 'linux' ]]; then
   # Lock the screen
