@@ -14,8 +14,5 @@ unset file
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 [[ -f ~/.travis/travis.sh ]] && source ~/.travis/travis.sh
 
-# Load *external* ZSH modules from the $DOTFILES/zsh/modules directory
-# TODO: think of a better way to do this. Ideally, I could do something like
-# what prezto does.
-source $ZSH_MODULES_DIR/history-substring-search/zsh-history-substring-search.zsh
-source $ZSH_MODULES_DIR/syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
