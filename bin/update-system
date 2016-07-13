@@ -1,11 +1,10 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 #
 # Updates:
 #   - macOS
 #   - Homebrew as well all of the installed formulas
 #   - Vim plugin manager and all of its plugins
 #   - Solarized repositories
-#   - Dotfiles submodules
 
 # Initialize colors
 GREEN="$(tput setaf 2)"
@@ -22,13 +21,6 @@ printf "\n${BLUE}%s${NORMAL}\n" "Updating Homebrew formulas..."
 brew update
 brew upgrade --all
 brew cleanup
-
-printf "\n${BLUE}%s${NORMAL}\n" "Updating dotfiles submodules..."
-
-# TODO: improve this, since this submodule update only works if I'm inside the
-# $DOTFILES dir.
-cd "$DOTFILES"
-git submodule foreach git pull origin master
 
 printf "\n${BLUE}%s${NORMAL}\n" "Updating Solarized repos..."
 
