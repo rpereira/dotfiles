@@ -55,9 +55,13 @@ brew install rbenv
 brew install ruby-build
 brew install rust
 
+fancy_echo "Installing databases..."
+brew install postgres
+
 fancy_echo "Installing other useful binaries..."
-brew install imagemagick --with-webp
 brew install dos2unix
+brew install imagemagick --with-webp
+brew install pandoc
 
 fancy_echo "Installing OpenPG tools..."
 brew install gnupg2 gpg-agent pinentry-mac
