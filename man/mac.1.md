@@ -36,14 +36,6 @@ update
 : Install macOS software updates, Homebrew and installed formulas, Vim and its
 plugins, Solarized repositories, and dotfiles submodules
 
-## TCP/IP
-
-free-port
-: Kill process running on the specified port
-
-ports
-: List all used ports
-
 ## WI-FI
 
 check-internet
