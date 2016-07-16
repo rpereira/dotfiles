@@ -49,6 +49,7 @@ brew install zsh-history-substring-search
 brew install zsh-syntax-highlighting
 
 fancy_echo "Installing programming languages..."
+brew install elixir
 brew install node
 brew install nodenv
 brew install rbenv
