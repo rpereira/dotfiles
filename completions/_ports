@@ -1,0 +1,17 @@
+#compdef ports
+
+_ports() {
+  local -a commands
+  commands=(
+    'free:kill process running on the specified port'
+    'ls:list all ports in use'
+  )
+
+  if (( CURRENT == 2 )); then
+    _describe -t commands 'commands' commands
+  fi
+
+  return 0
+}
+
+_ports "$@"

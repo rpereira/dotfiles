@@ -19,9 +19,6 @@ Available mac commands:
   empty-trash       Empty trash
   update            Install macOS software updates, Homebrew and installed formulas,
                     Vim and its plugins, Solarized repositories, and dotfiles submodules
-* TCP/IP:
-  free-port         Kill process running on the specified port
-  ports             List all used ports
 
 * WI-FI:
   check-internet    Test network connectivity
@@ -52,17 +49,6 @@ empty_trash() {
 
 launch_screen_saver() {
   open /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app
-}
-
-#-------------------------------------
-# TCP/IP
-#-------------------------------------
-free_port() {
-  kill "$(lsof -t -i:$2)" 2> /dev/null
-}
-
-list_used_ports() {
-  lsof -iTCP -sTCP:LISTEN -P
 }
 
 #-------------------------------------
@@ -108,12 +94,6 @@ main() {
     info        ) sw_vers ;;
     lock        ) launch_screen_saver ;;
     update      ) update-system ;;
-
-    #-------------------------------------
-    # TCP/IP
-    #-------------------------------------
-    free-port  ) free_port "$@" ;;
-    ports      ) list_used_ports ;;
 
     #-------------------------------------
     # WI-FI
