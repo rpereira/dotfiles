@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+#
+# Manage ports in use.
+
+usage() {
+  cat <<- EOF
+Usage: ports <option> [<args>]
+
+    Manage ports in use.
+
+Available commands:
+    free        Kill process running on the specified port
+    ls          List all ports in use
+EOF
+}
+
+free_port() {
+  kill "$(lsof -t -i:$2)" 2> /dev/null
+}
+
+list_used_ports() {
+  lsof -iTCP -sTCP:LISTEN -P
+}
+
+main() {
+  case $1 in
+    help )
+      usage
+      exit
+      ;;
+
+    free )
+      free_port "$@"
+      ;;
+
+    ls )
+      list_used_ports
+      ;;
+
+    * )
+      echo "ports: '$1' is not a ports command. See 'ports help'."
+      exit 1
+      ;;
+  esac
+}
+
+main "$@"
