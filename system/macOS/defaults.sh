@@ -70,6 +70,9 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # `sudo systemsetup -gettimezone` for current value
 sudo systemsetup -settimezone "Europe/Lisbon" > /dev/null
 
+# Enable Dark mode
+defaults write /Library/Preferences/.GlobalPreferences AppleInterfaceTheme Dark
+
 # ==============================================
 # Hot corners
 # ==============================================
