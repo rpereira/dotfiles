@@ -37,7 +37,7 @@ brew install ctags
 brew install diff-so-fancy
 brew install fzf
 brew install homebrew/dupes/screen
-brew install less
+brew install homebrew/dupes/less
 brew install reattach-to-user-namespace
 brew install the_silver_searcher
 brew install tmux
