@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-local DOTFILES=$HOME/.dotfiles
+DOTFILES=$HOME/.dotfiles
 
 # Symlink dotfiles to our home.
-ln -sf $HOME/code/dotfiles $DOTFILES/.dotfiles
+ln -sf $HOME/code/dotfiles $DOTFILES
 
 ln -sf $HOME/.solarized/dircolors-solarized/dircolors.256dark $HOME/.dircolors
 
@@ -16,7 +16,7 @@ ln -sf $DOTFILES/zsh/zprofile $HOME/.zprofile
 ln -sf $DOTFILES/vim/vimrc $HOME/.vimrc
 ln -sf $DOTFILES/vim/gvimrc $HOME/.gvimrc
 ln -sf $DOTFILES/vim/ftplugin $HOME/.vim/after/ftplugin
-ln -sf $DOTFILES/vim/UltiSnips ~/.vim
+ln -sf $DOTFILES/vim/UltiSnips $HOME/.vim/UltiSnips
 
 # tmux
 ln -sf $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf

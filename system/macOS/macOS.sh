@@ -14,7 +14,7 @@ git clone git@github.com:seebi/dircolors-solarized.git \
 ./system/macOS/brew.sh
 
 # symlink it up!
-#./system/macOS/symlink_setup.sh
+./system/macOS/symlink_setup.sh
 
 # Compile ZSH-related files for faster autoloading
 zcompile $HOME/.zshrc
