@@ -23,16 +23,27 @@ Plug 'tpope/vim-rhubarb'
 "------------------------------------------------
 " Languages
 "------------------------------------------------
+" CoffeeScript
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+
+" Elixir
+Plug 'elixir-lang/vim-elixir',   { 'for': 'elixir' }
+
+" JavaScript
+Plug 'flowtype/vim-flow'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript',  { 'branch': 'develop' }
+
+" Markdown
 Plug 'plasticboy/vim-markdown',  { 'for': 'markdown' }
-Plug 'rust-lang/rust.vim',       { 'for': 'rust' }
+
+" Ruby
 Plug 'tpope/vim-haml',           { 'for': 'haml' }
 Plug 'tpope/vim-rails',          { 'for': ['ruby', 'haml'] }
 Plug 'vim-ruby/vim-ruby',        { 'for': 'ruby' }
-Plug 'flowtype/vim-flow'
-Plug 'elixir-lang/vim-elixir'
+
+" Rust
+Plug 'rust-lang/rust.vim',       { 'for': 'rust' }
 
 "------------------------------------------------
 " Motion
