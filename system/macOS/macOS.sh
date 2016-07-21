@@ -21,6 +21,9 @@ zcompile $HOME/.zshrc
 zcompile $HOME/.zshenv
 zcompile $HOME/.zprofile
 
+# Make ZSH the default shell
+chsh -s $(which zsh)
+
 # Install vim plugin manager
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
