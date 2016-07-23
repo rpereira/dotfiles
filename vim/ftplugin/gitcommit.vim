@@ -2,4 +2,4 @@
 setlocal spell
 
 " Automatically wrap text
-" setlocal textwidth=72
+setlocal textwidth=72
