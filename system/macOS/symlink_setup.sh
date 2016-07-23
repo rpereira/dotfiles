@@ -15,7 +15,7 @@ ln -sf $DOTFILES/zsh/zprofile $HOME/.zprofile
 # vim
 ln -sf $DOTFILES/vim/vimrc $HOME/.vimrc
 ln -sf $DOTFILES/vim/gvimrc $HOME/.gvimrc
-ln -sf $DOTFILES/vim/ftplugin $HOME/.vim/after/ftplugin
+ln -sf $DOTFILES/vim/ftplugin $HOME/.vim/after
 ln -sf $DOTFILES/vim/UltiSnips $HOME/.vim/UltiSnips
 
 # tmux
