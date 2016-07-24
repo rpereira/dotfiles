@@ -15,7 +15,7 @@ EOF
 }
 
 free_port() {
-  kill "$(lsof -t -i:$2)" 2> /dev/null
+  kill "$(lsof -t -i:"$2")" 2> /dev/null
 }
 
 list_used_ports() {
