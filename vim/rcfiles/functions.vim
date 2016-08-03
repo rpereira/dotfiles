@@ -56,3 +56,24 @@ function! ToggleMovement(firstOp, thenOp)
 endfunction
 
 nnoremap <silent> 0 :call ToggleMovement('^', '0')<CR>
+
+" ----------------------------------------------------------------------------
+" <Leader>b | Fuzzy find buffer name from the buffer list and select it
+" ----------------------------------------------------------------------------
+function! s:buflist()
+  redir => ls
+  silent ls
+  redir END
+  return split(ls, '\n')
+endfunction
+
+function! s:bufopen(e)
+  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
+endfunction
+
+nnoremap <silent> <Leader>b :call fzf#run({
+\   'source':  reverse(<sid>buflist()),
+\   'sink':    function('<sid>bufopen'),
+\   'options': '+m',
+\   'down':    len(<sid>buflist()) + 2
+\ })<CR>
