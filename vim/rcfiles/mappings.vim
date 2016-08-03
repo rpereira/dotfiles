@@ -42,6 +42,9 @@ nnoremap Y y$
 xnoremap < <gv
 xnoremap > >gv
 
+" Use Q for formatting instead of Ex mode
+map Q gq
+
 " ----------------------------------------------------------------------------
 " Learn Vim the hard way
 " ----------------------------------------------------------------------------
