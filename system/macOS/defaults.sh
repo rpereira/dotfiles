@@ -65,6 +65,10 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # ==============================================
 # General
 # ==============================================
+
+# Set computer name (as done via System Preferences → Sharing)
+sudo scutil --set ComputerName "fringe"
+
 # Set the timezone.
 # see `sudo systemsetup -listtimezones` for other values
 # `sudo systemsetup -gettimezone` for current value
