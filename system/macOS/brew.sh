@@ -51,6 +51,7 @@ brew install zsh-syntax-highlighting
 fancy_echo "Installing programming languages..."
 brew install elixir
 brew install node
+brew install haskell-stack
 brew install nodenv
 brew install rbenv
 brew install ruby-build
