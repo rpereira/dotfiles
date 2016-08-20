@@ -17,6 +17,9 @@ brew cask install firefox
 info "Installing Google Chrome"
 brew cask install google-chrome
 
+info "Installing Haskell Platform"
+brew cask install haskell-platform
+
 info "Installing iTerm2"
 brew cask install iterm2
 

@@ -28,11 +28,6 @@ manpath=(
 # Ensure path arrays do not contain duplicates.
 typeset -gU path cdpath fpath manpath
 
-# load the Haskell Tool Stack if available
-if command -v stack >/dev/null; then
-  eval "$(stack --bash-completion-script stack)"
-fi
-
 # load rbenv if available
 if command -v rbenv >/dev/null; then
   eval "$(rbenv init - --no-rehash)"
