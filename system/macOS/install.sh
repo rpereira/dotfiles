@@ -53,7 +53,7 @@ source "$DIR/symlink_setup.sh"
 make -f "$DOTFILES_DIR/man/Makefile"
 
 # Compile ZSH-related files for faster autoloading
-declare -a ZFILES=('zshrc' 'zshenv' 'zprofile')
+declare -a ZFILES=(zshrc zshenv zprofile)
 for zfile in "${ZFILES[@]}"; do
   zcompile "$HOME/.$zfile"
 done
@@ -71,6 +71,21 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 # Install vim plugins
 vim +PlugInstall +qall
+
+# Install atom plugins
+declare -a ATOM_PLUGINS=(
+  file-icons
+  highlight-selected
+  language-elixir
+  linter
+  linter-elixirc
+  linter-eslint
+  motepair
+  react
+)
+for plugin in "${ATOM_PLUGINS[@]}"; do
+  apm install "$plugin"
+done
 
 # Set user preferences
 # shellcheck disable=SC1090
