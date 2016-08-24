@@ -4,6 +4,9 @@
       "one-dark-ui"
       "solarized-dark-syntax"
     ]
+  editor:
+    fontFamily: "Monaco"
+    fontSize: 15
   "exception-reporting":
     userId: "1dd85e3b-ba87-9779-645f-85f161541155"
   welcome:
