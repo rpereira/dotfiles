@@ -1,0 +1,10 @@
+"*":
+  core:
+    themes: [
+      "one-dark-ui"
+      "solarized-dark-syntax"
+    ]
+  "exception-reporting":
+    userId: "1dd85e3b-ba87-9779-645f-85f161541155"
+  welcome:
+    showOnStartup: false
