@@ -35,6 +35,13 @@ defaults write com.apple.iCal "Show Week Numbers" -bool true
 # see `sudo systemsetup -listtimezones` for other values
 # `sudo systemsetup -gettimezone` for current value
 sudo systemsetup -settimezone "Europe/Lisbon" > /dev/null
+
+# Clock:
+#   * Show AP/PM
+#   * Show the day of the week
+#   * Show date
+defaults write com.apple.menuextra.clock DateFormat -string 'EEE MMM d  h:mm a'
+
 # ==============================================
 # Dock
 # ==============================================
