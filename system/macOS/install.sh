@@ -54,11 +54,7 @@ source "$DIR/symlink_setup.sh"
 make -f "$DOTFILES_DIR/man/Makefile"
 
 # Compile ZSH-related files for faster autoloading
-declare -a ZFILES=(zshrc zshenv zprofile)
-for zfile in "${ZFILES[@]}"; do
-  zcompile "$HOME/.$zfile"
-done
-unset ZFILES
+source '../../bin/zsh-compile'
 
 # Append /usr/local/bin/zsh to the end of /etc/shells file
 grep -q -F '/usr/local/bin/zsh2' /etc/shells || sudo bash -c "echo /usr/local/bin/zsh2 >> /etc/shells"
