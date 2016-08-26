@@ -83,6 +83,14 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 sudo scutil --set ComputerName "fringe"
 
 
+# Menu bar extras
+defaults write com.apple.systemuiserver menuExtras -array \
+  "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+  "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+  "/System/Library/CoreServices/Menu Extras/Battery.menu" \
+  "/System/Library/CoreServices/Menu Extras" \
+  "/System/Library/CoreServices/Menu Extras/Clock.menu"
+
 # Enable Dark mode
 defaults write /Library/Preferences/.GlobalPreferences AppleInterfaceTheme Dark
 
