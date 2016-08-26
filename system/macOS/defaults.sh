@@ -82,6 +82,13 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # Set computer name (as done via System Preferences → Sharing)
 sudo scutil --set ComputerName "fringe"
 
+# Set language and text formats
+# Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
+# `Inches`, `en_GB` with `en_US`, and `true` with `false`.
+defaults write NSGlobalDomain AppleLanguages -array "en"
+defaults write NSGlobalDomain AppleLocale -string "en_US@currency=EUR"
+defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
+defaults write NSGlobalDomain AppleMetricUnits -bool true
 
 # Menu bar extras
 defaults write com.apple.systemuiserver menuExtras -array \
