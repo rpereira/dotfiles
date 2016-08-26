@@ -158,7 +158,9 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # ==============================================
 # Kill affected applications
 # ==============================================
-for app in "Dock" "Finder" "Photos"; do
+declare -a AFFECTED_APPS=("Activity Monitor" "Calendar" "Dock" "Finder" "iCal"
+                          "Mail" "Photos" "SystemUIServer")
+for app in "${AFFECTED_APPS[@]}"; do
   killall "${app}" &> /dev/null
 done
 
