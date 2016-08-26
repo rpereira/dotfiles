@@ -94,6 +94,9 @@ defaults write com.apple.systemuiserver menuExtras -array \
 # Enable Dark mode
 defaults write /Library/Preferences/.GlobalPreferences AppleInterfaceTheme Dark
 
+# Enable fast user switching
+sudo defaults write /Library/Preferences/.GlobalPreferences MultipleSessionEnabled -bool YES
+
 # ==============================================
 # Hot corners
 # ==============================================
