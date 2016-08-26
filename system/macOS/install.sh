@@ -24,6 +24,9 @@ if [[ -z "$(xcode-select -p)" ]]; then
   xcode-select --install
 fi
 
+# Install custom font
+open ../../fonts/Monaco_for_Powerline.ttf
+
 # Install Homebrew and Cask
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap caskroom/cask
