@@ -142,4 +142,4 @@ for app in "Dock" "Finder" "Photos"; do
   killall "${app}" &> /dev/null
 done
 
-echo "Done. Note that some of these changes require a logout/restart to take effect."
+info "Done. Note that some of these changes require a logout/restart to take effect."
