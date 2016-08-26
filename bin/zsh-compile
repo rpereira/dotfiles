@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+#
+# Compile ZSH-related files for faster autoloading.
+#
+# Usage: zsh-compile
+
+declare -a ZFILES=(zshrc zshenv zprofile)
+for zfile in "${ZFILES[@]}"; do
+  zcompile "$HOME/.$zfile"
+done
