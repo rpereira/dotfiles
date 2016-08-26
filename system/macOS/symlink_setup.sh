@@ -20,6 +20,13 @@ ln -sf "$DOTFILES_DIR/vim/ftplugin" "$HOME/.vim/after"
 mkdir "$HOME/.vim/UltiSnips"
 ln -sf "$DOTFILES_DIR/vim/UltiSnips" "$HOME/.vim/UltiSnips"
 
+# atom
+declare -a ATOM_FILES=("config.cson init.coffee keymap.cson snippets.cson styles.less")
+for file in "${ATOM_FILES[@]}"; do
+  ln -sf "$DOTFILES/atom/$file" "$HOME/.atom"
+done
+unset file
+
 # tmux
 ln -sf "$DOTFILES_DIR/tmux/tmux.conf" "$HOME/.tmux.conf"
 
