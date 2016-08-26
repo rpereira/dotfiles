@@ -29,6 +29,13 @@ defaults write com.apple.iCal "first day of week" -int 1
 defaults write com.apple.iCal "Show Week Numbers" -bool true
 
 # ==============================================
+# Date & Time
+# ==============================================
+# Set the timezone.
+# see `sudo systemsetup -listtimezones` for other values
+# `sudo systemsetup -gettimezone` for current value
+sudo systemsetup -settimezone "Europe/Lisbon" > /dev/null
+# ==============================================
 # Dock
 # ==============================================
 # Enable highlight hover effect for the grid view of a stack (Dock)
@@ -65,14 +72,9 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # ==============================================
 # General
 # ==============================================
-
 # Set computer name (as done via System Preferences → Sharing)
 sudo scutil --set ComputerName "fringe"
 
-# Set the timezone.
-# see `sudo systemsetup -listtimezones` for other values
-# `sudo systemsetup -gettimezone` for current value
-sudo systemsetup -settimezone "Europe/Lisbon" > /dev/null
 
 # Enable Dark mode
 defaults write /Library/Preferences/.GlobalPreferences AppleInterfaceTheme Dark
