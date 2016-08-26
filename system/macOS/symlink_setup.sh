@@ -34,7 +34,7 @@ ln -sf "$DOTFILES_DIR/tmux/tmux.conf" "$HOME/.tmux.conf"
 ln -sf "$DOTFILES_DIR/git/gitconfig" "$HOME/.gitconfig"
 ln -sf "$DOTFILES_DIR/git/gitignore_global" "$HOME/.gitignore_global"
 
-# TheSi"lverSearcher ignore list
+# TheSilverSearcher ignore list
 ln -sf "$DOTFILES_DIR/ag/agignore" "$HOME/.agignore"
 
 # ctags"
