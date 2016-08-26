@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+info "Creating symlinks..."
+
 # Symlink dotfiles to our home.
 ln -sf "$HOME/code/dotfiles" "$DOTFILES_DIR"
 
@@ -28,3 +30,5 @@ ln -sf "$DOTFILES_DIR/ag/agignore" "$HOME/.agignore"
 
 # ctags"
 ln -sf "$DOTFILES_DIR/ctags/ctags" "$HOME/.ctags"
+
+info "Done."
