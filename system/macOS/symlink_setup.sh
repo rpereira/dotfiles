@@ -15,7 +15,9 @@ ln -sf "$DOTFILES_DIR/zsh/zprofile" "$HOME/.zprofile"
 # vim
 ln -sf "$DOTFILES_DIR/vim/vimrc" "$HOME/.vimrc"
 ln -sf "$DOTFILES_DIR/vim/gvimrc" "$HOME/.gvimrc"
+mkdir "$HOME/.vim/after"
 ln -sf "$DOTFILES_DIR/vim/ftplugin" "$HOME/.vim/after"
+mkdir "$HOME/.vim/UltiSnips"
 ln -sf "$DOTFILES_DIR/vim/UltiSnips" "$HOME/.vim/UltiSnips"
 
 # tmux
