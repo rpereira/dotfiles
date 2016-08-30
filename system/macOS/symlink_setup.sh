@@ -21,7 +21,13 @@ mkdir "$HOME/.vim/UltiSnips"
 ln -sf "$DOTFILES_DIR/vim/UltiSnips" "$HOME/.vim/UltiSnips"
 
 # atom
-declare -a ATOM_FILES=("config.cson init.coffee keymap.cson snippets.cson styles.less")
+declare -a ATOM_FILES=(
+  "config.cson"
+  "init.coffee"
+  "keymap.cson"
+  "snippets.cson"
+  "styles.less"
+)
 for file in "${ATOM_FILES[@]}"; do
   ln -sf "$DOTFILES/atom/$file" "$HOME/.atom"
 done
