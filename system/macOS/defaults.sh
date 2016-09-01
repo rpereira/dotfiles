@@ -99,7 +99,8 @@ defaults write com.apple.systemuiserver menuExtras -array \
   "/System/Library/CoreServices/Menu Extras/Clock.menu"
 
 # Enable Dark mode
-defaults write /Library/Preferences/.GlobalPreferences AppleInterfaceTheme Dark
+# FIXME THis does not seem to work on El Capitan
+# defaults write /Library/Preferences/.GlobalPreferences AppleInterfaceTheme Dark
 
 # Enable fast user switching
 sudo defaults write /Library/Preferences/.GlobalPreferences MultipleSessionEnabled -bool YES
