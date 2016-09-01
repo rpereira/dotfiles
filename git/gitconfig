@@ -31,6 +31,9 @@
 [include]
   path = ~/.gitconfig.local
 
+[interactive]
+  singleKey = true
+
 [merge]
   tool = vimdiff
 
