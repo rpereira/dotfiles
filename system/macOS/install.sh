@@ -20,7 +20,7 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Install Xcode Command Line Tools
-if [[ -z "$(xcode-select -p)" ]]; then
+if [[ -z `xcode-select -p` ]]; then
   xcode-select --install
 fi
 
