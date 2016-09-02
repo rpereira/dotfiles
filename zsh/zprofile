@@ -5,6 +5,7 @@ path=(
   /usr/local/bin
   /usr/{sbin,bin}
   /{sbin,bin}
+  /Applications/Postgres.app/Contents/Versions/latest/bin
 )
 
 cdpath=(
