@@ -17,6 +17,9 @@ brew cask install firefox
 info "Installing Google Chrome"
 brew cask install google-chrome
 
+info "Installing GPG Tools"
+brew cask install gpgtools
+
 info "Installing Haskell Platform"
 brew cask install haskell-platform
 
