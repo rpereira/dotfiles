@@ -145,6 +145,12 @@ defaults write com.apple.dock wvous-bl-corner -int 0
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
 # ==============================================
+# iTerm2
+# ==============================================
+# Load preferences from a custom folder
+defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.dotfiles/iterm2"
+
+# ==============================================
 # Mail
 # ==============================================
 # Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app
