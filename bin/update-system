@@ -16,15 +16,11 @@ printf "${BLUE}%s${NORMAL}\n" "Updating your machine..."
 
 sudo softwareupdate -i -a
 
-printf "\n${BLUE}%s${NORMAL}\n" "Updating Homebrew formulas..."
+printf "\n${BLUE}%s${NORMAL}\n" "Updating Homebrew formulas and Casks..."
 
 brew update
 brew upgrade --all
 brew cleanup
-
-printf "\n${BLUE}%s${NORMAL}\n" "Updating Casks..."
-
-brew upgrade brew-cask
 brew cask cleanup
 
 printf "\n${BLUE}%s${NORMAL}\n" "Updating Solarized repos..."
