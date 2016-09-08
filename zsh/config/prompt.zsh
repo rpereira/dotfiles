@@ -37,7 +37,7 @@ local current_dir="%{$fg[blue]%}%~%{$reset_color%} %s"
 setopt PROMPT_SUBST
 
 PROMPT='
-${current_dir} $(git_prompt_info)
+${current_dir} $(git_prompt_info)  $(vi_mode_prompt_info)
 ${return_status}%{$reset_color%}'
 
-RPROMPT='%{$(echotc UP 1)%}$(vi_mode_prompt_info) $(git_time_since_last_commit) $(git_prompt_status)%{$(echotc DO 1)%}%{$reset_color%}'
+RPROMPT='%{$(echotc UP 1)%} $(git_time_since_last_commit) $(git_prompt_status)%{$(echotc DO 1)%}%{$reset_color%}'
