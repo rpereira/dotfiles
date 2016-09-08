@@ -8,14 +8,24 @@ section](https://github.com/ruiafonsopereira/dotfiles#local-settings).
 
 ## Installation
 
-Just run the following command in your terminal.
+### macOS
 
-### Via curl
+1. Create an SSH key and add it to your GitHub account
+2. Clone this repository
+3. Run `./system/macOS/install.sh`
+
+### Ubuntu
 
 ```shell
 sh -c "$(curl -fsSL \
   https://raw.githubusercontent.com/ruiafonsopereira/dotfiles/master/system/ubuntu/ubuntu.sh)"
 ```
+
+### Running tests
+
+Execute `./scripts/run_tests.sh` to run the full test suit. This will report if
+something went wrong during the installation process.
+
 ### What is set up?
 * [Solarized Dark](http://ethanschoonover.com/solarized) as the color scheme for
   terminal and Vim
@@ -26,11 +36,13 @@ sh -c "$(curl -fsSL \
 * [Vim](http://www.vim.org/) as your core editor
 * [Zsh](http://www.zsh.org/) as your shell
 
-
 ## Getting Updates
 In order to update this repository just pull the latest changes.
 
     git pull
+
+You can update your machine using `mac update`. _See `man mac` for more
+options._
 
 ## Local Settings
 This configuration can be extended or overridden to suit user-specific
