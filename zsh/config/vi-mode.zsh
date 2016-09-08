@@ -32,7 +32,7 @@ bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
 
 # Let's just show the NORMAL mode indicator
-MODE_INDICATOR="%{$fg_bold[red]%}NORMAL%{$reset_color%}"
+MODE_INDICATOR="%{$fg_bold[red]%}-- NORMAL --%{$reset_color%}"
 
 function vi_mode_prompt_info() {
   echo "${${KEYMAP/vicmd/$MODE_INDICATOR}/(main|viins)/}"
