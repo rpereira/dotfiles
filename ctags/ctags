@@ -1,10 +1,12 @@
+--recurse
+--tag-relative
+--sort=yes
 --exclude=.git
 --exclude=node_modules
---recurse
---sort=yes
---tag-relative
+--exclude=log
+--exclude=tmp
 
---languages=-javascript
+--languages=-javascript,sql
 
 --langdef=js
 --langmap=js:.js
