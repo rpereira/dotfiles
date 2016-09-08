@@ -29,7 +29,7 @@ declare -a ATOM_FILES=(
   "styles.less"
 )
 for file in "${ATOM_FILES[@]}"; do
-  ln -sf "$DOTFILES/atom/$file" "$HOME/.atom"
+  ln -sf "$DOTFILES/atom/$file" "$HOME/.atom/$file"
 done
 unset file
 
