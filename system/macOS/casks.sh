@@ -14,6 +14,9 @@ brew cask install evernote
 info "Installing Firefox"
 brew cask install firefox
 
+info "Installing f.lux"
+brew cask install flux
+
 info "Installing Google Chrome"
 brew cask install google-chrome
 
