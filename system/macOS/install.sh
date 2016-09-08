@@ -31,13 +31,21 @@ open ../../fonts/Monaco_for_Powerline.ttf
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap caskroom/cask
 
-# Install Casks
-# shellcheck disable=SC1090
-source "$DIR/casks.sh"
+# Install Homebrew formulaes and casks. If '--no-casks' argument is specified,
+# then only brews will be installed.
+case $1 in
+  --no-casks)
+    # shellcheck disable=SC1090
+    source "$DIR/brew.sh"
+    ;;
 
-# Install Homebrew formulaes
-# shellcheck disable=SC1090
-source "$DIR/brew.sh"
+  *)
+    # shellcheck disable=SC1090
+    source "$DIR/brew.sh"
+    # shellcheck disable=SC1090
+    source "$DIR/casks.sh"
+    ;;
+esac
 
 # Create a folder to hold all the solarized color schemes
 mkdir -p "$SOLARIZED_DIR"

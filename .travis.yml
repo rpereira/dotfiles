@@ -1,0 +1,9 @@
+language: objective-c # force OS X
+osx_image: xcode7.3
+before_install:
+  - brew update
+install: ./system/macOS/install.sh --no-casks
+script: ./scripts/run_tests.sh
+branches:
+  except:
+    - /^experimental-.*$/
