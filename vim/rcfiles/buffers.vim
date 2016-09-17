@@ -2,8 +2,8 @@
 " set switchbuf=useopen,usetab
 
 " List buffers and edit the specified buffer from the buffer list
-nnoremap gb :ls<CR>:buffer<Space>
-nnoremap gB :ls<CR>:sbuffer<Space>
+" nnoremap gb :ls<CR>:buffer<Space>
+" nnoremap gB :ls<CR>:sbuffer<Space>
 
 " Search for the specified buffer name
 " nnoremap ,b :buffer *
