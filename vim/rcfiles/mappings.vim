@@ -42,7 +42,7 @@ nnoremap Y y$
 xnoremap < <gv
 xnoremap > >gv
 
-" Use Q for formatting instead of Ex mode
+" Don't use Ex mode, use Q for formatting.
 map Q gq
 
 " ----------------------------------------------------------------------------

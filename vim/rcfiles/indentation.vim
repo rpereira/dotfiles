@@ -4,7 +4,7 @@
 " Copy indent from current line when starting a new line
 set autoindent
 
-" Backspace deletes like most programs in insert mode
+" Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start
 
 " A <Tab> in front of a line inserts blanks according to 'shiftwidth'
