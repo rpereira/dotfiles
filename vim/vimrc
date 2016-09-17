@@ -1,6 +1,9 @@
 " ============================================================================
 " General Configuration
 " ============================================================================
+" Use Vim settings, rather than Vi settings.  This must be first, because it
+" changes other options as a side effect.
+set nocompatible
 
 " Change Leader to a comma because the backslash is too far away
 let mapleader = ','
@@ -25,6 +28,9 @@ set novisualbell
 set t_vb=
 
 set path=.,**
+
+" Do not recognize octal numbers for Ctrl-A and Ctrl-X.
+set nrformats-=octal
 
 " Source all of the .vim files under the specified directory.
 function! s:SourceConfigFilesIn(directory)
