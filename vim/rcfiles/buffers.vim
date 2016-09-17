@@ -10,5 +10,5 @@ nnoremap gB :ls<CR>:sbuffer<Space>
 " nnoremap ,B :sbuffer *
 
 " Cicle through buffers
-" nnoremap bn :bnext<CR>
-" nnoremap bp :bprevious<CR>
+nnoremap ]b :bnext<CR>
+nnoremap [b :bprevious<CR>
