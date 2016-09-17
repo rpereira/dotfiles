@@ -3,9 +3,9 @@
 " ----------------------------------------------------------------------------
 " Navigate Vim style
 nnoremap th :tabfirst<CR>
-nnoremap tj :tabnext<CR>
-nnoremap tk :tabprevious<CR>
 nnoremap tl :tablast<CR>
+nnoremap ]t :tabnext<CR>
+nnoremap [t :tabprevious<CR>
 
 " Open tabpage after the last one
 nnoremap tn :$tabnew<CR>
