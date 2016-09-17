@@ -1,8 +1,4 @@
-" ----------------------------------------------------------------------------
-" Airline
-" ----------------------------------------------------------------------------
 " Note: The airline theme is defined on the `theme.vim` file.
-
 let g:airline_extensions = ['branch', 'hunks', 'tabline']
 
 " I'm defining these 2 here because if I define them on the array, the
