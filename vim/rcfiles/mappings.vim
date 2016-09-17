@@ -71,6 +71,8 @@ vnoremap <Right> <NOP>
 " keys are under two of my strongest fingers and I don't have to perform a
 " chord.
 inoremap jk <Esc>
+xnoremap jk <Esc>
+cnoremap jk <C-c>
 
 " Disable <Esc> key in insert mode. Use <jk> mapping to exit insert mode.
 inoremap <Esc> <NOP>
