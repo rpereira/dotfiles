@@ -77,3 +77,17 @@ nnoremap <silent> <Leader>b :call fzf#run({
 \   'options': '+m',
 \   'down':    len(<sid>buflist()) + 2
 \ })<CR>
+
+" ----------------------------------------------------------------------------
+" :Shuffle | Shuffle selected lines
+" ----------------------------------------------------------------------------
+function! s:Shuffle() range
+ruby << EOF
+  first, last = %w[a:firstline a:lastline].map { |e| VIM::evaluate(e).to_i }
+  (first..last).map { |l| $curbuf[l] }.shuffle.each_with_index do |line, i|
+    $curbuf[first + i] = line
+  end
+EOF
+endfunction
+
+command! -range Shuffle <line1>,<line2>call s:Shuffle()
