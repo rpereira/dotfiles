@@ -62,7 +62,7 @@ included.
 [The cheat sheet](./docs/cheat-sheet.md) is intended as a reference
 to _some_ Vim and tmux commands.
 
-## Acknowledgements
+## Acknowledgments
 
 Inspiration and some code was taken from several sources, including:
 * [Chris Toomey](http://ctoomey.com/) and his [dotfiles repo](https://github.com/christoomey/dotfiles)
