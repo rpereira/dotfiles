@@ -44,6 +44,12 @@ defaults write com.apple.iCal "first day of week" -int 1
 defaults write com.apple.iCal "Show Week Numbers" -bool true
 
 # ==============================================
+# Dashboard
+# ==============================================
+# Disable Dashboard
+defaults write com.apple.dashboard mcx-disabled -bool true
+
+# ==============================================
 # Date & Time
 # ==============================================
 # Set the timezone.
@@ -84,6 +90,9 @@ defaults write com.apple.dock launchanim -bool false
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
+
+# Don’t show Dashboard as a Space
+defaults write com.apple.dock dashboard-in-overlay -bool true
 
 # ==============================================
 # Finder
