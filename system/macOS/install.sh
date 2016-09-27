@@ -75,6 +75,7 @@ vim +PlugInstall +qall
 # Install atom plugins
 declare -a ATOM_PLUGINS=(
   file-icons
+  highlight-line
   highlight-selected
   language-elixir
   linter
