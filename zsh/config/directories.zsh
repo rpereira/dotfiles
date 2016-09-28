@@ -6,19 +6,19 @@ setopt AUTO_PUSHD
 setopt PUSHDMINUS
 setopt PUSHD_IGNORE_DUPS
 
-DIRSTACKSIZE=5
 
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
 alias -g ......='../../../../..'
 
-alias -- -='cd -'
-alias 1='cd -'
-alias 2='cd -2'
-alias 3='cd -3'
-alias 4='cd -4'
-alias 5='cd -5'
+# Prevent the directory stack from getting too large.
+DIRSTACKSIZE=9
+
+for index ({1..$DIRSTACKSIZE}); do
+  alias "$index"="cd -${index}"
+done
+unset index
 
 alias md='mkdir -p'
 alias rd='rmdir'
