@@ -1,13 +1,5 @@
-# Get host operating system
-platform='unknown'
-unamestr=$(uname)
-if [[ $unamestr == 'Linux' ]]; then
-  platform='linux'
-elif [[ $unamestr == 'Darwin' ]]; then
-  platform='darwin'
-fi
 # --------------------------------------------
-# Sortcuts
+# Shortcuts
 # --------------------------------------------
 alias e="$EDITOR"
 alias v="$VISUAL"
@@ -53,7 +45,7 @@ alias devlog='tail -f log/development.log'
 # System specific
 # --------------------------------------------
 # macOS
-if [[ $platform == 'darwin' ]]; then
+if [[ "$OSTYPE" == (darwin)* ]]; then
   # Lock the screen
   alias afk='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
 
@@ -63,8 +55,8 @@ if [[ $platform == 'darwin' ]]; then
   # Open current directory in finder.
   alias f='open -a Finder ./'
 
-# Linux with GNOME
-elif [[ $platform == 'linux' ]]; then
+# Linux
+elif [[ "$OSTYPE" == (linux)* ]]; then
   # Lock the screen
   alias afk='gnome-screensaver-command --lock'
 
