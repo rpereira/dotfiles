@@ -22,8 +22,9 @@ alias ag='ag --path-to-agignore=~/.agignore'
 # --------------------------------------------
 # macOS
 if [[ "$OSTYPE" == (darwin)* ]]; then
-  # Lock the screen
-  alias afk='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
+  alias afk='mac lock'
+  alias ip='mac ip'
+  alias ping!='mac check-internet'
 
   # Copy the contents of the id_rsa.pub file to the clipboard.
   alias sshkey='pbcopy < ~/.ssh/id_rsa.pub | echo "=> SSH key was copied to the clipboard."'
@@ -45,8 +46,6 @@ fi
 # Network
 # --------------------------------------------
 alias hosts='sudo $EDITOR /etc/hosts'
-alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
-alias png='ping www.google.pt'
 
 # --------------------------------------------
 # Just for fun
