@@ -18,30 +18,6 @@ alias path='echo $PATH | tr -s ":" "\n"'
 alias ag='ag --path-to-agignore=~/.agignore'
 
 # --------------------------------------------
-# Bundler
-# --------------------------------------------
-alias b="bundle"
-
-# --------------------------------------------
-# Rails
-# --------------------------------------------
-# Basic commands
-alias r='rails'
-alias rn='rails new'
-alias rs='rails server'
-alias rg='rails generate'
-alias rc='rails console'
-alias rdb='rails dbconsole'
-alias rd='rails destroy'
-
-# Rake
-alias rr='rake routes'
-alias rdbm='rake db:migrate'
-
-# Other
-alias devlog='tail -f log/development.log'
-
-# --------------------------------------------
 # System specific
 # --------------------------------------------
 # macOS
