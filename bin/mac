@@ -55,9 +55,10 @@ launch_screen_saver() {
 # WI-FI
 #-------------------------------------
 show_ip_address() {
-  local local_ip_addr, external_ip_addr
-  external_ip_addr="$(dig +short myip.opendns.com @resolver1.opendns.com)"
-  local_ip_addr="$(ipconfig getifaddr en0)"
+  # shellcheck disable=SC2155
+  local external_ip_addr="$(dig +short myip.opendns.com @resolver1.opendns.com)"
+  # shellcheck disable=SC2155
+  local local_ip_addr="$(ipconfig getifaddr en0)"
 
   printf "Local IP Address:    %s\n" "$local_ip_addr"
   printf "External IP Address: %s\n" "$external_ip_addr"
