@@ -100,6 +100,17 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
+# Set Desktop as the default location for new Finder windows
+# Show all filename extensions
+defaults write com.apple.finder AppleShowAllExtensions -bool true
+
+# For other paths, use `PfLo` and `file:///full/path/here/`
+defaults write com.apple.finder NewWindowTarget -string "PfDe"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/"
+
+# Show path bar
+defaults write com.apple.finder ShowPathbar -bool true
+
 # ==============================================
 # General
 # ==============================================
