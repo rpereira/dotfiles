@@ -177,6 +177,12 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.dotfiles/iterm2"
 defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" "@\U21a9"
 
 # ==============================================
+# Mouse
+# ==============================================
+# Enable secondary click on Apple's Magic Mouse (defaults to click on right side)
+defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode TwoButton
+
+# ==============================================
 # Photos
 # ==============================================
 # Prevent Photos from opening automatically when devices are plugged in
