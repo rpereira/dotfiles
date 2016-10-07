@@ -5,7 +5,7 @@ info "Creating symlinks..."
 # Symlink dotfiles to our home.
 ln -sf "$HOME/code/dotfiles" "$DOTFILES_DIR"
 
-ln -sf "$SOLARIZED_DIR/dircolors-solarized/dircolors.256dark" "$HOME/.dircolors"
+ln -sf "$SOLARIZED_DIR/dircolors-solarized/dircolors.ansi-dark" "$HOME/.dircolors"
 
 # zsh
 ln -sf "$DOTFILES_DIR/zsh/zshrc" "$HOME/.zshrc"
