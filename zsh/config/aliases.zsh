@@ -15,7 +15,7 @@ alias :q='exit'
 alias path='echo $PATH | tr -s ":" "\n"'
 
 # A list of directories for TheSilverSearcher ignore
-alias ag='ag --path-to-agignore=~/.agignore'
+alias ag='ag --path-to-ignore=~/.agignore'
 
 # --------------------------------------------
 # System specific
