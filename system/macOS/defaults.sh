@@ -115,6 +115,9 @@ defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desk
 # Show path bar
 defaults write com.apple.finder ShowPathbar -bool true
 
+# Keep folders on top when sorting by name
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
 # ==============================================
 # General
 # ==============================================
