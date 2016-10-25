@@ -20,7 +20,7 @@ sudo softwareupdate -i -a
 printf "\n${BLUE}%s${NORMAL}\n" "Updating Homebrew formulas and Casks..."
 
 brew update
-brew upgrade --all
+brew upgrade
 brew cleanup
 brew cask cleanup
 
