@@ -59,7 +59,6 @@ Plug 'romainl/vim-qlist'
 " Theme
 "------------------------------------------------
 Plug 'romainl/flattened',        { 'dir': '~/.vim/colors' }
-Plug 'edkolev/tmuxline.vim',     { 'on': [] }
 
 "------------------------------------------------
 " Tools
