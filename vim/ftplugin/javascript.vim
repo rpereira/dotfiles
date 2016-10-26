@@ -10,3 +10,8 @@ fun! RunESlint(path)
 endfun
 
 command! -nargs=* Lint call RunESlint('src')
+
+"
+" Snippets
+"
+autocmd FileType javascript.jsx UltiSnipsAddFiletypes javascript-react
