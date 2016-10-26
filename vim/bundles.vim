@@ -67,14 +67,8 @@ Plug 'vim-airline/vim-airline-themes' | Plug 'vim-airline/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'scrooloose/syntastic'
-
+" Lazy load. See vim/rcplugins/ultisnips.vim
 Plug 'sirver/ultisnips', { 'on': [] }
-augroup ulti_snips_lazy_load_on_file_type
-  autocmd!
-  autocmd FileType javascript,java call plug#load('ultisnips')
-        \| call UltiSnips#FileTypeChanged()
-        \| autocmd! ulti_snips_lazy_load_on_file_type
-augroup END
 
 " Local bundles
 if filereadable(expand("~/.vimrc_bundles.local"))
