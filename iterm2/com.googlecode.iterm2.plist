@@ -1120,6 +1120,8 @@
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<false/>
+	<key>RestoreWindowContents</key>
+	<false/>
 	<key>RightCommand</key>
 	<integer>8</integer>
 	<key>RightOption</key>
@@ -1146,6 +1148,8 @@
 	<true/>
 	<key>ShowPaneTitles</key>
 	<true/>
+	<key>ShowSessionRestoredBanner</key>
+	<false/>
 	<key>SmartPlacement</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
