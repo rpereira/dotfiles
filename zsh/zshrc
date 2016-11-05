@@ -1,3 +1,7 @@
+# Load plugins
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
+
 # Load configuration files
 for file ($DOTFILES/zsh/config/*.zsh(N)); do
   source $file
@@ -13,6 +17,3 @@ unset file
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 [[ -f ~/.travis/travis.sh ]] && source ~/.travis/travis.sh
-
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
