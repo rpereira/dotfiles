@@ -66,7 +66,7 @@ Plug 'romainl/flattened',        { 'dir': '~/.vim/colors' }
 Plug 'vim-airline/vim-airline-themes' | Plug 'vim-airline/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'pbrisbin/vim-mkdir'
-Plug 'scrooloose/syntastic'
+Plug 'neomake/neomake'
 " Lazy load. See vim/rcplugins/ultisnips.vim
 Plug 'sirver/ultisnips', { 'on': [] }
 
