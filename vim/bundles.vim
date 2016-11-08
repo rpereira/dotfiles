@@ -33,6 +33,7 @@ Plug 'elixir-lang/vim-elixir',   { 'for': 'elixir' }
 Plug 'flowtype/vim-flow'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript',  { 'branch': 'develop' }
+Plug 'heavenshell/vim-jsdoc'
 
 " Markdown
 Plug 'plasticboy/vim-markdown',  { 'for': 'markdown' }
