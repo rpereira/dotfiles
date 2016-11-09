@@ -31,6 +31,7 @@ alias gcmsg='git commit -m'
 alias gcs='git commit -S'
 
 alias gco='git checkout'
+alias gfco='git fuzzy-checkout'
 alias gcb='git checkout -b'
 alias gcm='git checkout master'
 
