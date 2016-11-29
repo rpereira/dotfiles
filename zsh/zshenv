@@ -15,6 +15,13 @@ ZSH="$HOME/.zsh"
 ZSH_CACHE_DIR="$ZSH/cache/"
 ZSH_MODULES_DIR="$DOTFILES/zsh/modules"
 
+# According to https://github.com/Homebrew/brew/blob/master/docs/Analytics.md,
+# Homebrew gathers anonymous aggregate user behaviour analytics and reporting
+# these to Google Analytics. Opt out...
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_INSECURE_REDIRECT=1
+export HOMEBREW_CASK_OPTS=--require-sha
+
 # Set Ag as the default source for fzf
 export FZF_DEFAULT_COMMAND='ag --hidden -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
