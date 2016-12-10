@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Undo commit and keep changes.
+# Removes the latest commits, and add their changes to your staging area.
 # See for details: http://stackoverflow.com/a/6866485/1319249
 #
 # Usage:
