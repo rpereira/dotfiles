@@ -183,6 +183,12 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.dotfiles/iterm2"
 # Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app
 defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" "@\U21a9"
 
+# Send mail identified by Apple Mail as junk to the Junk mailbox.
+defaults write ~/Library/Containers/com.apple.mail/Data/Library/Preferences/com.apple.mail JunkMailBehavior -int 2
+
+# Apple Mail automatically checks for updates to GPGMail.
+defaults write ~/Library/Preferences/org.gpgtools.gpgmail.plist SUEnableAutomaticChecks -bool true
+
 # ==============================================
 # Mouse
 # ==============================================
@@ -199,6 +205,7 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 # Physical Access
 # ==============================================
 defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # ==============================================
 # Screen
@@ -208,6 +215,26 @@ defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
+
+# ==============================================
+# Security & Privacy
+# ==============================================
+# Built-in, basic application layer firewall which blocks incoming connections
+# only.
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+
+# Enable application firewall.
+defaults write ~/Library/Preferences/com.apple.alf globalstate -bool true
+
+# Required password to wake the computer from sleep or screen saver.
+defaults write /Library/Preferences/com.apple.screensaver askForPassword -bool true
+
+# Enable Stealth mode: Machine does not respond to ICMP ping requests or
+# connection attempts from a closed TCP/UDP port.
+defaults write /Library/Preferences/com.apple.alf stealthenabled -bool true
+
+# Save to disk (not to iCloud) by default
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 # ==============================================
 # Trackpad
