@@ -1,7 +1,19 @@
-snippet rcc
-import React, { Component } from 'react';
+snippet rpc
+import React from 'react';
 
-class $1 extends Component {
+function $1(props) {
+  return (
+    $2
+  );
+}
+
+export default $1;
+endsnippet
+
+snippet rcc
+import React from 'react';
+
+class $1 extends React.Component {
   render() {
     return $2;
   }
