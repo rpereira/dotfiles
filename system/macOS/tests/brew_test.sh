@@ -16,6 +16,7 @@ declare -a BINARIES_TO_TEST=(
   "convert"                        # ImageMagick
   "less"
   "pandoc"
+  "openssl"
   "reattach-to-user-namespace"
   "shellcheck"
   "tmux"
