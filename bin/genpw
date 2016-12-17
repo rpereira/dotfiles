@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#
+# Generates a strong random password.
+
+openssl rand -base64 30

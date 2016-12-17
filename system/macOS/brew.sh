@@ -25,6 +25,7 @@ brew install diff-so-fancy
 brew install fzf
 brew install homebrew/dupes/screen
 brew install homebrew/dupes/less
+brew install openssl
 brew install reattach-to-user-namespace
 brew install the_silver_searcher
 brew install tmux
