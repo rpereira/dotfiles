@@ -1,0 +1,7 @@
+#
+# Executes commands at login post-zshrc.
+#
+
+if ! type "$fortune" > /dev/null; then
+  fortune -s | cowsay
+fi
