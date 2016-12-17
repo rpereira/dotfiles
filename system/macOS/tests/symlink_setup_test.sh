@@ -33,6 +33,7 @@ declare -a SYMLINKS_TO_TEST=(
   "$VIM_DIR/after/ftplugin"
   "$VIM_DIR/UltiSnips"
 
+  "$HOME/.zlogin"
   "$HOME/.zshrc"
   "$HOME/.zshenv"
   "$HOME/.zprofile"
