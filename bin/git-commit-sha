@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#
+# Get a git commit SHA by fuzzy searching the commit subject.
+#
+# Example usage:
+#   $ git rebase -i `git-commit-sha`
+
+commits=$(git log --color=always --pretty=oneline --abbrev-commit --reverse) &&
+commit=$(echo "$commits" | fzf --tac +s +m -e --ansi --reverse) &&
+echo -n "$(echo "$commit" | sed "s/ .*//")"
