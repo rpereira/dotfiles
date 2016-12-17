@@ -21,6 +21,8 @@ declare -a SYMLINKS_TO_TEST=(
 
   "$HOME/.ctags"
 
+  "$HOME/.curlrc"
+
   "$HOME/.dircolors"
 
   "$HOME/.gitconfig"

@@ -21,6 +21,7 @@ brew install wget --with-iri
 info "Installing Unix tools..."
 brew install git
 brew install ctags
+brew install curl
 brew install diff-so-fancy
 brew install fzf
 brew install homebrew/dupes/screen

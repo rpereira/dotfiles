@@ -44,7 +44,10 @@ ln -sf "$DOTFILES_DIR/git/gitignore_global" "$HOME/.gitignore_global"
 # TheSilverSearcher ignore list
 ln -sf "$DOTFILES_DIR/ag/agignore" "$HOME/.agignore"
 
-# ctags"
+# ctags
 ln -sf "$DOTFILES_DIR/ctags/ctags" "$HOME/.ctags"
+
+# curl
+ln -sf "$DOTFILES/curl/curlrc" "$HOME/.curlrc"
 
 info "Done."

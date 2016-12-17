@@ -5,15 +5,16 @@ binary_exists() {
   command -v "$1" >/dev/null 2>&1
 }
 
+# Just care about the core binaries
 declare -a BINARIES_TO_TEST=(
-  "ag"                             # The Silver Searcher
+  "ag"
+  "curl"
   "ctags"
   "diff-so-fancy"
   "dos2unix"
   "fzf"
   "git"
   "gpg"
-  "convert"                        # ImageMagick
   "less"
   "pandoc"
   "openssl"
