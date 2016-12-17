@@ -4,7 +4,28 @@
 
 set -e
 
-branches=$(git branch --all | grep -v HEAD) &&
-branch=$(echo "$branches" | fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+fuzzy_checkout_with_remotes() {
+  branches=$(git branch --all | grep -v HEAD) &&
+  branch=$(echo "$branches" | fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout "$(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")"
+}
 
-git checkout "$(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")"
+fuzzy_checkout() {
+  branches=$(git branch -vv) &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git checkout "$(echo "$branch" | awk '{print $1}' | sed "s/.* //")"
+}
+
+main() {
+  case "$1" in
+    -r | --remote)
+      fuzzy_checkout_with_remotes
+      ;;
+
+    *)
+      fuzzy_checkout
+      ;;
+  esac
+}
+
+main "$@"
