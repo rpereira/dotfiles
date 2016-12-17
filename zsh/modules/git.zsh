@@ -149,6 +149,7 @@ alias grb='git rebase'
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
 alias grbi='git rebase -i'
+alias grbfcs='git rebase -i `git-commit-sha`'
 alias grbm='git rebase master'
 alias grbs='git rebase --skip'
 
