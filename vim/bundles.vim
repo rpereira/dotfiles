@@ -50,6 +50,7 @@ Plug 'rust-lang/rust.vim',       { 'for': 'rust' }
 " Motion
 "------------------------------------------------
 Plug 'wellle/targets.vim'
+Plug 'justinmk/vim-sneak'
 
 "------------------------------------------------
 " Searching
