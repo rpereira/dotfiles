@@ -104,6 +104,10 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
+# Expose hidden files and Library folder in Finder
+defaults write com.apple.finder AppleShowAllFiles -bool true
+chflags nohidden ~/Library
+
 # Set Desktop as the default location for new Finder windows
 # Show all filename extensions
 defaults write com.apple.finder AppleShowAllExtensions -bool true
