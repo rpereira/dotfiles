@@ -148,6 +148,12 @@ defaults write com.apple.systemuiserver menuExtras -array \
 sudo defaults write /Library/Preferences/.GlobalPreferences MultipleSessionEnabled -bool YES
 
 # ==============================================
+# GPGMail
+# ==============================================
+# Enable signing emails by default
+defaults write ~/Library/Preferences/org.gpgtools.gpgmail SignNewEmailsByDefault -bool true
+
+# ==============================================
 # Hot corners
 # ==============================================
 # Possible values:
