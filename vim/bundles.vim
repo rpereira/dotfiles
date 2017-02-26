@@ -29,6 +29,11 @@ Plug 'kchmck/vim-coffee-script',   { 'for': 'coffee' }
 " Elixir
 Plug 'elixir-lang/vim-elixir',     { 'for': 'elixir' }
 
+" Haskell
+" Don't use `{ 'for': 'haskell' }` otherwise the plugin is not correctly loaded.
+Plug 'neovimhaskell/haskell-vim'
+Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
+
 " JavaScript
 Plug 'flowtype/vim-flow'
 Plug 'mxw/vim-jsx'
