@@ -157,6 +157,9 @@ sudo defaults write /Library/Preferences/.GlobalPreferences MultipleSessionEnabl
 # Enable signing emails by default
 defaults write ~/Library/Preferences/org.gpgtools.gpgmail SignNewEmailsByDefault -bool true
 
+# Enable email encryption by default if the receiver's PGP is present in the keychain
+defaults write ~/Library/Preferences/org.gpgtools.gpgmail.plist EncryptNewEmailsByDefault -bool true
+
 # ==============================================
 # Hot corners
 # ==============================================
@@ -237,14 +240,20 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
 defaults write ~/Library/Preferences/com.apple.alf globalstate -bool true
 
 # Required password to wake the computer from sleep or screen saver.
-defaults write /Library/Preferences/com.apple.screensaver askForPassword -bool true
+defaults write ~/Library/Preferences/com.apple.screensaver askForPassword -bool true
 
 # Enable Stealth mode: Machine does not respond to ICMP ping requests or
 # connection attempts from a closed TCP/UDP port.
-defaults write /Library/Preferences/com.apple.alf stealthenabled -bool true
+defaults write ~/Library/Preferences/com.apple.alf stealthenabled -bool true
 
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
+# Disable captive portal for connecting to new networks to prevent MITM attacks
+defaults write ~/Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
+
+# Disable wake on network access
+systemsetup -setwakeonnetworkaccess off
 
 # ==============================================
 # Trackpad
