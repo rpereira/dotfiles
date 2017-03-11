@@ -45,3 +45,6 @@ ln -sf $DOTFILES/ag/agignore $HOME/.agignore
 
 # ctags
 ln -sf $DOTFILES/ctags/ctags $HOME/.ctags
+
+# dnsmasq
+ln -sf $DOTFILES/dnsmasq/dnsmasq.conf /usr/local/etc/
