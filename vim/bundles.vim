@@ -7,6 +7,7 @@ call plug#begin('~/.vim/bundle')
 "------------------------------------------------
 " Edit
 "------------------------------------------------
+Plug 'christoomey/vim-sort-motion'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align',    { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
 Plug 'tpope/vim-commentary',       { 'on': '<Plug>Commentary' }
