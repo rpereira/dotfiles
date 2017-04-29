@@ -34,6 +34,7 @@ alias gcs='git commit -S'
 alias gco='git checkout'
 alias gfco='git fuzzy-checkout'
 alias gcb='git checkout -b'
+alias gcd='git checkout develop'
 alias gcm='git checkout master'
 
 alias gcf='git config --list'
