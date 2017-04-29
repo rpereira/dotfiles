@@ -4,20 +4,11 @@ function! NeomakeStatus()
   return neomake#statusline#LoclistStatus(prefix)
 endfunction
 
-function! Modified()
-  if &modified
-    return emoji#for('construction').' '
-  else
-    return ''
-  endif
-endfunction
-
 function! GitBranch()
   let l:head = fugitive#head()
     if empty(l:head)
       return ''
     else
-      " return emoji#for('arrows_clockwise').l:head
       return l:head
     endif
 endfunction
@@ -43,17 +34,17 @@ function! StatusLine()
   let buf         = " [%n]"
   let make_status = "%{NeomakeStatus()}"
   let fpath       = " %<%f "
-  let mod         = "%{Modified()}"
-  let spell       = "%{&spell ? emoji#for('mag') . ' ' : ''}"
-  let ro          = "%{&readonly ? emoji#for('lock') . ' ' : ''}"
+  let mod         = "%m"
+  let ro          = "%r"
   " Use 4l as a little trick to avoid issues of emojis being rendered above
   " previous chars.
-  let pos         = " %4l,%-3c %P "
+  let pos         = "%4l,%-3c %P"
   let sep         = " %= "
+  let spell       = "%{&spell ? &spelllang : ''}"
   let gb          = "%{GitBranch()} "
   let gh          = "%{GitHunks()}"
 
-  return buf.make_status.fpath.ro.mod.spell.pos.sep.sep.gb.gh
+  return buf.make_status.fpath.ro.mod.pos.sep.spell.sep.gb.gh
 endfunction
 
 " Note that the "%!" expression is evaluated in the context of the
