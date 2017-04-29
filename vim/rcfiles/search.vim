@@ -30,10 +30,10 @@ if executable('ag')
 endif
 
 " Search for the provided text and open a 'quickfix' window
-command! -nargs=+ -bar Grep execute 'silent! grep! <q-args>' | redraw! | copen
+command! -nargs=+ -bar Ag execute 'silent! grep! <q-args>' | redraw! | copen
 
 " Bind \ (backward slash) to grep shortcut
-nnoremap \ :Grep<Space>
+nnoremap \ :Ag<Space>
 
 " Bind K to grep word under cursor
 nnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:copen<CR>
