@@ -32,20 +32,6 @@ let s:ft_emoji = map({
   \ 'zsh':            'shell',
 \ }, 'emoji#for(v:val)')
 
-let s:mode_emoji = map({
-  \ "n":      'cherry_blossom',
-  \ "i":      'four_leaf_clover',
-  \ "R":      'sunflower',
-  \ "v":      'tulip',
-  \ "\<C-V>": 'tulip',
-  \ "V":      'tulip',
-\ }, 'emoji#for(v:val)')
-
-function! Mode()
-  " Get emoji for mode and fallback to 'question' emoji
-  return get(s:mode_emoji, mode(), emoji#for('question'))
-endfunc
-
 " See: https://github.com/neomake/neomake/blob/master/doc/neomake.txt#L407
 function! NeomakeStatus()
   let prefix = ' '.emoji#for('x').' '
@@ -96,8 +82,7 @@ endfunction
 
 hi def link User1 TablineFill
 function! StatusLine()
-  let mode        = " %{Mode()} "
-  let buf         = "[%n]"
+  let buf         = " [%n]"
   let make_status = "%{NeomakeStatus()}"
   let fpath       = " %<%f "
   let ft          = "%{Filetype()} "
@@ -111,7 +96,7 @@ function! StatusLine()
   let gb          = "%{GitBranch()} "
   let gh          = "%{GitHunks()}"
 
-  return mode.buf.make_status.fpath.ft.ro.mod.spell.pos.sep.sep.gb.gh
+  return buf.make_status.fpath.ft.ro.mod.spell.pos.sep.sep.gb.gh
 endfunction
 
 " Note that the "%!" expression is evaluated in the context of the

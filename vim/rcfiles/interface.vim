@@ -12,9 +12,6 @@ set hidden
 " Always show the status line
 set laststatus=2
 
-" Get rid of default mode indicator - using airline's instead
-set noshowmode
-
 " Show line numbers.
 " Check http://vim.wikia.com/wiki/Display_line_numbers to learn more about line
 " numbers.
