@@ -1,49 +1,7 @@
-let s:ft_emoji = map({
-  \ 'c':              'baby_chick',
-  \ 'clojure':        'lollipop',
-  \ 'coffee':         'coffee',
-  \ 'conf':           'wrench',
-  \ 'cpp':            'chicken',
-  \ 'css':            'art',
-  \ 'eruby':          'ring',
-  \ 'gitcommit':      'cat',
-  \ 'haml':           'hammer',
-  \ 'haskell':        'tophat',
-  \ 'help':           'angel',
-  \ 'html':           'herb',
-  \ 'java':           'older_man',
-  \ 'javascript':     'see_no_evil',
-  \ 'javascript.jsx': 'see_no_evil',
-  \ 'json':           'page_with_curl',
-  \ 'make':           'seedling',
-  \ 'markdown':       'book',
-  \ 'perl':           'camel',
-  \ 'python':         'snake',
-  \ 'ruby':           'gem',
-  \ 'scala':          'barber',
-  \ 'scss':           'art',
-  \ 'sh':             'shell',
-  \ 'slim':           'dancer',
-  \ 'text':           'books',
-  \ 'vim':            'poop',
-  \ 'vim-plug':       'electric_plug',
-  \ 'yaml':           'yum',
-  \ 'yaml.jinja':     'yum',
-  \ 'zsh':            'shell',
-\ }, 'emoji#for(v:val)')
-
 " See: https://github.com/neomake/neomake/blob/master/doc/neomake.txt#L407
 function! NeomakeStatus()
   let prefix = ' '.emoji#for('x').' '
   return neomake#statusline#LoclistStatus(prefix)
-endfunction
-
-function! Filetype()
-  if empty(&filetype)
-    return ''
-  else
-    return get(s:ft_emoji, &filetype)
-  endif
 endfunction
 
 function! Modified()
@@ -85,7 +43,6 @@ function! StatusLine()
   let buf         = " [%n]"
   let make_status = "%{NeomakeStatus()}"
   let fpath       = " %<%f "
-  let ft          = "%{Filetype()} "
   let mod         = "%{Modified()}"
   let spell       = "%{&spell ? emoji#for('mag') . ' ' : ''}"
   let ro          = "%{&readonly ? emoji#for('lock') . ' ' : ''}"
@@ -96,7 +53,7 @@ function! StatusLine()
   let gb          = "%{GitBranch()} "
   let gh          = "%{GitHunks()}"
 
-  return buf.make_status.fpath.ft.ro.mod.spell.pos.sep.sep.gb.gh
+  return buf.make_status.fpath.ro.mod.spell.pos.sep.sep.gb.gh
 endfunction
 
 " Note that the "%!" expression is evaluated in the context of the
