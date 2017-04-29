@@ -24,6 +24,7 @@ brew install ctags
 brew install curl
 brew install diff-so-fancy
 brew install fzf
+brew install highlight
 brew install homebrew/dupes/screen
 brew install homebrew/dupes/less
 brew install openssl
