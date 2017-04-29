@@ -31,3 +31,8 @@ export FZF_DEFAULT_OPTS='
   --color info:108,prompt:109,spinner:108,pointer:168,marker:168
 '
 export FZF_CTRL_T_OPTS="--preview 'preview {} | head -200'"
+export FZF_CTRL_R_OPTS="--preview 'echo {}'
+  --preview-window down:1:hidden:wrap
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --header 'Press CTRL-Y to copy command to the pasteboard'
+  --border"
