@@ -1,6 +1,6 @@
 " See: https://github.com/neomake/neomake/blob/master/doc/neomake.txt#L407
 function! NeomakeStatus()
-  let prefix = ' '.emoji#for('x').' '
+  let prefix = "\u2718"
   return neomake#statusline#LoclistStatus(prefix)
 endfunction
 
