@@ -72,8 +72,6 @@ Plug 'junegunn/seoul256.vim',       { 'dir': '~/.vim/colors' }
 "------------------------------------------------
 " Tools
 "------------------------------------------------
-" Plug 'vim-airline/vim-airline-themes' | Plug 'vim-airline/vim-airline'
-Plug 'junegunn/vim-emoji'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'neomake/neomake'
