@@ -23,6 +23,12 @@ nnoremap <leader>v :vsplit **/*
 
 nnoremap <C-p> :FZF<CR>
 
+" Movement in insert mode
+inoremap <S-h> <C-o>h
+inoremap <S-l> <C-o>a
+inoremap <S-j> <C-o>j
+inoremap <S-k> <C-o>k
+
 " ----------------------------------------------------------------------------
 " Editing
 " ----------------------------------------------------------------------------
