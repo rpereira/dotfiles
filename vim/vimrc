@@ -32,6 +32,9 @@ set path=.,**
 " Do not recognize octal numbers for Ctrl-A and Ctrl-X.
 set nrformats-=octal
 
+" Show @@@ in the last line if it is truncated.
+set display=truncate
+
 " Source all of the .vim files under the specified directory.
 function! s:SourceConfigFilesIn(directory)
   let dir_splat = '~/.dotfiles/vim/' . a:directory . '/*.vim'
