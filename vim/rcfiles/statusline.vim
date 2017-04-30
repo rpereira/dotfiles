@@ -31,20 +31,15 @@ endfunction
 
 hi def link User1 TablineFill
 function! StatusLine()
-  let buf         = " [%n]"
   let make_status = "%{NeomakeStatus()}"
-  let fpath       = " %<%f "
-  let mod         = "%m"
-  let ro          = "%r"
-  " Use 4l as a little trick to avoid issues of emojis being rendered above
-  " previous chars.
-  let pos         = "%4l,%-3c %P"
-  let sep         = " %= "
+  let fpath       = " %<%.99f "
+  let pos         = "%(%5l,%-3c %P%)"
+  let sep         = " %="
   let spell       = "%{&spell ? &spelllang : ''}"
   let gb          = "%{GitBranch()} "
   let gh          = "%{GitHunks()}"
 
-  return buf.make_status.fpath.ro.mod.pos.sep.spell.sep.gb.gh
+  return ' [%n]'.make_status.fpath.'%h%w%m%r'.pos.sep.spell.sep.gb.gh
 endfunction
 
 " Note that the "%!" expression is evaluated in the context of the
