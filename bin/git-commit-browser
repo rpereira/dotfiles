@@ -5,9 +5,12 @@
 # Usage:
 #   $ git commit-browser
 
+INSTRUCTIONS="Type to search | <ENTER>:show diff | <q>:go back | <ESC>:exit | <C-y>:yank sha1"
+
 git log --graph --color=always \
     --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
 fzf --ansi --no-sort --reverse --tiebreak=index \
-    --header "Type to search    <ENTER>:view changes    <q>:go back    <ESC>:exit" \
+    --header "$INSTRUCTIONS" \
     --bind "enter:execute:echo {} | (grep -o '[a-f0-9]\{7\}' | head -1 |
             xargs -I % sh -c 'git show --color=always % | less -R')" \
+    --bind "ctrl-y:execute-silent(echo -n {2} | pbcopy)+abort"
