@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#
+# Deletes branches that are listed in `git branch --merged`.
+#
+# Usage:
+#   $ git delete-merged-branches
+
+git branch --merged | ag -v "master|dev" | xargs git branch -d
