@@ -14,8 +14,14 @@ alias :q='exit'
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
-# A list of directories for TheSilverSearcher ignore
-alias ag='ag --path-to-ignore=~/.agignore'
+## Summary for args to less:
+# less(1)
+#   -M (-M or --LONG-PROMPT) Prompt very verbosely
+#   -I (-I or --IGNORE-CASE) Searches with '/' ignore case
+#   -R (-R or --RAW-CONTROL-CHARS) For handling ANSI colors
+#   -F (-F or --quit-if-one-screen) Auto exit if <1 screen
+#   -X (-X or --no-init) Disable termcap init & deinit
+alias ag='ag --path-to-ignore=~/.agignore --pager="less -MIRFX"'
 
 # --------------------------------------------
 # System specific
