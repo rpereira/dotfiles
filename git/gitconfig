@@ -4,7 +4,7 @@
   verbs = !git log --pretty=format:'%s' | cut -d \" \" -f 1 | sort | uniq -c | sort -nr | head -15
 
 [branch]
-  autosetuprebase = always
+  autoSetupRebase = always
 
 [core]
   autocrlf = input
@@ -16,7 +16,7 @@
   untracked = yellow
 
 [commit]
-  gpgsign = true
+  gpgSign = true
   template = ~/.dotfiles/git/gitmessage.txt
 
 [fetch]
