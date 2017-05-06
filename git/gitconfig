@@ -19,6 +19,9 @@
   gpgSign = true
   template = ~/.dotfiles/git/gitmessage.txt
 
+[diff]
+  indentHeuristic = true
+
 [fetch]
   prune = true
 
