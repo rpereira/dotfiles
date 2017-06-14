@@ -5,4 +5,4 @@
 # Usage:
 #   $ git delete-merged-branches
 
-git branch --merged | ag -v "master|dev" | xargs git branch -d
+git branch --no-color --merged | ag -v "master|dev" | xargs git branch -d
