@@ -1,5 +1,4 @@
-" Text wrapping is pretty much useless in the quickfix window
-setlocal nowrap
+setlocal wrap
 
 " Relative line numbers don't make much sense either but absolute numbers
 " definitely do
