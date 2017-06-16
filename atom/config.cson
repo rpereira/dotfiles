@@ -1,5 +1,9 @@
 "*":
   core:
+    disabledPackages: [
+      "language-elixir"
+      "linter-elixirc"
+    ]
     telemetryConsent: "no"
     themes: [
       "one-dark-ui"
