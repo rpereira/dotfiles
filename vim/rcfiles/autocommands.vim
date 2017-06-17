@@ -8,12 +8,6 @@ augroup file_type_check
         \ endif
 augroup END
 
-" Write all changed buffers when Vim loses input focus.
-augroup write_buffer_on_focus_lost
-  autocmd!
-  autocmd FocusLost * silent! wall
-augroup END
-
 " Restore cursor position when opening file except for gitcommit filetype.
 augroup restore_cursor_position
   autocmd!
@@ -21,4 +15,10 @@ augroup restore_cursor_position
         \ if &ft !=# 'gitcommit' && line("'\"") > 1 && line("'\"") <= line("$") |
         \   exe "normal! g`\"" |
         \ endif
+augroup END
+
+augroup auto_save_and_read
+    autocmd!
+    autocmd TextChanged,InsertLeave,FocusLost * silent! wall
+    autocmd CursorHold * silent! checktime
 augroup END
