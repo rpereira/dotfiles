@@ -4,3 +4,6 @@
 " Cicle through buffers
 nnoremap ]b :bnext<CR>
 nnoremap [b :bprevious<CR>
+
+" Delete current buffer
+noremap <leader>d :bdelete<CR>
