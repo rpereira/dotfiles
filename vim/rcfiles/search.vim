@@ -18,7 +18,7 @@ set ignorecase
 set smartcase
 
 " Turn off search highlight
-nnoremap <silent> <Leader>qs <Esc> :nohlsearch<CR>
+nnoremap <Esc> :nohlsearch<Return><Esc>
 
 " Use the Silver Searcher
 if executable('ag')
