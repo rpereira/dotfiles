@@ -43,6 +43,9 @@ xnoremap > >gv
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
+" Completion menu with various formats for current date.
+inoremap <silent> <C-g><C-t> <C-r>=repeat(complete(col('.'), map(["%Y-%m-%d %H:%M:%S","%a, %d %b %Y %H:%M:%S %z","%Y %b %d","%d-%b-%y","%a %b %d %T %Z %Y"],'strftime(v:val)')+[localtime()]),0)<CR>
+
 " ----------------------------------------------------------------------------
 " Learn Vim the hard way
 " ----------------------------------------------------------------------------
