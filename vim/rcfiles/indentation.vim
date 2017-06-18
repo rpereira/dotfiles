@@ -32,10 +32,3 @@ set listchars=tab:»·,trail:·,nbsp:·
 " Make every wrapped line visually indented.
 set breakindent
 let &showbreak = '››› '
-
-" Ident like most editors do.
-" Note: In insert mode, you can just use Ctrl-t and Ctrl-d to indent/dedent.
-nnoremap <TAB> >>
-nnoremap <S-TAB> <<
-vnoremap <TAB> >gv
-vnoremap <S-TAB> <gv
