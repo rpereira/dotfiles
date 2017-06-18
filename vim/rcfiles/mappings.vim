@@ -53,6 +53,7 @@ xnoremap <silent> [e :move-2<CR>gv
 xnoremap <silent> ]e :move'>+<CR>gv
 
 " Change indentation
+" Note: In insert mode, you can just use Ctrl-t and Ctrl-d to indent/dedent.
 nnoremap < <<
 nnoremap > >>
 xnoremap < <gv
