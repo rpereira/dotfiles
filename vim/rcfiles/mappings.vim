@@ -36,23 +36,30 @@ noremap <Leader>" viw<Esc>a"<Esc>hbi"<Esc>lel
 " Make Y consistent with other capitals (e.g. C and D)
 nnoremap Y y$
 
-" Moving lines
-xnoremap < <gv
-xnoremap > >gv
-
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
 " Completion menu with various formats for current date.
 inoremap <silent> <C-g><C-t> <C-r>=repeat(complete(col('.'), map(["%Y-%m-%d %H:%M:%S","%a, %d %b %Y %H:%M:%S %z","%Y %b %d","%d-%b-%y","%a %b %d %T %Z %Y"],'strftime(v:val)')+[localtime()]),0)<CR>
 
+" ----------------------------------------------------------------------------
+" Moving lines
+" ----------------------------------------------------------------------------
 " Insert blank lines above and bellow current line, respectively.
-nnoremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
-nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
+nnoremap [<Space> :<c-u>put! =repeat(nr2char(10), v:count1)<CR>
+nnoremap ]<Space> :<c-u>put =repeat(nr2char(10), v:count1)<CR>
 
 " Move current line up and down, respectively.
-nnoremap [e  :<c-u>execute 'move -1-'. v:count1<cr>
-nnoremap ]e  :<c-u>execute 'move +'. v:count1<cr>
+nnoremap <silent> [e :move-2<CR>
+nnoremap <silent> ]e :move+<CR>
+xnoremap <silent> [e :move-2<CR>gv
+xnoremap <silent> ]e :move'>+<CR>gv
+
+" Change indentation
+nnoremap < <<
+nnoremap > >>
+xnoremap < <gv
+xnoremap > >gv
 
 " ----------------------------------------------------------------------------
 " Learn Vim the hard way
