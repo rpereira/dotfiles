@@ -1,9 +1,6 @@
 " Draw a vertical line at 'textwidth' + 1
 set colorcolumn=+1
 
-" Highlight current line
-set cursorline
-
 " Act like all other editors, where buffers can exist in the background without
 " being in a window.
 " http://items.sjbach.com/319/configuring-vim-right
