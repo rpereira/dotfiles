@@ -5,6 +5,9 @@
 " changes other options as a side effect.
 set nocompatible
 
+" Disable netrw; use vim-dirvish instead.
+let loaded_netrwPlugin = 1
+
 " Change Leader to a comma because the backslash is too far away
 let mapleader = ','
 
