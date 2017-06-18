@@ -17,9 +17,6 @@ set gdefault
 set ignorecase
 set smartcase
 
-" Turn off search highlight
-nnoremap <Esc> :nohlsearch<Return><Esc>
-
 " Use the Silver Searcher
 if executable('ag')
   " Use ag over grep.
