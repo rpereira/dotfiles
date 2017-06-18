@@ -74,8 +74,9 @@ Plug 'junegunn/seoul256.vim',       { 'dir': '~/.vim/colors' }
 " Tools
 "------------------------------------------------
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'pbrisbin/vim-mkdir'
+Plug 'justinmk/vim-dirvish'
 Plug 'neomake/neomake'
+Plug 'pbrisbin/vim-mkdir'
 " Lazy load. See vim/rcplugins/ultisnips.vim
 Plug 'sirver/ultisnips',           { 'on': [] }
 
