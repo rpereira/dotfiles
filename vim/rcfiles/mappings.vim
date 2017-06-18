@@ -59,6 +59,12 @@ xnoremap < <gv
 xnoremap > >gv
 
 " ----------------------------------------------------------------------------
+" Readline-style key bindings in command-line
+" ----------------------------------------------------------------------------
+cnoremap        <C-A> <Home>
+cnoremap <expr> <C-D> getcmdpos()>strlen(getcmdline())?"\<Lt>C-D>":"\<Lt>Del>"
+
+" ----------------------------------------------------------------------------
 " Learn Vim the hard way
 " ----------------------------------------------------------------------------
 " Quote from http://learnvimscriptthehardway.stevelosh.com/
