@@ -1,7 +1,7 @@
 " Load plugin manually.
 augroup ultisnips_lazy_load
   autocmd!
-  autocmd FileType javascript,java call plug#load('ultisnips')
+  autocmd FileType javascript.jsx,java call plug#load('ultisnips')
         \| autocmd! ultisnips_lazy_load
 augroup END
 
