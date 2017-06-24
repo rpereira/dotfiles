@@ -37,10 +37,10 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
 
 " JavaScript
-Plug 'flowtype/vim-flow'
-Plug 'mxw/vim-jsx'
-Plug 'pangloss/vim-javascript',  { 'branch': 'develop' }
-Plug 'heavenshell/vim-jsdoc'
+Plug 'flowtype/vim-flow' ,         { 'for': ['javascript.jsx', 'javascript'] }
+Plug 'mxw/vim-jsx' ,               { 'for': ['javascript.jsx', 'javascript'] }
+Plug 'pangloss/vim-javascript' ,   { 'for': ['javascript.jsx', 'javascript'] }
+Plug 'heavenshell/vim-jsdoc' ,     { 'for': ['javascript.jsx', 'javascript'] }
 
 " Markdown
 Plug 'plasticboy/vim-markdown',    { 'for': 'markdown' }
