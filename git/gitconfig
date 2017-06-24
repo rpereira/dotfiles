@@ -12,6 +12,9 @@
   autocrlf = input
   excludesfile = ~/.gitignore_global
 
+[color]
+  ui = always
+
 [color "status"]
   added = cyan
   changed = red
