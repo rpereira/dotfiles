@@ -3,6 +3,8 @@
     disabledPackages: [
       "language-elixir"
       "linter-elixirc"
+      "welcome"
+      "metrics"
     ]
     telemetryConsent: "no"
     themes: [
