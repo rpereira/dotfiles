@@ -6,11 +6,10 @@
       "welcome"
       "metrics"
     ]
-    telemetryConsent: "no"
-    themes: [
-      "one-dark-ui"
-      "solarized-dark-syntax"
+    packagesWithKeymapsDisabled: [
+      "highlight-line"
     ]
+    telemetryConsent: "no"
   editor:
     fontFamily: "Monaco"
     fontSize: 15
