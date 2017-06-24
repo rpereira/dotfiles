@@ -62,7 +62,6 @@ Plug 'justinmk/vim-sneak'
 " Searching
 "------------------------------------------------
 Plug 'romainl/vim-cool'
-Plug 'romainl/vim-qlist'
 
 "------------------------------------------------
 " Theme
