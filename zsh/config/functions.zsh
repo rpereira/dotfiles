@@ -4,7 +4,9 @@ mkcd() {
 }
 
 # Fuzzy cd into selected directory.
-fcd() {
-  DIR=`find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf-tmux` \
-    && cd "$DIR"
+fd() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf --height=50% --border) &&
+  cd "$dir"
 }
