@@ -1,6 +1,7 @@
 " Set filetype for file names without format.
 augroup file_type_check
   autocmd!
+  autocmd BufNewFile,BufRead .babelrc,.eslintrc,.lintstagedrc set ft=json
   autocmd BufNewFile,BufRead *named.conf* set ft=named
   autocmd BufNewFile,BufRead *.txt,INSTALL,LICENSE,NEWS,README,TODO
         \ if &ft == ""  |
