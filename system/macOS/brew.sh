@@ -25,8 +25,8 @@ brew install curl
 brew install diff-so-fancy
 brew install fzf
 brew install highlight
-brew install homebrew/dupes/screen
-brew install homebrew/dupes/less
+brew install screen
+brew install less
 brew install openssl
 brew install reattach-to-user-namespace
 brew install the_silver_searcher
