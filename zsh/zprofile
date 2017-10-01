@@ -18,6 +18,7 @@ cdpath=(
 fpath=(
   /usr/local/share/zsh-completions
   $DOTFILES/completions
+  $DOTFILES/zsh/zfunctions
   $fpath
 )
 
