@@ -1,0 +1,90 @@
+#!/usr/bin/env bash
+#
+# Copyright 2017 Rui Afonso Pereira
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+VERSION=0.1
+TAR=/usr/bin/tar
+GPG=gpg
+
+opt="$1"
+dir_path="$2"
+
+usage() {
+  cat <<- EOF
+Usage: gpgdir [--help] [--version] [--encrypt] [--decrypt]
+       filename
+       directory
+
+Encrypt files into an archive.
+EOF
+}
+
+encrypt() {
+  timestamp="$(date +%F_at_%H.%M.%S_%p)"
+  $TAR zcf - "$dir_path" | $GPG -c > "$dir_path"_backup_"$timestamp".tar.gz.gpg
+  printf "%s\n" "Backup successfully created for '$dir_path'."
+}
+
+decrypt() {
+  output_dir=$(dirname "$dir_path")
+  source_name=$(basename "$dir_path")
+  output_name="$output_dir/restored_$source_name"
+
+  # Decrypt and extract archive in the current directory
+  $GPG -o "$output_name" -d "$dir_path" && $TAR zxvf "$output_name"
+
+  # Cleanup restored archive file -- just keep the extracted archive
+  rm "$output_name"
+}
+
+main() {
+  if [[ $# -eq 0 ]]; then
+    usage
+    exit 0
+  fi
+
+  case "$opt" in
+    --help | -h)
+      usage
+      exit
+      ;;
+
+    --version | -v)
+      echo "gpgdir (GnuPG) $VERSION"
+      exit 0
+      ;;
+
+    --encrypt | -e)
+      encrypt
+      ;;
+
+    --decrypt | -d)
+      decrypt
+      ;;
+
+    *)
+      echo "gpgdir: '$opt' is not a gpgdir command. See 'gpgdir --help'."
+      exit 1
+      ;;
+  esac
+}
+
+main "$@"
