@@ -16,6 +16,8 @@ ln -sf "$DOTFILES_DIR/zsh/zprofile" "$HOME/.zprofile"
 # vim
 ln -sf "$DOTFILES_DIR/vim/vimrc" "$HOME/.vimrc"
 ln -sf "$DOTFILES_DIR/vim/gvimrc" "$HOME/.gvimrc"
+mkdir "$HOME/.vim/autoload"
+ln -sf "$DOTFILES/vim/autoload/*" "$HOME/.vim/autoload/"
 mkdir "$HOME/.vim/after"
 ln -sf "$DOTFILES_DIR/vim/ftplugin" "$HOME/.vim/after/ftplugin"
 mkdir "$HOME/.vim/UltiSnips"
