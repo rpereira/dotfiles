@@ -16,6 +16,10 @@ let mapleader = ','
 filetype plugin indent on
 syntax on
 
+" The mouse works just fine.
+set mouse=a
+set ttyfast
+
 " Automatically save before commands like :next and :make.
 set autowrite
 
