@@ -1,6 +1,7 @@
 "
 " flowtype/vim-flow
 "
+let g:flow#enable = 0
 let g:flow#autoclose = 1
 
 " Custom flow executable.
