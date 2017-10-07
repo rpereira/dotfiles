@@ -1,5 +1,5 @@
 autocmd! BufWritePost * Neomake
-let g:neomake_open_list = 1
+let g:neomake_open_list = 0
 
 " Haskell
 " These makers should be on $PATH. See zsh/zprofile for more information.
