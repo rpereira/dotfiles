@@ -22,12 +22,12 @@ if executable('ag')
   " Use ag over grep.
   " Output the line and column number of each match, so that we can navigate
   " results by jumping to the precise position of each match.
-  set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column
+  set grepprg=ag\ --nogroup\ --nocolor\ --column\ $*
   set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
 
-" Search for the provided text and open a 'quickfix' window
-command! -nargs=+ -bar Ag execute 'silent! grep! <q-args>' | redraw! | copen
+" See grepper#run in vim/autoload/grepper.vim
+command! -nargs=* -complete=file Ag call grepper#run(<q-args>)
 
 " Bind \ (backward slash) to grep shortcut
 nnoremap \ :Ag<Space>
