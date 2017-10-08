@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-VERSION=0.1
+VERSION=0.1.1
 TAR=/usr/bin/tar
 GPG=gpg
 
@@ -37,10 +37,14 @@ Encrypt files into an archive.
 EOF
 }
 
+log_info() {
+  echo "gpgdir: $1"
+}
+
 encrypt() {
   timestamp="$(date +%F_at_%H.%M.%S_%p)"
   $TAR zcf - "$dir_path" | $GPG -c > "$dir_path"_backup_"$timestamp".tar.gz.gpg
-  printf "%s\n" "Backup successfully created for '$dir_path'."
+  log_info "Data encryption succeeded."
 }
 
 decrypt() {
@@ -53,6 +57,7 @@ decrypt() {
 
   # Cleanup restored archive file -- just keep the extracted archive
   rm "$output_name"
+  log_info "Data decryption succeeded."
 }
 
 main() {
@@ -81,7 +86,7 @@ main() {
       ;;
 
     *)
-      echo "gpgdir: '$opt' is not a gpgdir command. See 'gpgdir --help'."
+      log_info "'$opt' is not a gpgdir command. See 'gpgdir --help'."
       exit 1
       ;;
   esac
