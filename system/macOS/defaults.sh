@@ -220,6 +220,28 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # ==============================================
+# Safari & WebKit
+# ==============================================
+# Disable AutoFill
+defaults write com.apple.Safari AutoFillFromAddressBook -bool false
+defaults write com.apple.Safari AutoFillPasswords -bool false
+defaults write com.apple.Safari AutoFillCreditCardData -bool false
+defaults write com.apple.Safari AutoFillMiscellaneousForms -bool false
+
+# Warn about fraudulent websites
+defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool true
+
+# Disable Java
+defaults write com.apple.Safari WebKitJavaEnabled -bool false
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabled -bool false
+
+# Enable "Do Not Track"
+defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
+
+# Update extensions automatically
+defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
+
+# ==============================================
 # Screen
 # ==============================================
 # Save screenshots to the desktop
@@ -266,7 +288,7 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # Kill affected applications
 # ==============================================
 declare -a AFFECTED_APPS=("Activity Monitor" "Calendar" "Dock" "Finder" "iCal"
-                          "Mail" "Photos" "SystemUIServer")
+                          "Mail" "Photos" "Safari" "SystemUIServer")
 for app in "${AFFECTED_APPS[@]}"; do
   killall "${app}" &> /dev/null
 done
