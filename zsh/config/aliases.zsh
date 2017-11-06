@@ -21,7 +21,7 @@ alias path='echo $PATH | tr -s ":" "\n"'
 #   -R (-R or --RAW-CONTROL-CHARS) For handling ANSI colors
 #   -F (-F or --quit-if-one-screen) Auto exit if <1 screen
 #   -X (-X or --no-init) Disable termcap init & deinit
-alias ag='ag --path-to-ignore=~/.agignore --pager="less -MIRFX"'
+alias ag='ag --path-to-ignore=~/.ignore --pager="less -MIRFX"'
 
 # --------------------------------------------
 # System specific
