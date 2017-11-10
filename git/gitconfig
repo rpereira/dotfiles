@@ -4,6 +4,7 @@
   lg = log --abbrev-commit --date=relative --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset'
   gsb = gss --branch
   verbs = !git log --pretty=format:'%s' | cut -d \" \" -f 1 | sort | uniq -c | sort -nr | head -15
+  patch = !git --no-pager diff --no-color
 
 [branch]
   autoSetupRebase = always
