@@ -143,6 +143,9 @@ defaults write com.apple.systemuiserver menuExtras -array \
   "/System/Library/CoreServices/Menu Extras/Battery.menu" \
   "/System/Library/CoreServices/Menu Extras/Clock.menu"
 
+# Don't show Siri
+defaults write com.apple.Siri StatusMenuVisible -bool NO
+
 # Enable Dark mode
 # FIXME THis does not seem to work on El Capitan
 # defaults write /Library/Preferences/.GlobalPreferences AppleInterfaceTheme Dark
