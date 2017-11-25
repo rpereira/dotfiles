@@ -44,12 +44,17 @@ brew install nodenv
 brew install rbenv
 brew install ruby-build
 brew install rust
+brew cask install haskell-platform
 
 info "Installing other useful binaries..."
 brew install dos2unix
 brew install imagemagick --with-webp
 brew install pandoc
 brew install shellcheck
+
+info "Installing Applications"
+brew cask install iterm2
+brew cask install sourcetree
 
 info "Installing OpenPG tools..."
 brew install gnupg gpg-agent pinentry-mac
