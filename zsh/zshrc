@@ -1,6 +1,6 @@
 # Load plugins
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # Load configuration files
 for file ($DOTFILES/zsh/config/*.zsh(N)); do
