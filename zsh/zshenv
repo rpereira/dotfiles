@@ -9,6 +9,9 @@ export EDITOR=$VISUAL
 # Reduce to 0.1 secs the delay after hitting the <ESC> key.
 export KEYTIMEOUT=1
 
+# The Curses based Pinentry needs a real tty device in order to work.
+export GPG_TTY=$(tty)
+
 DOTFILES="$HOME/.dotfiles"
 SHELL="/usr/local/bin/zsh"
 ZSH="$HOME/.zsh"
