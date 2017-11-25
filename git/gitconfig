@@ -59,7 +59,7 @@
 
 [user]
   name = Rui Afonso Pereira
-  signingkey = F1156874
+  signingkey = F2D97CF6F1156874
   useConfigOnly = true
 
 [filter "lfs"]
