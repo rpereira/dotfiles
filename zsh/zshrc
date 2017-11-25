@@ -16,4 +16,3 @@ unset file
 
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
-[[ -f ~/.travis/travis.sh ]] && source ~/.travis/travis.sh
