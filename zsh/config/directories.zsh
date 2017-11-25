@@ -40,6 +40,3 @@ alias l='ls -lah'
 alias la='ls -lAh'
 alias ll='ls -lh'
 alias lsa='ls -lah'
-
-# Set Solarized Dark colors for GNU ls
-eval `dircolors $HOME/.dircolors`
