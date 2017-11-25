@@ -17,7 +17,7 @@ declare -a SYMLINKS_TO_TEST=(
 
   "$HOME/.dotfiles"
 
-  "$HOME/.ignore"
+  "$HOME/.agignore"
 
   "$HOME/.ctags"
 

@@ -1,6 +1,6 @@
+.git/
 log
+node_modules/
 tags
 tmp
 vendor
-.git/
-node_modules/
