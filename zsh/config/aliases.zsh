@@ -21,30 +21,15 @@ alias path='echo $PATH | tr -s ":" "\n"'
 #   -X (-X or --no-init) Disable termcap init & deinit
 alias ag='ag --pager="less -MIRFX"'
 
-# --------------------------------------------
-# System specific
-# --------------------------------------------
-# macOS
-if [[ "$OSTYPE" == (darwin)* ]]; then
-  alias afk='mac lock'
-  alias ip='mac ip'
-  alias ping!='mac check-internet'
+alias afk='mac lock'
+alias ip='mac ip'
+alias ping!='mac check-internet'
 
-  # Copy the contents of the id_rsa.pub file to the clipboard.
-  alias sshkey='pbcopy < ~/.ssh/id_rsa.pub | echo "=> SSH key was copied to the clipboard."'
+# Copy the contents of the id_rsa.pub file to the clipboard.
+alias sshkey='pbcopy < ~/.ssh/id_rsa.pub | echo "=> SSH key was copied to the clipboard."'
 
-  # Open current directory in finder.
-  alias f='open -a Finder ./'
-
-# Linux
-elif [[ "$OSTYPE" == (linux)* ]]; then
-  # Lock the screen
-  alias afk='gnome-screensaver-command --lock'
-
-  # Hide/show all desktop icons
-  alias hidedesktop='gsettings set org.gnome.desktop.background show-desktop-icons false'
-  alias showdesktop='gsettings set org.gnome.desktop.background show-desktop-icons true'
-fi
+# Open current directory in finder.
+alias f='open -a Finder ./'
 
 # --------------------------------------------
 # Network
