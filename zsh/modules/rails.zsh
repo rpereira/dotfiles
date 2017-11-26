@@ -1,6 +1,5 @@
 # Return if bundle command is not found.
 if ! command -v bundle >/dev/null; then
-  echo "Error loading $0: Module requires 'bundle' to be installed."
   return 1
 fi
 
