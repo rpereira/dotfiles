@@ -21,8 +21,3 @@ let g:javascript_plugin_jsdoc = 1
 
 " Enables syntax highlighting for Flow.
 let g:javascript_plugin_flow = 1
-
-"
-" Snippets
-"
-autocmd FileType javascript.jsx UltiSnipsAddFiletypes javascript-react
