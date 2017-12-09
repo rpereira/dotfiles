@@ -75,6 +75,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'justinmk/vim-dirvish'
 Plug 'neomake/neomake'
 Plug 'pbrisbin/vim-mkdir'
+Plug 'msanders/snipmate.vim'
 
 " Local bundles
 if filereadable(expand("~/.vimrc_bundles.local"))
