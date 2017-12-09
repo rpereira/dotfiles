@@ -20,8 +20,8 @@ mkdir "$HOME/.vim/autoload"
 ln -sf "$DOTFILES/vim/autoload/*" "$HOME/.vim/autoload/"
 mkdir "$HOME/.vim/after"
 ln -sf "$DOTFILES_DIR/vim/ftplugin" "$HOME/.vim/after/ftplugin"
-mkdir "$HOME/.vim/UltiSnips"
-ln -sf "$DOTFILES_DIR/vim/UltiSnips" "$HOME/.vim/UltiSnips"
+mkdir "$HOME/.vim/snippets"
+ln -sf "$DOTFILES_DIR/vim/snippets" "$HOME/.vim/snippets"
 
 # atom
 declare -a ATOM_FILES=(
