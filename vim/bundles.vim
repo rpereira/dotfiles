@@ -75,8 +75,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'justinmk/vim-dirvish'
 Plug 'neomake/neomake'
 Plug 'pbrisbin/vim-mkdir'
-" Lazy load. See vim/rcplugins/ultisnips.vim
-Plug 'sirver/ultisnips',           { 'on': [] }
 
 " Local bundles
 if filereadable(expand("~/.vimrc_bundles.local"))
