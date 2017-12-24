@@ -1,8 +1,6 @@
 # Rui's dotfiles
 
-These are the base dotfiles I use when setting up a new environment. For private
-configuration I use `.local` files, as described in the [Local Settings
-section](https://github.com/ruiafonsopereira/dotfiles#local-settings).
+Dotfiles for me.
 
 ![Screenshot of my shell prompt using Solarized Dark Theme](http://i.imgur.com/tyXR3p3.png)
 
@@ -14,18 +12,6 @@ section](https://github.com/ruiafonsopereira/dotfiles#local-settings).
 2. Clone this repository
 3. Run `./system/macOS/install.sh`
 
-### Ubuntu
-
-```shell
-sh -c "$(curl -fsSL \
-  https://raw.githubusercontent.com/ruiafonsopereira/dotfiles/master/system/ubuntu/ubuntu.sh)"
-```
-
-### Running tests
-
-Execute `./scripts/run_tests.sh` to run the full test suit. This will report if
-something went wrong during the installation process.
-
 ### What is set up?
 * [Solarized Dark](http://ethanschoonover.com/solarized) as the color scheme for
   terminal and Vim
@@ -35,27 +21,6 @@ something went wrong during the installation process.
   projects
 * [Vim](http://www.vim.org/) as your core editor
 * [Zsh](http://www.zsh.org/) as your shell
-
-## Getting Updates
-In order to update this repository just pull the latest changes.
-
-    git pull
-
-You can update your machine using `mac update`. _See `man mac` for more
-options._
-
-## Local Settings
-This configuration can be extended or overridden to suit user-specific
-requirements. In order to accomplish that, just create and edit the following
-files:
-* `~/.aliases.local`
-* `~/.gitconfig.local`
-* `~/.tmux.conf.local`
-* `~/.vimrc.local`
-* `~/.vimrc_bundles.local`
-
-If it exists in your `$HOME`, each of these files will be automatically
-included.
 
 ## Cheat sheet
 
