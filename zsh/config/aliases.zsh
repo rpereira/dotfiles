@@ -41,8 +41,3 @@ alias hosts='sudo $EDITOR /etc/hosts'
 # --------------------------------------------
 alias weather='curl wttr.in/Porto'
 alias moon='curl wttr.in/Moon'
-
-# --------------------------------------------
-# Custom
-# --------------------------------------------
-[ -f ~/.aliases.local ] && source ~/.aliases.local

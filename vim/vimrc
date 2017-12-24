@@ -65,11 +65,3 @@ call s:SourceConfigFilesIn('rcplugins')
 " Source vimrc files
 " ============================================================================
 call s:SourceConfigFilesIn('rcfiles')
-
-" ============================================================================
-" Local Customization
-" ============================================================================
-" If the file exists, load local configurations.
-if filereadable(expand('~/.vimrc.local'))
-  source ~/.vimrc.local
-endif
