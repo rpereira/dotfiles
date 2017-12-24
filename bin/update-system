@@ -3,54 +3,24 @@
 # Updates:
 #   - macOS
 #   - Homebrew as well all of the installed formulas and Casks
-#   - Solarized repositories
 #   - Vim plugin manager and all of the installed plugins
-#   - Atom packages
 
 # Initialize colors
-GREEN="$(tput setaf 2)"
 BLUE="$(tput setaf 4)"
-BOLD="$(tput bold)"
 NORMAL="$(tput sgr0)"
 
 printf "${BLUE}%s${NORMAL}\n" "Updating your machine..."
 
 sudo softwareupdate -i -a
 
-printf "\n${BLUE}%s${NORMAL}\n" "Updating Homebrew formulas and Casks..."
+printf "\\n${BLUE}%s${NORMAL}\\n" "Updating Homebrew formulas..."
 
 brew update
 brew upgrade
 brew cleanup
-brew cask cleanup
 
-printf "\n${BLUE}%s${NORMAL}\n" "Updating Solarized repos..."
-
-find ~/.solarized \
-  -mindepth 1 -maxdepth 1 \
-  -type d \
-  -print \
-  -exec git -C {} pull \;
-
-printf "\n${BLUE}%s${NORMAL}\n" "Updating Vim plugins..."
+printf "\\n${BLUE}%s${NORMAL}\\n" "Updating Vim plugins..."
 
 vim +PlugUpgrade +PlugUpdate +qall
 
-printf "%s\n" "Done."
-
-printf "\n${BLUE}%s${NORMAL}\n" "Updating Atom packages..."
-
-apm update --no-confirm
-
-printf "\n"
-printf '%s' "$GREEN"
-printf '%s\n' '    _______ _________ _        _______  _______'
-printf '%s\n' '   (  ____ \\__   __/( \      (  ____ \(  ____ \'
-printf '%s\n' '   | (    \/   ) (   | (      | (    \/| (    \/'
-printf '%s\n' '   | (__       | |   | |      | (__    | (_____'
-printf '%s\n' '   |  __)      | |   | |      |  __)   (_____  )'
-printf '%s\n' '   | (         | |   | |      | (            ) |'
-printf '%s\n' ' _ | )      ___) (___| (____/\| (____/\/\____) |'
-printf '%s\n' '(_)|/       \_______/(_______/(_______/\_______)'
-printf "${BLUE}%s${NORMAL}\n" "Hooray! Your system is up-to-date."
-printf "${BLUE}${BOLD}%s${NORMAL}\n" "Follow me on twitter: https://twitter.com/ruiapereira"
+printf "%s\\n" "Done."
