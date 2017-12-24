@@ -77,9 +77,4 @@ Plug 'neomake/neomake'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'msanders/snipmate.vim'
 
-" Local bundles
-if filereadable(expand("~/.vimrc_bundles.local"))
-  source ~/.vimrc_bundles.local
-endif
-
 call plug#end()
