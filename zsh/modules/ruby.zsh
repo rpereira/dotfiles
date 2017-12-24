@@ -14,4 +14,5 @@ fi
 #
 
 # Bundler
-alias b="bundle"
+alias b='bundle'
+alias be='bundle exec'
