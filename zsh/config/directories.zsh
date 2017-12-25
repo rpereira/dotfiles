@@ -40,3 +40,12 @@ alias l='ls -lah'
 alias la='ls -lAh'
 alias ll='ls -lh'
 alias lsa='ls -lah'
+
+#------------------------------------------------
+# Colors
+#------------------------------------------------
+# Set colors for GNU ls
+eval `dircolors $DOTFILES/dircolors/dircolors.ansi-dark`
+
+# Take advantage of $LS_COLORS for completion as well.
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
