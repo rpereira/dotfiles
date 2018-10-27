@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+#
+# Manual actions to perform:
+#   * Set computer name (via System Preferences → Sharing): "fringe"
+
+#
+# Automatic setup begins here
+#
+
 # Close any open System Preferences panes to prevent them from overriding
 # settings we’re about to change.
 osascript -e 'tell application "System Preferences" to quit'
@@ -34,6 +42,9 @@ defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
 
 # Automatically download apps purchased on other Macs
 defaults write com.apple.SoftwareUpdate ConfigDataInstall -int 1
+
+# Turn on app auto-update
+defaults write com.apple.commerce AutoUpdate -bool true
 
 # ==============================================
 # Calendar (iCal)
@@ -125,8 +136,6 @@ defaults write com.apple.finder _FXSortFoldersFirst -bool true
 # ==============================================
 # General
 # ==============================================
-# Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "fringe"
 
 # Set language and text formats
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
@@ -142,13 +151,6 @@ defaults write com.apple.systemuiserver menuExtras -array \
   "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
   "/System/Library/CoreServices/Menu Extras/Battery.menu" \
   "/System/Library/CoreServices/Menu Extras/Clock.menu"
-
-# Don't show Siri
-defaults write com.apple.Siri StatusMenuVisible -bool NO
-
-# Enable Dark mode
-# FIXME THis does not seem to work on El Capitan
-# defaults write /Library/Preferences/.GlobalPreferences AppleInterfaceTheme Dark
 
 # Enable fast user switching
 sudo defaults write /Library/Preferences/.GlobalPreferences MultipleSessionEnabled -bool YES
@@ -176,15 +178,9 @@ defaults write ~/Library/Preferences/org.gpgtools.gpgmail.plist EncryptNewEmails
 # 10: Put display to sleep
 # 11: Launchpad
 # 12: Notification Center
-# Top left screen corner → Mission Control
-defaults write com.apple.dock wvous-tl-corner -int 2
-defaults write com.apple.dock wvous-tl-modifier -int 0
 # Top right screen corner → Desktop
-defaults write com.apple.dock wvous-tr-corner -int 4
-defaults write com.apple.dock wvous-tr-modifier -int 0
-# Bottom left screen corner → Start screen saver
-defaults write com.apple.dock wvous-bl-corner -int 0
-defaults write com.apple.dock wvous-bl-modifier -int 0
+defaults write com.apple.dock wvous-br-corner -int 4
+defaults write com.apple.dock wvous-br-modifier -int 0
 
 # ==============================================
 # iTerm2
@@ -197,9 +193,6 @@ defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/.dotfiles/iterm2"
 # ==============================================
 # Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app
 defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" "@\U21a9"
-
-# Send mail identified by Apple Mail as junk to the Junk mailbox.
-defaults write ~/Library/Containers/com.apple.mail/Data/Library/Preferences/com.apple.mail JunkMailBehavior -int 2
 
 # Apple Mail automatically checks for updates to GPGMail.
 defaults write ~/Library/Preferences/org.gpgtools.gpgmail.plist SUEnableAutomaticChecks -bool true
@@ -243,15 +236,6 @@ defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
 
 # Update extensions automatically
 defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
-
-# ==============================================
-# Screen
-# ==============================================
-# Save screenshots to the desktop
-defaults write com.apple.screencapture location -string "${HOME}/Desktop"
-
-# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
-defaults write com.apple.screencapture type -string "png"
 
 # ==============================================
 # Security & Privacy
