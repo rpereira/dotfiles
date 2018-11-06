@@ -39,5 +39,5 @@ alias hosts='sudo $EDITOR /etc/hosts'
 # --------------------------------------------
 # Just for fun
 # --------------------------------------------
-alias weather='curl wttr.in/Porto'
+alias weather='curl wttr.in'
 alias moon='curl wttr.in/Moon'
