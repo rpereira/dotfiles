@@ -1,5 +1,3 @@
-packadd! matchit
-
 set rtp+=/usr/local/opt/fzf
 
 call plug#begin('~/.vim/bundle')
@@ -19,15 +17,11 @@ Plug 'tpope/vim-surround'
 "------------------------------------------------
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
 Plug 'shumphrey/fugitive-gitlab.vim'
 
 "------------------------------------------------
 " Languages
 "------------------------------------------------
-" CoffeeScript
-Plug 'kchmck/vim-coffee-script',   { 'for': 'coffee' }
-
 " Elixir
 Plug 'elixir-lang/vim-elixir',     { 'for': 'elixir' }
 

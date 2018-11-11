@@ -1,15 +1,111 @@
+" vim: set foldmethod=marker foldlevel=0 nomodeline:
 " ============================================================================
-" General Configuration
+" .vimrc of Rui Afonso Pereira {{{
 " ============================================================================
+
+" Vim 8 defaults
+unlet! skip_defaults_vim
+silent! source $VIMRUNTIME/defaults.vim
+
+" }}}
+" ============================================================================
+" VIM-PLUG BLOCK {{{
+" ============================================================================
+
+set rtp+=/usr/local/opt/fzf
+
+call plug#begin('~/.vim/bundle')
+
+"------------------------------------------------
+" Edit
+"------------------------------------------------
+Plug 'christoomey/vim-sort-motion'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/vim-easy-align',    { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
+Plug 'tpope/vim-commentary',       { 'on': '<Plug>Commentary' }
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-surround'
+
+"------------------------------------------------
+" Git
+"------------------------------------------------
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'shumphrey/fugitive-gitlab.vim'
+
+"------------------------------------------------
+" Languages
+"------------------------------------------------
+" Elixir
+Plug 'elixir-lang/vim-elixir',     { 'for': 'elixir' }
+
+" Haskell
+Plug 'neovimhaskell/haskell-vim',  { 'for': 'haskell' }
+Plug 'hspec/hspec.vim',            { 'for': 'haskell.hspec' }
+
+" JavaScript
+Plug 'flowtype/vim-flow' ,         { 'for': ['javascript.jsx', 'javascript'] }
+Plug 'mxw/vim-jsx' ,               { 'for': ['javascript.jsx', 'javascript'] }
+Plug 'pangloss/vim-javascript' ,   { 'for': ['javascript.jsx', 'javascript'] }
+Plug 'heavenshell/vim-jsdoc' ,     { 'for': ['javascript.jsx', 'javascript'] }
+
+" Markdown
+Plug 'plasticboy/vim-markdown',    { 'for': 'markdown' }
+
+" Ruby
+Plug 'tpope/vim-haml',             { 'for': 'haml' }
+Plug 'tpope/vim-rails',            { 'for': ['ruby', 'haml'] }
+Plug 'vim-ruby/vim-ruby',          { 'for': 'ruby' }
+
+" Rust
+Plug 'rust-lang/rust.vim',         { 'for': 'rust' }
+
+"------------------------------------------------
+" Motion
+"------------------------------------------------
+Plug 'wellle/targets.vim'
+Plug 'justinmk/vim-sneak'
+
+"------------------------------------------------
+" Searching
+"------------------------------------------------
+Plug 'romainl/vim-cool'
+
+"------------------------------------------------
+" Theme
+"------------------------------------------------
+Plug 'junegunn/seoul256.vim',       { 'dir': '~/.vim/colors' }
+
+"------------------------------------------------
+" Tools
+"------------------------------------------------
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'junegunn/fzf.vim'
+Plug 'justinmk/vim-dirvish'
+Plug 'msanders/snipmate.vim'
+Plug 'neomake/neomake'
+Plug 'pbrisbin/vim-mkdir'
+
+call plug#end()
+
+" }}}
+" ============================================================================
+" GENERAL CONFIGURATION {{{
+" ============================================================================
+
+" Change Leader to a comma because the backslash is too far away
+let mapleader = ' '
+
+augroup vimrc
+  autocmd!
+augroup END
+
 " Use Vim settings, rather than Vi settings.  This must be first, because it
 " changes other options as a side effect.
 set nocompatible
 
 " Disable netrw; use vim-dirvish instead.
 let loaded_netrwPlugin = 1
-
-" Change Leader to a comma because the backslash is too far away
-let mapleader = ','
 
 " Enabling filetype support provides filetype-specific indenting, syntax
 " highlighting, omni-completion and other useful settings.
@@ -42,6 +138,709 @@ set nrformats-=octal
 " Show @@@ in the last line if it is truncated.
 set display=truncate
 
+" Open new split panes to right and bottom, which feels more natural.
+set splitbelow
+set splitright
+
+" Keep more lines of context around where I'm working.
+set sidescrolloff=5
+set scrolloff=5
+
+" ----------------------------------------------------------------------------
+" Backups
+" ----------------------------------------------------------------------------
+
+" Switch off automatic creation of backup files
+set nobackup
+set nowritebackup
+
+" http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
+set noswapfile
+
+" ----------------------------------------------------------------------------
+" Clipboard
+" ----------------------------------------------------------------------------
+
+" Yank to system clipboard.
+nmap <leader>y "*y
+vmap <leader>y "*y
+
+" Delete to system clipboard.
+nmap <leader>d "*d
+vmap <leader>d "*d
+
+" Preserve indentation while pasting text from the system clipboard.
+noremap <leader>p :set paste<CR>:put *<CR>:set nopaste<CR>
+
+" ----------------------------------------------------------------------------
+" Interface
+" ----------------------------------------------------------------------------
+
+" Draw a vertical line at 'textwidth' + 1
+set colorcolumn=+1
+
+" Act like all other editors, where buffers can exist in the background without
+" being in a window.
+" http://items.sjbach.com/319/configuring-vim-right
+set hidden
+
+" Always show the status line
+set laststatus=2
+
+" Show line numbers.
+" Check http://vim.wikia.com/wiki/Display_line_numbers to learn more about line
+" numbers.
+" set number
+
+" Minimal number of columns to use for the line number
+set numberwidth=4
+
+" Show relative line numbers
+set relativenumber
+
+" Show the cursor position all the time
+set ruler
+
+" Display incomplete commands
+set showcmd
+
+" Highlight matching parenthesis
+set showmatch
+
+" Break lines at this many chars
+set textwidth=80
+
+" ----------------------------------------------------------------------------
+" Theme
+" ----------------------------------------------------------------------------
+
+" 24-bit colors
+set t_8f=[38;2;%lu;%lu;%lum
+set t_8b=[48;2;%lu;%lu;%lum
+set termguicolors
+
+" Seoul Colors (http://www.seoul.go.kr/v2012/seoul/symbol/color.html)
+colorscheme seoul256
+
+" ----------------------------------------------------------------------------
+" Search
+" ----------------------------------------------------------------------------
+
+" Vim only remembers the last 20 commands and search patterns entered. Let's
+" boost this up.
+set history=1000
+
+" Highlight matches
+set hlsearch
+
+" Search as characters are entered
+set incsearch
+
+" When using a ':substitute' command, all matches in a line are substituted
+" instead of one.
+set gdefault
+
+" Ignore the case of normal letters. 'smartcase' is set to ignore case when the
+" pattern contains lowercase letters only.
+set ignorecase
+set smartcase
+
+" Use the Silver Searcher
+if executable('ag')
+  " Use ag over grep.
+  " Output the line and column number of each match, so that we can navigate
+  " results by jumping to the precise position of each match.
+  set grepprg=ag\ --nogroup\ --nocolor\ --column\ $*
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
+
+" ----------------------------------------------------------------------------
+" Spell
+" ----------------------------------------------------------------------------
+
+set spelllang=en_us
+set spellfile=~/.dotfiles/vim/spell/en.utf-8.add
+
+" Autocomplete with dictionary words when spell check is on
+set complete+=kspell
+
+" ----------------------------------------------------------------------------
+" Statusline
+" ----------------------------------------------------------------------------
+
+" See: https://github.com/neomake/neomake/blob/master/doc/neomake.txt#L407
+function! NeomakeStatus()
+  let prefix = "\u2718"
+  return neomake#statusline#LoclistStatus(prefix)
+endfunction
+
+function! GitBranch()
+  let l:head = fugitive#head()
+    if empty(l:head)
+      return ''
+    else
+      return l:head
+    endif
+endfunction
+
+function! GitHunks()
+  let hunks  = GitGutterGetHunkSummary()
+  let string = ''
+
+  if !empty(hunks)
+    let hunk_symbols = ['+', '~', '-']
+
+    for i in [0, 1, 2]
+      if hunks[i] > 0
+        let string .= printf('%s%s ', hunk_symbols[i], hunks[i])
+      endif
+    endfor
+  endif
+  return string
+endfunction
+
+hi def link User1 TablineFill
+function! StatusLine()
+  let make_status = "%{NeomakeStatus()}"
+  let fpath       = " %<%.99f "
+  let pos         = "%(%5l,%-3c %P%)"
+  let sep         = " %="
+  let spell       = "%{&spell ? &spelllang : ''}"
+  let gb          = "%{GitBranch()} "
+  let gh          = "%{GitHunks()}"
+
+  return ' [%n]'.make_status.fpath.'%h%w%m%r'.pos.sep.spell.sep.gb.gh
+endfunction
+
+" Note that the "%!" expression is evaluated in the context of the
+" current window and buffer, while %{} items are evaluated in the
+" context of the window that the statusline belongs to.
+set statusline=%!StatusLine()
+
+" }}}
+" ============================================================================
+" MAPPINGS {{{
+" ============================================================================
+
+" ----------------------------------------------------------------------------
+" Basic Mappings
+" ----------------------------------------------------------------------------
+
+" Save & Quit
+nnoremap <leader>x :x<CR>
+
+" Quit
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>Q :qa!<CR>
+
+" Useful for 'getting around'.
+" nnoremap <leader>e :edit **/*
+" nnoremap <leader>f :find *
+" nnoremap <leader>s :split **/*
+" nnoremap <leader>v :vsplit **/*
+
+nnoremap <C-p> :FZF<CR>
+
+" Scroll the viewport faster.
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
+" ----------------------------------------------------------------------------
+" Editing
+" ----------------------------------------------------------------------------
+
+" Smart-insert semicolon
+inoremap <leader>; <C-o>A;<Esc>:w<CR>
+nnoremap <leader>; A;<Esc>:w<CR>
+
+" Surround the word under the cursor in double quotes.
+noremap <Leader>" viw<Esc>a"<Esc>hbi"<Esc>lel
+
+" Make Y consistent with other capitals (e.g. C and D)
+nnoremap Y y$
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" Completion menu with various formats for current date.
+inoremap <silent> <C-g><C-t> <C-r>=repeat(complete(col('.'), map(["%Y-%m-%d %H:%M:%S","%a, %d %b %Y %H:%M:%S %z","%Y %b %d","%d-%b-%y","%a %b %d %T %Z %Y"],'strftime(v:val)')+[localtime()]),0)<CR>
+
+" ----------------------------------------------------------------------------
+" Quickfix window
+" ----------------------------------------------------------------------------
+
+nnoremap ]q :cnext<CR>zz
+nnoremap [q :cprev<CR>zz
+nnoremap ]l :lnext<CR>zz
+nnoremap [l :lprev<CR>zz
+
+" Close quickfix/location window
+nnoremap <leader>c :cclose<bar>lclose<cr>
+
+" ----------------------------------------------------------------------------
+" Search
+" ----------------------------------------------------------------------------
+
+" See grepper#run in vim/autoload/grepper.vim
+command! -nargs=* -complete=file Ag call grepper#run(<q-args>)
+
+" Bind \ (backward slash) to grep shortcut
+nnoremap \ :Ag<Space>
+
+" Bind K to grep word under cursor
+nnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:copen<CR>
+
+" ----------------------------------------------------------------------------
+" Tabs
+" ----------------------------------------------------------------------------
+
+" Navigate Vim style
+nnoremap th :tabfirst<CR>
+nnoremap tl :tablast<CR>
+nnoremap ]t :tabnext<CR>
+nnoremap [t :tabprevious<CR>
+
+" Open tabpage after the last one
+nnoremap tn :$tabnew<CR>
+
+" Close current tab
+nnoremap td :tabclose<CR>
+
+" Go to the nth tabpage
+nnoremap t1 1gt
+nnoremap t2 2gt
+nnoremap t3 3gt
+nnoremap t4 4gt
+nnoremap t5 5gt
+nnoremap t6 6gt
+nnoremap t7 7gt
+nnoremap t8 8gt
+nnoremap t9 9gt
+nnoremap t0 10gt
+
+" ----------------------------------------------------------------------------
+" Tags
+" ----------------------------------------------------------------------------
+
+" Find a tag.
+nnoremap ,t :ta<Space>
+
+" Find the tag under the cursor.
+nnoremap g] g<C-]>
+
+" ----------------------------------------------------------------------------
+" Windows
+" ----------------------------------------------------------------------------
+
+" Quicker window movement.
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" Cicle through buffers
+nnoremap ]b :bnext<CR>
+nnoremap [b :bprevious<CR>
+
+" Delete current buffer
+nnoremap <Leader>bd :bdelete<CR>
+
+" ----------------------------------------------------------------------------
+" Moving lines
+" ----------------------------------------------------------------------------
+" Insert blank lines above and bellow current line, respectively.
+nnoremap [<Space> :<c-u>put! =repeat(nr2char(10), v:count1)<CR>
+nnoremap ]<Space> :<c-u>put =repeat(nr2char(10), v:count1)<CR>
+
+" Move current line up and down, respectively.
+nnoremap <silent> [e :move-2<CR>
+nnoremap <silent> ]e :move+<CR>
+xnoremap <silent> [e :move-2<CR>gv
+xnoremap <silent> ]e :move'>+<CR>gv
+
+" Change indentation
+" Note: In insert mode, you can just use Ctrl-t and Ctrl-d to indent/dedent.
+nnoremap < <<
+nnoremap > >>
+xnoremap < <gv
+xnoremap > >gv
+
+" ----------------------------------------------------------------------------
+" Readline-style key bindings in command-line
+" ----------------------------------------------------------------------------
+cnoremap        <C-A> <Home>
+cnoremap <expr> <C-D> getcmdpos()>strlen(getcmdline())?"\<Lt>C-D>":"\<Lt>Del>"
+
+" ----------------------------------------------------------------------------
+" Learn Vim the hard way
+" ----------------------------------------------------------------------------
+" Quote from http://learnvimscriptthehardway.stevelosh.com/
+" `The right way to use Vim is to get out of insert mode as soon as you can and
+" use normal mode to move around.`
+nnoremap <Up> :echoe "Use k"<CR>
+inoremap <Up> <NOP>
+vnoremap <Up> <NOP>
+
+nnoremap <Down> :echoe "Use j"<CR>
+inoremap <Down> <NOP>
+vnoremap <Down> <NOP>
+
+nnoremap <Left> :echoe "Use h"<CR>
+inoremap <Left> <NOP>
+vnoremap <Left> <NOP>
+
+nnoremap <Right> :echoe "Use l"<CR>
+inoremap <Right> <NOP>
+vnoremap <Right> <NOP>
+
+" Save my left hand. Using <jk> to return to normal mode is greate because these
+" keys are under two of my strongest fingers and I don't have to perform a
+" chord.
+inoremap jk <Esc>
+xnoremap jk <Esc>
+cnoremap jk <C-c>
+
+" Disable <Esc> key in insert mode. Use <jk> mapping to exit insert mode.
+inoremap <Esc> <NOP>
+
+" }}}
+" ============================================================================
+" FUNCTIONS & COMMANDS {{{
+" ============================================================================
+
+" ----------------------------------------------------------------------------
+" :SV or :EV
+" Quick access to my .vimrc file.
+" ----------------------------------------------------------------------------
+command! SV source  $MYVIMRC
+command! EV tabedit $MYVIMRC <bar> lcd %:p:h
+
+" ----------------------------------------------------------------------------
+" :Count <pattern>
+" Count the number of matches of the specified pattern.
+" ----------------------------------------------------------------------------
+" Usage: :Count <pattern>
+command! -nargs=1 Count execute printf('%%s/%s//gn', escape(<q-args>, '/'))
+      \ | normal! ``
+
+" ----------------------------------------------------------------------------
+" Whitespace trimmer
+" ----------------------------------------------------------------------------
+function! s:StripTrailingWhitespace()
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  %s/\s\+$//e
+  " Clean up: restore previous search history, and cursor position.
+  let @/=_s
+  call cursor(l, c)
+endfunction
+
+" Run the previous command automatically when a file is saved.
+autocmd BufWritePre * :call s:StripTrailingWhitespace()
+
+" ----------------------------------------------------------------------------
+" :Root
+" Change directory to the root of the Git repository
+" ----------------------------------------------------------------------------
+function! s:root()
+  let root = systemlist('git rev-parse --show-toplevel')[0]
+  if v:shell_error
+    echo 'Not in git repo'
+  else
+    execute 'lcd' root
+    echo 'Changed directory to: '.root
+  endif
+endfunction
+command! Root call s:root()
+
+" ----------------------------------------------------------------------------
+" :Todo
+" Grep the specified pattern and open the results on a quickfix window and
+" prevents the output from being displayed on the shell.
+" ----------------------------------------------------------------------------
+function! g:Grep(pattern) abort
+  let entries = []
+  let cmd = 'ag ' . a:pattern . ' 2> /dev/null'
+  let lines = split(system(cmd), '\n')
+
+  if v:shell_error != 0
+    continue
+  endif
+
+  for line in lines
+    let [fname, lnum, text] = matchlist(line, '^\([^:]*\):\([^:]*\):\(.*\)')[1:3]
+    call add(entries, { 'filename': fname, 'lnum': lnum, 'text': text })
+  endfor
+
+  if !empty(entries)
+    call setqflist(entries)
+    copen
+  endif
+endfunction
+
+" TODO: I might not need the previous function at all. Using something like
+" `command! Todo Ag TODO` could be enough.
+command! Todo call g:Grep('TODO\|FIXME\|XXX')
+
+" ----------------------------------------------------------------------------
+" <Leader>?/!
+" Google it / Feeling lucky
+" ----------------------------------------------------------------------------
+function! s:GoogleIt(pat, feelingLucky)
+  let q = '"'.substitute(a:pat, '["\n]', ' ', 'g').'"'
+  let q = substitute(q, '[[:punct:] ]',
+                     \ '\=printf("%%%02X", char2nr(submatch(0)))', 'g')
+  call system(printf('open "https://www.google.com/search?%sq=%s"',
+                     \ a:feelingLucky ? 'btnI&' : '', q))
+endfunction
+
+nnoremap <leader>? :call <SID>GoogleIt(expand("<cWORD>"), 0)<CR>
+nnoremap <leader>! :call <SID>GoogleIt(expand("<cWORD>"), 1)<CR>
+xnoremap <leader>? "gy:call <SID>GoogleIt(@g, 0)<CR>gv
+xnoremap <leader>! "gy:call <SID>GoogleIt(@g, 1)<CR>gv
+
+" ----------------------------------------------------------------------------
+" Supper toggling powers
+" ----------------------------------------------------------------------------
+" Example: When I hit `0` for the first time, I want it be be like `^`. If I hit
+" it again, I want it to finish its travels and go to the first column.
+function! ToggleMovement(firstOp, thenOp)
+  let pos = getpos('.')
+  execute "normal! " . a:firstOp
+  if pos == getpos('.')
+    execute "normal! " . a:thenOp
+  endif
+endfunction
+
+nnoremap <silent> 0 :call ToggleMovement('^', '0')<CR>
+
+" ----------------------------------------------------------------------------
+" <Leader>bf
+" Fuzzy find buffer name from the buffer list and select it.
+" ----------------------------------------------------------------------------
+function! s:buflist()
+  redir => ls
+  silent ls
+  redir END
+  return split(ls, '\n')
+endfunction
+
+function! s:bufopen(e)
+  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
+endfunction
+
+nnoremap <silent> <Leader>bf :call fzf#run({
+\   'source':  reverse(<sid>buflist()),
+\   'sink':    function('<sid>bufopen'),
+\   'options': '+m',
+\   'down':    len(<sid>buflist()) + 2
+\ })<CR>
+
+" ----------------------------------------------------------------------------
+" :Shuffle
+" Shuffle selected lines
+" ----------------------------------------------------------------------------
+function! s:Shuffle() range
+ruby << EOF
+  first, last = %w[a:firstline a:lastline].map { |e| VIM::evaluate(e).to_i }
+  (first..last).map { |l| $curbuf[l] }.shuffle.each_with_index do |line, i|
+    $curbuf[first + i] = line
+  end
+EOF
+endfunction
+
+command! -range Shuffle <line1>,<line2>call s:Shuffle()
+
+" }}}
+" ============================================================================
+" PLUGINS {{{
+" ============================================================================
+
+" ----------------------------------------------------------------------------
+" dirvish
+" ----------------------------------------------------------------------------
+" Sort folders at the top
+let g:dirvish_mode = ':sort ,^.*[\/],'
+
+" ----------------------------------------------------------------------------
+" vim-commentary
+" ----------------------------------------------------------------------------
+map  gc  <Plug>Commentary
+nmap gcc <Plug>CommentaryLine
+
+" ----------------------------------------------------------------------------
+" vim-easy-align
+" ----------------------------------------------------------------------------
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" ----------------------------------------------------------------------------
+" vim-gitgutter
+" ----------------------------------------------------------------------------
+set updatetime=250
+
+let g:gitgutter_sign_added = '✚'
+let g:gitgutter_sign_modified = '✹'
+let g:gitgutter_sign_removed = '✖'
+let g:gitgutter_sign_removed_first_line = '➜'
+let g:gitgutter_sign_modified_removed = '✗'
+
+" Use 'ag' as the default grep command
+if executable('ag')
+  let g:gitgutter_grep_command = 'ag'
+endif
+
+" ----------------------------------------------------------------------------
+" vim-jsx
+" ----------------------------------------------------------------------------
+" Allow JSX in normal JS files
+let g:jsx_ext_required = 0
+
+" }}}
+" ============================================================================
+" FZF {{{
+" ============================================================================
+
+if has('nvim') || has('gui_running')
+  let $FZF_DEFAULT_OPTS .= ' --inline-info'
+endif
+
+" Hide statusline of terminal buffer
+autocmd! FileType fzf
+autocmd  FileType fzf set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+nnoremap <silent> <expr> <Leader><Leader> (expand('%') =~ 'NERD_tree' ? "\<c-w>\<c-w>" : '').":Files\<cr>"
+nnoremap <silent> <Leader>C        :Colors<CR>
+nnoremap <silent> <Leader><Enter>  :Buffers<CR>
+nnoremap <silent> <Leader>L        :Lines<CR>
+nnoremap <silent> <Leader>ag       :Ag <C-R><C-W><CR>
+nnoremap <silent> <Leader>AG       :Ag <C-R><C-A><CR>
+xnoremap <silent> <Leader>ag       y:Ag <C-R>"<CR>
+nnoremap <silent> <Leader>`        :Marks<CR>
+
+inoremap <expr> <c-x><c-t> fzf#complete('tmuxwords.rb --all-but-current --scroll 500 --min 5')
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+inoremap <expr> <c-x><c-d> fzf#vim#complete#path('blsd')
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+function! s:plug_help_sink(line)
+  let dir = g:plugs[a:line].dir
+  for pat in ['doc/*.txt', 'README.md']
+    let match = get(split(globpath(dir, pat), "\n"), 0, '')
+    if len(match)
+      execute 'tabedit' match
+      return
+    endif
+  endfor
+  tabnew
+  execute 'Explore' dir
+endfunction
+
+command! PlugHelp call fzf#run(fzf#wrap({
+  \ 'source': sort(keys(g:plugs)),
+  \ 'sink':   function('s:plug_help_sink')}))
+
+" }}}
+" ============================================================================
+" AUTOCMD {{{
+" ============================================================================
+
+" ----------------------------------------------------------------------------
+" Automatic rename of tmux window.
+" ----------------------------------------------------------------------------
+augroup set_tmux_window_name
+  if exists('$TMUX') && !exists('$NORENAME')
+    au BufEnter * if empty(&buftype) | call system('tmux rename-window '.expand('%:t:S')) | endif
+    au VimLeave * call system('tmux set-window automatic-rename on')
+  endif
+augroup END
+
+" ----------------------------------------------------------------------------
+" Set filetype for file names without format.
+" ----------------------------------------------------------------------------
+augroup file_type_check
+  autocmd!
+  autocmd BufNewFile,BufRead .babelrc,.eslintrc,.lintstagedrc set ft=json
+  autocmd BufNewFile,BufRead *named.conf* set ft=named
+  autocmd BufNewFile,BufRead *.txt,INSTALL,LICENSE,NEWS,README,TODO
+        \ if &ft == ""  |
+        \   set ft=text |
+        \ endif
+augroup END
+
+" ----------------------------------------------------------------------------
+" Restore cursor position when opening file except for gitcommit filetype.
+" ----------------------------------------------------------------------------
+augroup restore_cursor_position
+  autocmd!
+  autocmd BufReadPost *
+        \ if &ft !=# 'gitcommit' && line("'\"") > 1 && line("'\"") <= line("$") |
+        \   exe "normal! g`\"" |
+        \ endif
+augroup END
+
+augroup auto_save_and_read
+    autocmd!
+    autocmd TextChanged,InsertLeave,FocusLost * silent! wall
+    autocmd CursorHold * silent! checktime
+augroup END
+
+" ----------------------------------------------------------------------------
+" Only highlight the current line in the current window.
+" ----------------------------------------------------------------------------
+augroup cursor_line
+  autocmd!
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
+augroup END
+
+" ----------------------------------------------------------------------------
+" Help in new tabs
+" ----------------------------------------------------------------------------
+function! s:helptab()
+  if &buftype == 'help'
+    wincmd T
+    nnoremap <buffer> q :q<cr>
+  endif
+endfunction
+autocmd vimrc BufEnter *.txt call s:helptab()
+
+" }}}
+" ============================================================================
+
+" --------- old vimrc ---------
+
 " Source all of the .vim files under the specified directory.
 function! s:SourceConfigFilesIn(directory)
   let dir_splat = '~/.dotfiles/vim/' . a:directory . '/*.vim'
@@ -51,15 +850,6 @@ function! s:SourceConfigFilesIn(directory)
     endif
   endfor
 endfunction
-
-" ============================================================================
-" Source plugins
-" ============================================================================
-if filereadable(expand("$DOTFILES/vim/bundles.vim"))
-  source $DOTFILES/vim/bundles.vim
-endif
-
-call s:SourceConfigFilesIn('rcplugins')
 
 " ============================================================================
 " Source vimrc files
