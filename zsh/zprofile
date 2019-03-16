@@ -37,4 +37,6 @@ if command -v nodenv >/dev/null; then
   eval "$(nodenv init -)"
 fi
 
+. $DOTFILES/zsh/modules/z/z.sh
+
 # vim: ft=zsh sw=2 ts=2 et
