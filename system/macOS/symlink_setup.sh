@@ -13,6 +13,14 @@ ln -sf "$DOTFILES_DIR/zsh/zshrc" "$HOME/.zshrc"
 ln -sf "$DOTFILES_DIR/zsh/zshenv" "$HOME/.zshenv"
 ln -sf "$DOTFILES_DIR/zsh/zprofile" "$HOME/.zprofile"
 
+# # zsh modules
+zsh_fpath="$HOME/.zfunctions"
+zsh_modules="$DOTFILES/zsh/modules"
+
+mkdir zsh_fpath
+ln -s "$zsh_modules/pure/pure.zsh" "$zsh_fpath/prompt_pure_setup"
+ln -s "$zsh_modules/pure/async.zsh" "$zsh_fpath/async"
+
 # vim
 ln -sf "$DOTFILES_DIR/vim/vimrc" "$HOME/.vimrc"
 ln -sf "$DOTFILES_DIR/vim/gvimrc" "$HOME/.gvimrc"
