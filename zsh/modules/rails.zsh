@@ -1,23 +1,11 @@
-# Return if bundle command is not found.
-if ! command -v bundle >/dev/null; then
-  return 1
-fi
-
 #
 # Aliases
 #
 
-alias r='rails'
-alias rn='rails new'
-alias rs='rails server'
-alias rg='rails generate'
-alias rc='rails console'
-alias rdb='rails dbconsole'
-alias rd='rails destroy'
+alias ror='foreman run bundle exec rails'
+alias rorc='foreman run bundle exec rails console'
+alias rordm='foreman run bundle exec rake db:migrate'
+alias rorg='foreman run bundle exec rails generate'
+alias rors='foreman run bundle exec rails server'
 
-# Rake
-alias rr='rake routes'
-alias rdbm='rake db:migrate'
-
-# Other
-alias devlog='tail -f log/development.log'
+alias rordevlog='tail -f log/development.log'
