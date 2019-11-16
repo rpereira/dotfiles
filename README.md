@@ -1,41 +1,32 @@
 # Rui's dotfiles
 
-Dotfiles for me.
+Dotfiles for me. Here be draggons!
 
-![Screenshot of my shell prompt using Solarized Dark Theme](http://i.imgur.com/tyXR3p3.png)
+![Screenshot of my shell prompt](https://user-images.githubusercontent.com/3859158/68991197-01481e00-0854-11ea-91ae-bbbaa16d1779.png)
+
+## What's in it?
+
+* [Sensible macOS defaults](./system/macOS/defaults.sh), most of them taken from [mathiasbynens' dotfiles](https://raw.githubusercontent.com/mathiasbynens/dotfiles/master/.macos)
+* My [bin](./bin), with lots of automation scripts
+* [fzf](https://github.com/junegunn/fzf), which is an amazing command-line fuzzy finder
+* A [git config](./git/gitconfig) and a bunch of [custom git commands](./bin) that improve my quality of life
+* [neovim](https://github.com/neovim/neovim) as the core text editor. If you like vim, consider [helping children in Uganda](https://www.vim.org/sponsor/index.php)
+* [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) for
+  finding things in files
+* [tmux](https://tmux.github.io/) as a terminal multiplexer, useful for saving project state and switching between
+  projects
+* [zsh](http://www.zsh.org/) as the default shell with a vanilla setup and git in prompt
+* Other tools can be found [here](./system/macOS/brew.sh)
 
 ## Installation
 
+__Warning__: If you want to give these dotfiles a try, you should first fork this repository, review the code, and remove things you don't want or need. Don't blindly use settings provided here unless you understand them. Use at your own risk!
+
 ### macOS
 
-1. Create an SSH key and add it to your GitHub account
-2. Clone this repository
-3. Run `./system/macOS/install.sh`
-
-### What is set up?
-* [Solarized Dark](http://ethanschoonover.com/solarized) as the color scheme for
-  terminal and Vim
-* [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) for
-  finding things in files
-* [Tmux](https://tmux.github.io/) for saving project state and switching between
-  projects
-* [Vim](http://www.vim.org/) as your core editor
-* [Zsh](http://www.zsh.org/) as your shell
-
-## Cheat sheet
-
-[The cheat sheet](./docs/cheat-sheet.md) is intended as a reference
-to _some_ Vim and tmux commands.
-
-## Acknowledgments
-
-Inspiration and some code was taken from several sources, including:
-* [Chris Toomey](http://ctoomey.com/) and his [dotfiles repo](https://github.com/christoomey/dotfiles)
-* [Paul Irish](http://www.paulirish.com/) and his [dotfiles repo](https://github.com/paulirish/dotfiles)
-* [Thoughtbot](https://thoughtbot.com/) and their [dotfiles repo](https://github.com/thoughtbot/dotfiles)
-* [Thoughtbot](https://thoughtbot.com/) and their [laptop setup](https://github.com/thoughtbot/laptop)
+1. Fork this repository
+2. Run `./system/macOS/install.sh`
 
 ## License
 
-These dotfiles are [MIT licensed](./LICENSE). Documentation is
-[Creative Commons licensed](./LICENSE-docs).
+dotfiles is copyright © 2015-present Rui Afonso Pereira. It is free software, and may be redistributed under the terms specified in the [LICENSE](./LICENSE) file.
