@@ -12,6 +12,8 @@ alias :q='exit'
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
+alias t0p='top -o cpu -O -vsize -s 10 -n 20 -stats pid,command,cpu,time,pstate,user'
+
 ## Summary for args to less:
 # less(1)
 #   -M (-M or --LONG-PROMPT) Prompt very verbosely
