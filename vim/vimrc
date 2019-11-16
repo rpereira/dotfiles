@@ -607,6 +607,17 @@ xnoremap <leader>? "gy:call <SID>GoogleIt(@g, 0)<CR>gv
 xnoremap <leader>! "gy:call <SID>GoogleIt(@g, 1)<CR>gv
 
 " ----------------------------------------------------------------------------
+" Jump between SCM conflict markers
+" ----------------------------------------------------------------------------
+" Go to the next/previous SCM conflict marker or diff/patch hunk.
+function! s:Context(reverse) abort
+  call search('^\(@@ .* @@\|[<=>|]\{7}[<=>|]\@!\)', a:reverse ? 'bW' : 'W')
+endfunction
+
+nnoremap <silent> [n :call <SID>Context(1)<CR>
+nnoremap <silent> ]n :call <SID>Context(0)<CR>
+
+" ----------------------------------------------------------------------------
 " Supper toggling powers
 " ----------------------------------------------------------------------------
 " Example: When I hit `0` for the first time, I want it be be like `^`. If I hit
