@@ -41,20 +41,20 @@ Plug 'elixir-lang/vim-elixir',     { 'for': 'elixir' }
 
 " Haskell
 Plug 'neovimhaskell/haskell-vim',  { 'for': 'haskell' }
-Plug 'hspec/hspec.vim',            { 'for': 'haskell.hspec' }
 
 " JavaScript
-Plug 'flowtype/vim-flow' ,         { 'for': ['javascript.jsx', 'javascript'] }
-Plug 'mxw/vim-jsx' ,               { 'for': ['javascript.jsx', 'javascript'] }
-Plug 'pangloss/vim-javascript' ,   { 'for': ['javascript.jsx', 'javascript'] }
-Plug 'heavenshell/vim-jsdoc' ,     { 'for': ['javascript.jsx', 'javascript'] }
+
+Plug 'mxw/vim-jsx',                { 'for': ['javascript.jsx', 'javascript'] }
+Plug 'pangloss/vim-javascript',    { 'for': ['javascript.jsx', 'javascript'] }
+Plug 'heavenshell/vim-jsdoc',      { 'for': ['javascript.jsx', 'javascript'] }
+Plug 'galooshi/vim-import-js',     { 'for': ['javascript.jsx', 'javascript'] }
 
 " Markdown
 Plug 'plasticboy/vim-markdown',    { 'for': 'markdown' }
 
 " Ruby
 Plug 'tpope/vim-haml',             { 'for': 'haml' }
-Plug 'tpope/vim-rails',            { 'for': ['ruby', 'haml'] }
+Plug 'tpope/vim-rails',            { 'for': 'ruby' }
 Plug 'vim-ruby/vim-ruby',          { 'for': 'ruby' }
 
 " Rust
