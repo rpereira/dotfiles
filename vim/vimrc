@@ -86,8 +86,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'msanders/snipmate.vim'
-Plug 'neomake/neomake'
 Plug 'pbrisbin/vim-mkdir'
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -271,10 +271,17 @@ set complete+=kspell
 " Statusline
 " ----------------------------------------------------------------------------
 
-" See: https://github.com/neomake/neomake/blob/master/doc/neomake.txt#L407
-function! NeomakeStatus()
-  let prefix = "\u2718"
-  return neomake#statusline#LoclistStatus(prefix)
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? 'OK' : printf(
+    \   '%dE %dW',
+    \   all_errors,
+    \   all_non_errors
+    \)
 endfunction
 
 function! GitBranch()
@@ -304,15 +311,15 @@ endfunction
 
 hi def link User1 TablineFill
 function! StatusLine()
-  let make_status = "%{NeomakeStatus()}"
   let fpath       = " %<%.99f "
   let pos         = "%(%5l,%-3c %P%)"
   let sep         = " %="
   let spell       = "%{&spell ? &spelllang : ''}"
+  let make_status = "[%{LinterStatus()}] "
   let gb          = "%{GitBranch()} "
   let gh          = "%{GitHunks()}"
 
-  return ' [%n]'.make_status.fpath.'%h%w%m%r'.pos.sep.spell.sep.gb.gh
+  return fpath.'%h%w%m%r'.pos.sep.spell.sep.make_status.gb.gh
 endfunction
 
 " Note that the "%!" expression is evaluated in the context of the
@@ -659,6 +666,29 @@ command! -range Shuffle <line1>,<line2>call s:Shuffle()
 " ============================================================================
 " PLUGINS {{{
 " ============================================================================
+
+" ----------------------------------------------------------------------------
+" ale
+" ----------------------------------------------------------------------------
+let g:ale_lint_delay = 1000
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '──'
+let g:ale_echo_msg_format = '[%linter%] %code%: %s'
+
+nmap ]a <Plug>(ale_next_wrap)
+nmap [a <Plug>(ale_previous_wrap)
+
+let g:ale_fix_on_save = 1
+let g:ale_linters = {
+\  'javascript': ['eslint', 'flow']
+\}
+let g:ale_fixers = {
+\   'javascript': ['prettier', 'eslint', 'importjs'],
+\   'ruby':       ['rubocop']
+\}
+
+let g:ale_javascript_eslint_use_global = 1
+let g:ale_javascript_eslint_executable = 'eslint_d'
 
 " ----------------------------------------------------------------------------
 " dirvish
