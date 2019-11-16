@@ -733,6 +733,14 @@ endif
 " Allow JSX in normal JS files
 let g:jsx_ext_required = 0
 
+" ----------------------------------------------------------------------------
+" vim-ruby
+" ----------------------------------------------------------------------------
+" ft-ruby-syntax
+let ruby_operators = 1
+let ruby_no_expensive = 1
+let ruby_spellcheck_strings = 1
+
 " }}}
 " ============================================================================
 " FZF {{{
