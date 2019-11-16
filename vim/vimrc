@@ -83,6 +83,7 @@ Plug 'junegunn/seoul256.vim',       { 'dir': '~/.vim/colors' }
 " Tools
 "------------------------------------------------
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'msanders/snipmate.vim'
@@ -731,6 +732,18 @@ let g:jsx_ext_required = 0
 let ruby_operators = 1
 let ruby_no_expensive = 1
 let ruby_spellcheck_strings = 1
+
+" ----------------------------------------------------------------------------
+" vim-test
+" ----------------------------------------------------------------------------
+let test#strategy = "neovim"
+let test#javascript#jest#executable = 'yarn run jest'
+
+nnoremap <silent> <leader>t :TestFile<CR>
+nnoremap <silent> <leader>s :TestNearest<CR>
+nnoremap <silent> <leader>l :TestLast<CR>
+nnoremap <silent> <leader>a :TestSuite<CR>
+nnoremap <silent> <leader>gt :TestVisit<CR>
 
 " }}}
 " ============================================================================
