@@ -343,12 +343,6 @@ nnoremap <leader>x :x<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>Q :qa!<CR>
 
-" Useful for 'getting around'.
-" nnoremap <leader>e :edit **/*
-" nnoremap <leader>f :find *
-" nnoremap <leader>s :split **/*
-" nnoremap <leader>v :vsplit **/*
-
 " Scroll the viewport faster.
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
@@ -394,9 +388,6 @@ command! -nargs=* -complete=file Ag call grepper#run(<q-args>)
 
 " Bind \ (backward slash) to grep shortcut
 nnoremap \ :Ag<Space>
-
-" Bind K to grep word under cursor
-nnoremap <silent> K :grep! "\b<C-R><C-W>\b"<CR>:copen<CR>
 
 " ----------------------------------------------------------------------------
 " Tabs
