@@ -87,6 +87,7 @@ Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
 Plug 'msanders/snipmate.vim'
+Plug 'machakann/vim-highlightedyank'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'w0rp/ale'
 
@@ -718,6 +719,11 @@ let g:gitgutter_sign_modified_removed = '✗'
 if executable('ag')
   let g:gitgutter_grep_command = 'ag'
 endif
+
+" ----------------------------------------------------------------------------
+" vim-highlightedyank
+" ----------------------------------------------------------------------------
+highlight HighlightedyankRegion cterm=reverse gui=reverse
 
 " ----------------------------------------------------------------------------
 " vim-jsx
