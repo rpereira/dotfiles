@@ -60,6 +60,9 @@ Plug 'vim-ruby/vim-ruby',          { 'for': 'ruby' }
 " Rust
 Plug 'rust-lang/rust.vim',         { 'for': 'rust' }
 
+" Docker
+Plug 'honza/dockerfile.vim'
+
 "------------------------------------------------
 " Motion
 "------------------------------------------------
