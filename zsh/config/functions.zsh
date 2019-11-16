@@ -10,3 +10,8 @@ fd() {
                   -o -type d -print 2> /dev/null | fzf --height=50% --border) &&
   cd "$dir"
 }
+
+docker_clean() {
+  docker rm -vf $(docker ps -a -q)
+  docker rmi -f $(docker images -a -q)
+}
