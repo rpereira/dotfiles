@@ -12,6 +12,10 @@ setopt HIST_EXPIRE_DUPS_FIRST
 # Delete old recorded entry if new entry is a duplicate.
 setopt HIST_IGNORE_ALL_DUPS
 
+# Do not enter command lines into the history list if they are duplicates of the
+# previous event.
+setopt HIST_IGNORE_DUPS
+
 # Remove superfluous blanks before adding to the history list.
 setopt HIST_REDUCE_BLANKS
 
