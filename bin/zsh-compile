@@ -8,3 +8,5 @@ declare -a ZFILES=(zshrc zshenv zprofile)
 for zfile in "${ZFILES[@]}"; do
   zcompile "$HOME/.$zfile"
 done
+
+echo "Done!"
