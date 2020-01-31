@@ -7,6 +7,12 @@
 unlet! skip_defaults_vim
 silent! source $VIMRUNTIME/defaults.vim
 
+augroup vimrc
+  autocmd!
+augroup END
+
+let mapleader = ' '
+
 " }}}
 " ============================================================================
 " VIM-PLUG BLOCK {{{
@@ -98,13 +104,6 @@ call plug#end()
 " ============================================================================
 " GENERAL CONFIGURATION {{{
 " ============================================================================
-
-" Change Leader to a comma because the backslash is too far away
-let mapleader = ' '
-
-augroup vimrc
-  autocmd!
-augroup END
 
 " Use Vim settings, rather than Vi settings.  This must be first, because it
 " changes other options as a side effect.
