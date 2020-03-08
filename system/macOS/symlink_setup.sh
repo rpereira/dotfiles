@@ -26,7 +26,7 @@ ln -s "$zsh_modules/z/z.sh" "$zsh_fpath/z"
 
 man1_path="$DOTFILES/man/man1"
 
-mkdir $man1_path
+mkdir "$man1_path"
 ln -s "$zsh_modules/z/z.1" "$man1_path/z.1"
 
 # vim
