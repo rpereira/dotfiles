@@ -4,6 +4,8 @@ setlocal spell
 " Automatically wrap text
 setlocal textwidth=80
 
+setlocal nofoldenable
+
 " Markdown headings
 nnoremap <leader>1 m`^i# <esc>``2l
 nnoremap <leader>2 m`^i## <esc>``3l
