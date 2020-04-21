@@ -28,6 +28,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'christoomey/vim-sort-motion'
 Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-easy-align',    { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary',       { 'on': '<Plug>Commentary' }
