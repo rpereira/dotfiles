@@ -748,7 +748,7 @@ let ruby_spellcheck_strings = 1
 " ----------------------------------------------------------------------------
 " vim-test
 " ----------------------------------------------------------------------------
-let test#strategy = "neovim"
+let test#strategy = 'neovim'
 let test#javascript#jest#executable = 'yarn run jest'
 
 nnoremap <silent> <leader>t :TestFile<CR>
