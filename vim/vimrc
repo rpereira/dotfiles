@@ -47,11 +47,13 @@ Plug 'shumphrey/fugitive-gitlab.vim'
 " Elixir
 Plug 'elixir-lang/vim-elixir',     { 'for': 'elixir' }
 
+" Go
+Plug 'fatih/vim-go',               { 'do': ':GoUpdateBinaries' }
+
 " Haskell
 Plug 'neovimhaskell/haskell-vim',  { 'for': 'haskell' }
 
 " JavaScript
-
 Plug 'mxw/vim-jsx',                { 'for': ['javascript.jsx', 'javascript'] }
 Plug 'pangloss/vim-javascript',    { 'for': ['javascript.jsx', 'javascript'] }
 Plug 'heavenshell/vim-jsdoc',      { 'for': ['javascript.jsx', 'javascript'] }
