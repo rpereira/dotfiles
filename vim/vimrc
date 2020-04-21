@@ -40,6 +40,7 @@ Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'shumphrey/fugitive-gitlab.vim'
+Plug 'junegunn/gv.vim'
 
 "------------------------------------------------
 " Languages
