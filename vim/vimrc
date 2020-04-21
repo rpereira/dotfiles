@@ -44,14 +44,6 @@ Plug 'shumphrey/fugitive-gitlab.vim'
 "------------------------------------------------
 " Languages
 "------------------------------------------------
-" Elixir
-Plug 'elixir-lang/vim-elixir',     { 'for': 'elixir' }
-
-" Go
-Plug 'fatih/vim-go',               { 'do': ':GoUpdateBinaries' }
-
-" Haskell
-Plug 'neovimhaskell/haskell-vim',  { 'for': 'haskell' }
 
 " JavaScript
 Plug 'mxw/vim-jsx',                { 'for': ['javascript.jsx', 'javascript'] }
@@ -59,19 +51,15 @@ Plug 'pangloss/vim-javascript',    { 'for': ['javascript.jsx', 'javascript'] }
 Plug 'heavenshell/vim-jsdoc',      { 'for': ['javascript.jsx', 'javascript'] }
 Plug 'galooshi/vim-import-js',     { 'for': ['javascript.jsx', 'javascript'] }
 
-" Markdown
-Plug 'plasticboy/vim-markdown',    { 'for': 'markdown' }
-
 " Ruby
 Plug 'tpope/vim-haml',             { 'for': 'haml' }
 Plug 'tpope/vim-rails',            { 'for': 'ruby' }
 Plug 'vim-ruby/vim-ruby',          { 'for': 'ruby' }
 
-" Rust
-Plug 'rust-lang/rust.vim',         { 'for': 'rust' }
-
-" Docker
+Plug 'fatih/vim-go',               { 'do': ':GoUpdateBinaries' }
 Plug 'honza/dockerfile.vim'
+Plug 'jvirtanen/vim-hcl'
+Plug 'plasticboy/vim-markdown',    { 'for': 'markdown' }
 
 "------------------------------------------------
 " Motion
@@ -96,7 +84,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-dirvish'
-Plug 'msanders/snipmate.vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'w0rp/ale'
