@@ -13,7 +13,7 @@ cdpath=(
 )
 
 fpath=(
-  /usr/local/share/zsh-completions
+  $DOTFILES/zsh/modules/zsh-completions
   $DOTFILES/completions
   $HOME/.zfunctions
   $fpath
