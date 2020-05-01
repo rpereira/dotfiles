@@ -34,9 +34,6 @@ brew install tmux
 brew install tree
 brew install vim --HEAD --without-nls --with-override-system-vi
 brew install zsh
-brew install zsh-completions
-brew install zsh-history-substring-search
-brew install zsh-syntax-highlighting
 
 info "Installing programming languages..."
 brew install elixir
