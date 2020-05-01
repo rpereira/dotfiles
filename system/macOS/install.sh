@@ -69,22 +69,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # Install vim plugins
 vim +PlugInstall +qall
 
-# Install atom plugins
-declare -a ATOM_PLUGINS=(
-  file-icons
-  highlight-line
-  highlight-selected
-  language-elixir
-  linter
-  linter-elixirc
-  linter-eslint
-  motepair
-  react
-)
-for plugin in "${ATOM_PLUGINS[@]}"; do
-  apm install "$plugin"
-done
-
 #
 # dnsmasq
 #

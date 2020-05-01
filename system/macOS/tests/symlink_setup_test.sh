@@ -5,16 +5,9 @@ symlink_exists() {
   [[ -L $1 ]]
 }
 
-ATOM_DIR="$HOME/.atom"
 VIM_DIR="$HOME/.vim"
 
 declare -a SYMLINKS_TO_TEST=(
-  "$ATOM_DIR/config.cson"
-  "$ATOM_DIR/init.coffee"
-  "$ATOM_DIR/keymap.cson"
-  "$ATOM_DIR/snippets.cson"
-  "$ATOM_DIR/styles.less"
-
   "$HOME/.dotfiles"
 
   "$HOME/.agignore"
