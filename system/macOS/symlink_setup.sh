@@ -39,19 +39,6 @@ ln -sf "$DOTFILES_DIR/vim/ftplugin" "$HOME/.vim/after/ftplugin"
 mkdir "$HOME/.vim/snippets"
 ln -sf "$DOTFILES_DIR/vim/snippets" "$HOME/.vim/snippets"
 
-# atom
-declare -a ATOM_FILES=(
-  "config.cson"
-  "init.coffee"
-  "keymap.cson"
-  "snippets.cson"
-  "styles.less"
-)
-for file in "${ATOM_FILES[@]}"; do
-  ln -sf "$DOTFILES/atom/$file" "$HOME/.atom/$file"
-done
-unset file
-
 # tmux
 ln -sf "$DOTFILES_DIR/tmux/tmux.conf" "$HOME/.tmux.conf"
 
