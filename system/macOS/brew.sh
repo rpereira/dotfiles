@@ -32,7 +32,7 @@ brew install reattach-to-user-namespace
 brew install the_silver_searcher
 brew install tmux
 brew install tree
-brew install vim --HEAD --without-nls --with-override-system-vi
+brew install nvim
 brew install zsh
 
 info "Installing programming languages..."
