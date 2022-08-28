@@ -1,0 +1,31 @@
+#compdef passqr
+
+_passqr() {
+  local cmd
+  if (( CURRENT > 2)); then
+    cmd=${words[2]}
+    # Set the context for the subcommand.
+    curcontext="${curcontext%:*:*}:pass-$cmd"
+    # Narrow the range of words we are looking at to exclude `pass'
+    (( CURRENT-- ))
+    shift words
+    _pass_complete_entries
+  fi
+}
+
+_pass_complete_entries_helper () {
+  local IFS=$'\n'
+  local prefix
+  zstyle -s ":completion:${curcontext}:" prefix prefix || prefix="${PASSWORD_STORE_DIR:-$HOME/.password-store}"
+  _values -C 'passwords' ${$(find -L "$prefix" \( -name .git -o -name .gpg-id \) -prune -o $@ -print 2>/dev/null | sed -e "s#${prefix}/\{0,1\}##" -e 's#\.gpg##' -e 's#\\#\\\\#' | sort):-""}
+}
+
+_pass_complete_entries_with_subdirs () {
+  _pass_complete_entries_helper
+}
+
+_pass_complete_entries () {
+  _pass_complete_entries_helper -type f
+}
+
+_passqr
