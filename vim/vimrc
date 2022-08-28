@@ -278,7 +278,7 @@ function! LinterStatus() abort
 endfunction
 
 function! GitBranch()
-  let l:head = fugitive#head()
+  let l:head = fugitive#Head()
     if empty(l:head)
       return ''
     else
