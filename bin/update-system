@@ -18,6 +18,7 @@ printf "\\n${BLUE}%s${NORMAL}\\n" "Updating Homebrew formulas..."
 brew update
 brew upgrade
 brew cleanup
+brew autoremove
 
 printf "\\n${BLUE}%s${NORMAL}\\n" "Updating Vim plugins..."
 
