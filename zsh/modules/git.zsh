@@ -11,7 +11,7 @@ alias gap='git add --patch'
 # Branch (b)
 alias gb='git branch'
 alias gba='git branch -a'
-alias gbda='git branch --merged | command grep -vE "^(\*|\s*master\s*$)" | command xargs -n 1 git branch -d'
+alias gbda='git branch --merged | command grep -vE "^(\*|\s*main\s*$)" | command xargs -n 1 git branch -d'
 alias gbnm='git branch --no-merged'
 alias gbr='git branch --remote'
 
@@ -40,7 +40,7 @@ alias gcop='git checkout -'
 alias gfco='git fuzzy-checkout'
 alias gcb='git checkout -b'
 alias gcd='git checkout develop'
-alias gcm='git checkout master'
+alias gcm='git checkout main'
 
 alias gcf='git config --list'
 alias gcl='git clone --recursive'
@@ -140,8 +140,8 @@ alias glola="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Crese
 alias glog='git log --oneline --decorate --color --graph'
 
 alias gm='git merge'
-alias gmom='git merge origin/master'
-alias gmum='git merge upstream/master'
+alias gmom='git merge origin/main'
+alias gmum='git merge upstream/main'
 
 alias gmt='git mergetool --no-prompt'
 alias gmtvim='git mergetool --no-prompt --tool=vimdiff'
@@ -169,7 +169,7 @@ alias grbc='git rebase --continue'
 alias grbs='git rebase --skip'
 alias grbi='git rebase -i'
 alias grbfcs='git rebase -i `git-commit-sha`'
-alias grbm='git rebase master'
+alias grbm='git rebase main'
 alias grbd='git rebase develop'
 
 # Reset
@@ -201,7 +201,7 @@ alias gtv='git tag | sort -V'
 alias gl='git pull'
 alias gup='git pull --rebase'
 alias gupv='git pull --rebase -v'
-alias glum='git pull upstream master'
+alias glum='git pull upstream main'
 
 # Helpers
 alias grt='cd $(git rev-parse --show-toplevel || echo ".")'
