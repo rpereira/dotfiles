@@ -1,4 +1,5 @@
-# Color theme for the color GNU ls utility.
+# Exact Solarized Dark color theme for the color GNU ls utility.
+# Designed for dircolors (GNU coreutils) 5.97
 #
 # Based on https://github.com/seebi/dircolors-solarized
 
@@ -8,6 +9,7 @@
 COLOR tty
 
 # Below, there should be one TERM entry for each termtype that is colorizable
+TERM alacritty
 TERM ansi
 TERM color_xterm
 TERM color-xterm
@@ -30,6 +32,7 @@ TERM dvtm-256color
 TERM Eterm
 TERM eterm-color
 TERM fbterm
+TERM foot
 TERM gnome
 TERM gnome-256color
 TERM jfbterm
@@ -37,6 +40,7 @@ TERM konsole
 TERM konsole-256color
 TERM kterm
 TERM linux
+TERM linux-16color
 TERM linux-c
 TERM mach-color
 TERM mlterm
@@ -80,6 +84,7 @@ TERM xterm-256color-italic
 TERM xterm-88color
 TERM xterm-color
 TERM xterm-debian
+TERM xterm-kitty
 TERM xterm-termite
 
 # EIGHTBIT, followed by '1' for on, '0' for off. (8-bit output)
@@ -165,6 +170,7 @@ EXEC 01;31  # Unix
 
 # List any file extensions like '.gz' or '.tar' that you would like ls
 # to colorize below. Put the extension, a space, and the color init string.
+# (and any comments you want to add after a '#')
 
 ### Text formats
 
@@ -191,6 +197,7 @@ EXEC 01;31  # Unix
 .el 32
 .vim 32
 .java 32
+.lua 32
 .pl 32
 .pm 32
 .py 32
@@ -251,7 +258,6 @@ EXEC 01;31  # Unix
 .mng 33
 .pbm 33
 .pcx 33
-.pdf 33
 .pgm 33
 .png 33
 .PNG 33
@@ -270,6 +276,12 @@ EXEC 01;31  # Unix
 .xwd 33
 .xwd 33
 .yuv 33
+.nef 33 # Nikon RAW format
+.NEF 33
+.webp 33
+.heic 33
+.HEIC 33
+.avif 33
 
 # Audio
 .aac 33
@@ -338,6 +350,7 @@ EXEC 01;31  # Unix
 .otp 31
 .fla 31
 .psd 31
+.pdf 31
 
 # Archives, compressed
 .7z   1;35
@@ -367,6 +380,7 @@ EXEC 01;31  # Unix
 .z    1;35
 .Z    1;35
 .zip  1;35
+.zst  1;35
 
 # For testing
 .ANSI-30-black 30
@@ -386,12 +400,36 @@ EXEC 01;31  # Unix
 .ANSI-37-white 37
 .ANSI-01;37-brwhite 01;37
 
+#############################################################################
+# Your customizations
+
 # Unimportant text files
+# For universal scheme, use brightgreen 01;32
+# For optimal on light bg (but too prominent on dark bg), use white 01;34
 .log 01;32
 *~ 01;32
 *# 01;32
+#.log 01;34
+#*~ 01;34
+#*# 01;34
 
 # Unimportant non-text files
+# For universal scheme, use brightcyan 01;36
+# For optimal on dark bg (but too prominent on light bg), change to 01;33
+#.bak 01;36
+#.BAK 01;36
+#.old 01;36
+#.OLD 01;36
+#.org_archive 01;36
+#.off 01;36
+#.OFF 01;36
+#.dist 01;36
+#.DIST 01;36
+#.orig 01;36
+#.ORIG 01;36
+#.swp 01;36
+#.swo 01;36
+#*.v 01;36
 .bak 01;33
 .BAK 01;33
 .old 01;33
@@ -405,9 +443,10 @@ EXEC 01;31  # Unix
 .ORIG 01;33
 .swp 01;33
 .swo 01;33
-*,v 01;33
+*.v 01;33
 
-.gpg 34
+# The brightmagenta (Solarized: purple) color is free for you to use for your
+# custom file type
 .gpg 34
 .pgp 34
 .asc 34
