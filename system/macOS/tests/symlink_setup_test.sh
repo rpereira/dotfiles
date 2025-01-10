@@ -24,7 +24,6 @@ declare -a SYMLINKS_TO_TEST=(
   "$HOME/.tmux.conf"
 
   "$HOME/.vimrc"
-  "$HOME/.gvimrc"
   "$VIM_DIR/after/ftplugin"
   "$VIM_DIR/UltiSnips"
 
