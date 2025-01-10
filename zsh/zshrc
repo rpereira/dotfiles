@@ -2,6 +2,7 @@
 source $DOTFILES/zsh/modules/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $DOTFILES/zsh/modules/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $DOTFILES/zsh/modules/z/z.sh
+source <(fzf --zsh)
 
 # Load configuration files
 for file ($DOTFILES/zsh/config/*.zsh(N)); do
@@ -16,4 +17,3 @@ done
 unset file
 
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
-[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
