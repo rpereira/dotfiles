@@ -13,7 +13,7 @@ export KEYTIMEOUT=1
 export GPG_TTY=$(tty)
 
 DOTFILES="$HOME/.dotfiles"
-SHELL="/usr/local/bin/zsh"
+SHELL="/opt/homebrew/bin/zsh"
 ZSH="$HOME/.zsh"
 ZSH_CACHE_DIR="$ZSH/cache/"
 ZSH_MODULES_DIR="$DOTFILES/zsh/modules"
