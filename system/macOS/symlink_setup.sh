@@ -31,7 +31,6 @@ ln -s "$zsh_modules/z/z.1" "$man1_path/z.1"
 
 # vim
 ln -sf "$DOTFILES_DIR/vim/vimrc" "$HOME/.vimrc"
-ln -sf "$DOTFILES_DIR/vim/gvimrc" "$HOME/.gvimrc"
 mkdir "$HOME/.vim/autoload"
 ln -sf "$DOTFILES/vim/autoload/*" "$HOME/.vim/autoload/"
 mkdir "$HOME/.vim/after"
