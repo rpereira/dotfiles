@@ -1,6 +1,6 @@
 # Paths
 path=(
-  /usr/local/opt/coreutils/libexec/gnubin
+  /opt/homebrew/opt/coreutils/libexec/gnubin
   $DOTFILES/bin
   /usr/local/bin
   /usr/{sbin,bin}
@@ -26,6 +26,9 @@ manpath=(
 
 # Ensure path arrays do not contain duplicates.
 typeset -gU path cdpath fpath manpath
+
+# Set Homebrew configuration
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # load rbenv if available
 if command -v rbenv >/dev/null; then
