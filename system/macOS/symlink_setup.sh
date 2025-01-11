@@ -7,22 +7,27 @@ ln -sf "$HOME/code/dotfiles" "$DOTFILES_DIR"
 
 ln -sf "$SOLARIZED_DIR/dircolors-solarized/dircolors.ansi-dark" "$HOME/.dircolors"
 
+#
 # zsh
-ln -sf "$DOTFILES_DIR/zsh/zlogin" "$HOME/.zlogin"
-ln -sf "$DOTFILES_DIR/zsh/zshrc" "$HOME/.zshrc"
-ln -sf "$DOTFILES_DIR/zsh/zshenv" "$HOME/.zshenv"
-ln -sf "$DOTFILES_DIR/zsh/zprofile" "$HOME/.zprofile"
+#
+ln -sf "$DOTFILES/zsh/zshenv.home" "$HOME/.zshenv"
+
+mkdir -p "$ZDOTDIR" # ensure directory exists
+
+ln -sf "$DOTFILES/zsh/zlogin" "$ZDOTDIR/.zlogin"
+ln -sf "$DOTFILES/zsh/zshrc" "$ZDOTDIR/.zshrc"
+ln -sf "$DOTFILES/zsh/zshenv" "$ZDOTDIR/.zshenv"
+ln -sf "$DOTFILES/zsh/zprofile" "$ZDOTDIR/.zprofile"
 
 # zsh modules
-zsh_fpath="$HOME/.zfunctions"
+zsh_fpath="$ZDOTDIR/.zfunctions"
 zsh_modules="$DOTFILES/zsh/modules"
 
-mkdir zsh_fpath
+mkdir -p zsh_fpath
 
-ln -s "$zsh_modules/pure/pure.zsh" "$zsh_fpath/prompt_pure_setup"
-ln -s "$zsh_modules/pure/async.zsh" "$zsh_fpath/async"
-
-ln -s "$zsh_modules/z/z.sh" "$zsh_fpath/z"
+ln -sf "$zsh_modules/pure/pure.zsh" "$zsh_fpath/prompt_pure_setup"
+ln -sf "$zsh_modules/pure/async.zsh" "$zsh_fpath/async"
+ln -sf "$zsh_modules/z/z.sh" "$zsh_fpath/z"
 
 man1_path="$DOTFILES/man/man1"
 
