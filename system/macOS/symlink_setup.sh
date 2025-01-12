@@ -46,9 +46,11 @@ ln -sf "$DOTFILES_DIR/vim/snippets" "$HOME/.vim/snippets"
 # tmux
 ln -sf "$DOTFILES_DIR/tmux/tmux.conf" "$HOME/.tmux.conf"
 
+#
 # git
-ln -sf "$DOTFILES_DIR/git/gitconfig" "$HOME/.gitconfig"
-ln -sf "$DOTFILES_DIR/git/gitignore_global" "$HOME/.gitignore_global"
+#
+mkdir -p "$XDG_CONFIG_HOME/git"
+ln -sf "$DOTFILES/git/gitconfig" "$GIT_CONFIG_GLOBAL"
 
 # TheSilverSearcher ignore list
 ln -sf "$DOTFILES_DIR/ag/agignore" "$HOME/.agignore"

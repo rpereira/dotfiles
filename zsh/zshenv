@@ -12,6 +12,9 @@ export KEYTIMEOUT=1
 # The Curses based Pinentry needs a real tty device in order to work.
 export GPG_TTY=$(tty)
 
+export XDG_CONFIG_HOME="$HOME/.config"
+export GIT_CONFIG_GLOBAL="$XDG_CONFIG_HOME/git/.gitconfig"
+
 DOTFILES="$HOME/.dotfiles"
 SHELL="/opt/homebrew/bin/zsh"
 ZSH_CACHE_DIR="$ZDOTDIR/cache/"
