@@ -11,7 +11,7 @@
 
 [core]
   autocrlf = input
-  excludesfile = ~/.gitignore_global
+  excludesfile = ~/.dotfiles/git/.gitignore_global
 
   # Speed up commands involving untracked files such as "git status".
   # https://git-scm.com/docs/git-update-index#_untracked_cache
