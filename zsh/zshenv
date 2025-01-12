@@ -20,7 +20,7 @@ SHELL="/opt/homebrew/bin/zsh"
 ZSH_CACHE_DIR="$ZDOTDIR/cache/"
 
 # According to https://github.com/Homebrew/brew/blob/master/docs/Analytics.md,
-# Homebrew gathers anonymous aggregate user behaviour analytics and reporting
+# Homebrew gathers anonymous aggregate user behavior analytics and reporting
 # these to Google Analytics. Opt out...
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
