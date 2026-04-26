@@ -54,10 +54,7 @@ brew cask install iterm2
 brew cask install sourcetree
 
 info "Installing OpenPG tools..."
-brew install gnupg gpg-agent pinentry-mac
-
-info "Installing security tools..."
-brew install dnsmasq
+# brew install gnupg gpg-agent pinentry-mac
 
 # Remove outdated versions from the cellar.
 brew cleanup

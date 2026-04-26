@@ -69,16 +69,6 @@ curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --c
 # Install vim plugins
 nvim +PlugInstall +qall
 
-#
-# dnsmasq
-#
-# Install and start dnsmasq service
-sudo brew services start dnsmasq
-
-# Set dnsmasq as local DNS server
-networksetup -getdnsservers "Thunderbolt Ethernet"
-networksetup -getdnsservers "Wi-Fi"
-
 # Set user preferences
 # shellcheck disable=SC1090
 source "$DIR/defaults.sh"
