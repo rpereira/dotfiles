@@ -3,7 +3,7 @@
 info "Creating symlinks..."
 
 # Symlink dotfiles to our home.
-ln -sf "$HOME/code/dotfiles" "$DOTFILES_DIR"
+ln -sf "$HOME/code/dotfiles" "$DOTFILES"
 
 ln -sf "$SOLARIZED_DIR/dircolors-solarized/dircolors.ansi-dark" "$HOME/.dircolors"
 
@@ -42,7 +42,7 @@ ln -sf "$DOTFILES/vim/ftplugin" "$nvim_config/after/ftplugin"
 ln -sf "$DOTFILES/vim/snippets" "$nvim_config/UltiSnips"
 
 # tmux
-ln -sf "$DOTFILES_DIR/tmux/tmux.conf" "$HOME/.tmux.conf"
+ln -sf "$DOTFILES/tmux/tmux.conf" "$HOME/.tmux.conf"
 
 #
 # git
@@ -51,10 +51,10 @@ mkdir -p "$XDG_CONFIG_HOME/git"
 ln -sf "$DOTFILES/git/gitconfig" "$GIT_CONFIG_GLOBAL"
 
 # TheSilverSearcher ignore list
-ln -sf "$DOTFILES_DIR/ag/agignore" "$HOME/.agignore"
+ln -sf "$DOTFILES/ag/agignore" "$HOME/.agignore"
 
 # ctags
-ln -sf "$DOTFILES_DIR/ctags/ctags" "$HOME/.ctags"
+ln -sf "$DOTFILES/ctags/ctags" "$HOME/.ctags"
 
 # curl
 ln -sf "$DOTFILES/curl/curlrc" "$HOME/.curlrc"
