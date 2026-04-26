@@ -20,7 +20,7 @@ let mapleader = ' '
 
 set rtp+=/opt/homebrew/opt/fzf
 
-call plug#begin('~/.vim/bundle')
+call plug#begin(stdpath('data').'/plugged')
 
 "------------------------------------------------
 " Edit
@@ -76,7 +76,7 @@ Plug 'romainl/vim-cool'
 "------------------------------------------------
 " Theme
 "------------------------------------------------
-Plug 'junegunn/seoul256.vim',       { 'dir': '~/.vim/colors' }
+Plug 'junegunn/seoul256.vim'
 
 "------------------------------------------------
 " Tools

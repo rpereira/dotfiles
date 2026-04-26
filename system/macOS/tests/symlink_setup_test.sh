@@ -5,7 +5,7 @@ symlink_exists() {
   [[ -L $1 ]]
 }
 
-VIM_DIR="$HOME/.vim"
+NVIM_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/nvim"
 
 declare -a SYMLINKS_TO_TEST=(
   "$HOME/.dotfiles"
@@ -23,9 +23,9 @@ declare -a SYMLINKS_TO_TEST=(
 
   "$HOME/.tmux.conf"
 
-  "$HOME/.vimrc"
-  "$VIM_DIR/after/ftplugin"
-  "$VIM_DIR/UltiSnips"
+  "$NVIM_CONFIG/init.vim"
+  "$NVIM_CONFIG/after/ftplugin"
+  "$NVIM_CONFIG/UltiSnips"
 
   "$HOME/.zlogin"
   "$HOME/.zshrc"

@@ -62,12 +62,12 @@ grep -q -F '/usr/local/bin/zsh' /etc/shells || sudo bash -c "echo /usr/local/bin
 # Make ZSH the default shell
 chsh -s "$(which zsh)"
 
-# Install vim plugin manager
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+# Install plugin manager for Neovim
+curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Install vim plugins
-vim +PlugInstall +qall
+nvim +PlugInstall +qall
 
 #
 # dnsmasq

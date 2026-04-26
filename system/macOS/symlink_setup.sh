@@ -34,14 +34,12 @@ man1_path="$DOTFILES/man/man1"
 mkdir "$man1_path"
 ln -s "$zsh_modules/z/z.1" "$man1_path/z.1"
 
-# vim
-ln -sf "$DOTFILES_DIR/vim/vimrc" "$HOME/.vimrc"
-mkdir "$HOME/.vim/autoload"
-ln -sf "$DOTFILES/vim/autoload/*" "$HOME/.vim/autoload/"
-mkdir "$HOME/.vim/after"
-ln -sf "$DOTFILES_DIR/vim/ftplugin" "$HOME/.vim/after/ftplugin"
-mkdir "$HOME/.vim/snippets"
-ln -sf "$DOTFILES_DIR/vim/snippets" "$HOME/.vim/snippets"
+# neovim
+nvim_config="${XDG_CONFIG_HOME:-$HOME/.config}/nvim"
+mkdir -p "$nvim_config/after"
+ln -sf "$DOTFILES/vim/vimrc"    "$nvim_config/init.vim"
+ln -sf "$DOTFILES/vim/ftplugin" "$nvim_config/after/ftplugin"
+ln -sf "$DOTFILES/vim/snippets" "$nvim_config/UltiSnips"
 
 # tmux
 ln -sf "$DOTFILES_DIR/tmux/tmux.conf" "$HOME/.tmux.conf"
