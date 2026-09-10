@@ -40,6 +40,7 @@ mkdir -p "$nvim_config/after"
 ln -sf "$DOTFILES/vim/vimrc"    "$nvim_config/init.vim"
 ln -sf "$DOTFILES/vim/ftplugin" "$nvim_config/after/ftplugin"
 ln -sf "$DOTFILES/vim/snippets" "$nvim_config/UltiSnips"
+ln -sf "$DOTFILES/vim/autoload" "$nvim_config/autoload"
 
 # tmux
 ln -sf "$DOTFILES/tmux/tmux.conf" "$HOME/.tmux.conf"

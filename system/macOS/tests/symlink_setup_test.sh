@@ -26,6 +26,7 @@ declare -a SYMLINKS_TO_TEST=(
   "$NVIM_CONFIG/init.vim"
   "$NVIM_CONFIG/after/ftplugin"
   "$NVIM_CONFIG/UltiSnips"
+  "$NVIM_CONFIG/autoload"
 
   "$HOME/.zlogin"
   "$HOME/.zshrc"

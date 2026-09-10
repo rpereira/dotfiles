@@ -241,12 +241,12 @@ set gdefault
 set ignorecase
 set smartcase
 
-" Use the Silver Searcher
-if executable('ag')
-  " Use ag over grep.
+" Use ripgrep
+if executable('rg')
+  " Use rg over grep.
   " Output the line and column number of each match, so that we can navigate
   " results by jumping to the precise position of each match.
-  set grepprg=ag\ --nogroup\ --nocolor\ --column\ $*
+  set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case\ $*
   set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
 
@@ -380,10 +380,10 @@ nnoremap <leader>c :cclose<bar>lclose<cr>
 " ----------------------------------------------------------------------------
 
 " See grepper#run in vim/autoload/grepper.vim
-command! -nargs=* -complete=file Ag call grepper#run(<q-args>)
+command! -nargs=* -complete=file Rg call grepper#run(<q-args>)
 
 " Bind \ (backward slash) to grep shortcut
-nnoremap \ :Ag<Space>
+nnoremap \ :Rg<Space>
 
 " ----------------------------------------------------------------------------
 " Tabs
@@ -558,7 +558,7 @@ command! Root call s:root()
 " ----------------------------------------------------------------------------
 function! g:Grep(pattern) abort
   let entries = []
-  let cmd = 'ag ' . a:pattern . ' 2> /dev/null'
+  let cmd = 'rg ' . a:pattern . ' 2> /dev/null'
   let lines = split(system(cmd), '\n')
 
   if v:shell_error != 0
@@ -577,7 +577,7 @@ function! g:Grep(pattern) abort
 endfunction
 
 " TODO: I might not need the previous function at all. Using something like
-" `command! Todo Ag TODO` could be enough.
+" `command! Todo Rg TODO` could be enough.
 command! Todo call g:Grep('TODO\|FIXME\|XXX')
 
 " ----------------------------------------------------------------------------
@@ -791,9 +791,9 @@ command! -bang -nargs=? -complete=dir Files
 nnoremap <silent> <Leader><Leader> :Files<CR>
 nnoremap <silent> <Leader><Enter>  :Buffers<CR>
 nnoremap <silent> <Leader>L        :Lines<CR>
-nnoremap <silent> <Leader>ag       :Ag <C-R><C-W><CR>
-nnoremap <silent> <Leader>AG       :Ag <C-R><C-A><CR>
-xnoremap <silent> <Leader>ag       y:Ag <C-R>"<CR>
+nnoremap <silent> <Leader>ag       :Rg <C-R><C-W><CR>
+nnoremap <silent> <Leader>AG       :Rg <C-R><C-A><CR>
+xnoremap <silent> <Leader>ag       y:Rg <C-R>"<CR>
 nnoremap <silent> <Leader>`        :Marks<CR>
 
 imap <c-x><c-k> <plug>(fzf-complete-word)
