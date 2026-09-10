@@ -791,9 +791,9 @@ command! -bang -nargs=? -complete=dir Files
 nnoremap <silent> <Leader><Leader> :Files<CR>
 nnoremap <silent> <Leader><Enter>  :Buffers<CR>
 nnoremap <silent> <Leader>L        :Lines<CR>
-nnoremap <silent> <Leader>ag       :Rg <C-R><C-W><CR>
-nnoremap <silent> <Leader>AG       :Rg <C-R><C-A><CR>
-xnoremap <silent> <Leader>ag       y:Rg <C-R>"<CR>
+nnoremap <silent> <Leader>rg       :Rg <C-R><C-W><CR>
+nnoremap <silent> <Leader>RG       :Rg <C-R><C-A><CR>
+xnoremap <silent> <Leader>rg       y:Rg <C-R>"<CR>
 nnoremap <silent> <Leader>`        :Marks<CR>
 
 imap <c-x><c-k> <plug>(fzf-complete-word)
